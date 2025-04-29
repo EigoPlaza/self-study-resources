@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Word of the Day</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1em;
+      background: #f7f9fc;
+    }
+    .word-card {
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 1em;
+      background: #fff;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="word-card" id="wordOfDay">Loading...</div>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbyIlPHmsmJAxtpDzXwqLBy0ft9qlmrKb8ZBheG2m4zJiAKuMGSCq64k-wiYnmiUNAaW/exec")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("wordOfDay").innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("wordOfDay").innerText = "読み込みに失敗しました";
+      });
+  </script>
+</body>
+</html>
