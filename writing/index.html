@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>英作文チャレンジ - エプラ自習室</title>
+  <title>今日の英語日記 - エプラ自習室</title>
   <style>
     body {
       font-family: "Helvetica Neue", sans-serif;
@@ -72,10 +72,10 @@
   <form id="writing-form">
     <label for="writing-input">あなたの英文：</label>
     <textarea id="writing-input" placeholder="ここに英文を書いてください"></textarea>
-    <button type="submit">添削リクエスト（デモ）</button>
+    <button type="submit">添削リクエスト</button>
   </form>
   <div class="output" id="output-area">
-    ※ このデモでは実際の添削は行われません。
+    ※ ここに添削結果が表示されます
   </div>
   <footer>
     チリも積もれば英語力 🐣 by エプラ
@@ -105,7 +105,7 @@
       const data = await response.json();
 
       if (data.result) {
-        output.textContent = data.result;
+        output.innerHTML = data.result.replace(/\n/g, '<br>');
       } else if (data.error) {
         output.textContent = `エラー: ${data.error}`;
       } else {
