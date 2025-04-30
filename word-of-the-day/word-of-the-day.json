@@ -1,0 +1,2578 @@
+[
+  {
+    "日": 1,
+    "単語": "resilience",
+    "意味": "回復力",
+    "例文（英語）": "Her resilience helped her overcome many personal challenges.",
+    "例文（日本語訳）": "彼女の回復力は多くの個人的な困難を乗り越える助けとなった。"
+  },
+  {
+    "日": 2,
+    "単語": "gratitude",
+    "意味": "感謝",
+    "例文（英語）": "He expressed his gratitude through a heartfelt letter.",
+    "例文（日本語訳）": "彼は心のこもった手紙で感謝の気持ちを伝えた。"
+  },
+  {
+    "日": 3,
+    "単語": "efficient",
+    "意味": "効率的な",
+    "例文（英語）": "The new system is more efficient than the old one.",
+    "例文（日本語訳）": "新しいシステムは古いものよりも効率的だ。"
+  },
+  {
+    "日": 4,
+    "単語": "ambitious",
+    "意味": "野心的な",
+    "例文（英語）": "She’s very ambitious and aims to become a lawyer.",
+    "例文（日本語訳）": "彼女は非常に野心的で、弁護士になることを目指している。"
+  },
+  {
+    "日": 5,
+    "単語": "contribute",
+    "意味": "貢献する",
+    "例文（英語）": "Everyone should contribute to solving climate issues.",
+    "例文（日本語訳）": "誰もが気候問題の解決に貢献すべきだ。"
+  },
+  {
+    "日": 6,
+    "単語": "negotiate",
+    "意味": "交渉する",
+    "例文（英語）": "The two companies negotiated a new contract.",
+    "例文（日本語訳）": "両社は新しい契約を交渉した。"
+  },
+  {
+    "日": 7,
+    "単語": "emphasize",
+    "意味": "強調する",
+    "例文（英語）": "He emphasized the importance of daily practice.",
+    "例文（日本語訳）": "彼は毎日の練習の重要性を強調した。"
+  },
+  {
+    "日": 8,
+    "単語": "responsible",
+    "意味": "責任がある",
+    "例文（英語）": "She is responsible for managing the project.",
+    "例文（日本語訳）": "彼女はそのプロジェクトの管理に責任を持っている。"
+  },
+  {
+    "日": 9,
+    "単語": "determine",
+    "意味": "決定する／決心する",
+    "例文（英語）": "They determined to improve their performance.",
+    "例文（日本語訳）": "彼らはパフォーマンスを改善すると決心した。"
+  },
+  {
+    "日": 10,
+    "単語": "reliable",
+    "意味": "信頼できる",
+    "例文（英語）": "This car is old but still very reliable.",
+    "例文（日本語訳）": "この車は古いが、それでも非常に信頼できる。"
+  },
+  {
+    "日": 11,
+    "単語": "priority",
+    "意味": "優先事項",
+    "例文（英語）": "Safety is our top priority.",
+    "例文（日本語訳）": "安全が私たちの最優先事項です。"
+  },
+  {
+    "日": 12,
+    "単語": "criticize",
+    "意味": "批判する",
+    "例文（英語）": "The teacher criticized the report for lack of detail.",
+    "例文（日本語訳）": "教師は詳細の欠如を理由にその報告を批判した。"
+  },
+  {
+    "日": 13,
+    "単語": "apparent",
+    "意味": "明白な",
+    "例文（英語）": "It became apparent that he was not telling the truth.",
+    "例文（日本語訳）": "彼が真実を話していないことが明白になった。"
+  },
+  {
+    "日": 14,
+    "単語": "transform",
+    "意味": "変える、変化させる",
+    "例文（英語）": "The internet has transformed how we communicate.",
+    "例文（日本語訳）": "インターネットは私たちのコミュニケーションの方法を変えた。"
+  },
+  {
+    "日": 15,
+    "単語": "expand",
+    "意味": "拡大する",
+    "例文（英語）": "The company plans to expand into Asia next year.",
+    "例文（日本語訳）": "その会社は来年アジアに進出する予定だ。"
+  },
+  {
+    "日": 16,
+    "単語": "hesitate",
+    "意味": "ためらう",
+    "例文（英語）": "Don’t hesitate to ask if you need help.",
+    "例文（日本語訳）": "助けが必要なら遠慮なく聞いてください。"
+  },
+  {
+    "日": 17,
+    "単語": "consistent",
+    "意味": "一貫した",
+    "例文（英語）": "Her performance has been consistent throughout the year.",
+    "例文（日本語訳）": "彼女の成績は1年を通して一貫していた。"
+  },
+  {
+    "日": 18,
+    "単語": "maintain",
+    "意味": "維持する",
+    "例文（英語）": "It's important to maintain a healthy lifestyle.",
+    "例文（日本語訳）": "健康的な生活を維持することが大切だ。"
+  },
+  {
+    "日": 19,
+    "単語": "approve",
+    "意味": "承認する",
+    "例文（英語）": "The manager approved my vacation request.",
+    "例文（日本語訳）": "マネージャーは私の休暇申請を承認した。"
+  },
+  {
+    "日": 20,
+    "単語": "persuade",
+    "意味": "説得する",
+    "例文（英語）": "He persuaded me to join the team.",
+    "例文（日本語訳）": "彼は私をチームに入るように説得した。"
+  },
+  {
+    "日": 21,
+    "単語": "complicated",
+    "意味": "複雑な",
+    "例文（英語）": "The instructions were too complicated to follow.",
+    "例文（日本語訳）": "指示が複雑すぎて従えなかった。"
+  },
+  {
+    "日": 22,
+    "単語": "outcome",
+    "意味": "結果",
+    "例文（英語）": "The outcome of the meeting was positive.",
+    "例文（日本語訳）": "会議の結果は良好だった。"
+  },
+  {
+    "日": 23,
+    "単語": "threaten",
+    "意味": "脅す",
+    "例文（英語）": "Pollution threatens the survival of many animals.",
+    "例文（日本語訳）": "汚染は多くの動物の生存を脅かしている。"
+  },
+  {
+    "日": 24,
+    "単語": "confidence",
+    "意味": "自信",
+    "例文（英語）": "I have confidence in my decision.",
+    "例文（日本語訳）": "自分の決断に自信があります。"
+  },
+  {
+    "日": 25,
+    "単語": "convince",
+    "意味": "納得させる",
+    "例文（英語）": "He convinced me to try something new.",
+    "例文（日本語訳）": "彼は私に何か新しいことを試すように納得させた。"
+  },
+  {
+    "日": 26,
+    "単語": "achievement",
+    "意味": "達成、成果",
+    "例文（英語）": "Winning the award was a big achievement for her.",
+    "例文（日本語訳）": "その賞を取ったことは彼女にとって大きな成果だった。"
+  },
+  {
+    "日": 27,
+    "単語": "require",
+    "意味": "必要とする",
+    "例文（英語）": "This job requires strong communication skills.",
+    "例文（日本語訳）": "この仕事には強いコミュニケーション能力が求められる。"
+  },
+  {
+    "日": 28,
+    "単語": "flexible",
+    "意味": "柔軟な",
+    "例文（英語）": "He has a flexible approach to problem-solving.",
+    "例文（日本語訳）": "彼は問題解決に柔軟な姿勢を持っている。"
+  },
+  {
+    "日": 29,
+    "単語": "demonstrate",
+    "意味": "示す、実証する",
+    "例文（英語）": "She demonstrated her skills in the interview.",
+    "例文（日本語訳）": "彼女は面接で自分のスキルを示した。"
+  },
+  {
+    "日": 30,
+    "単語": "reflect",
+    "意味": "反映する／振り返る",
+    "例文（英語）": "The report reflects the team's hard work.",
+    "例文（日本語訳）": "その報告書はチームの努力を反映している。"
+  },
+  {
+    "日": 31,
+    "単語": "essential",
+    "意味": "不可欠な",
+    "例文（英語）": "Water is essential for all forms of life.",
+    "例文（日本語訳）": "水はすべての生命の形にとって不可欠だ。"
+  },
+  {
+    "日": 32,
+    "単語": "justify",
+    "意味": "正当化する",
+    "例文（英語）": "He tried to justify his absence with a weak excuse.",
+    "例文（日本語訳）": "彼は弱い言い訳で欠席を正当化しようとした。"
+  },
+  {
+    "日": 33,
+    "単語": "participate",
+    "意味": "参加する",
+    "例文（英語）": "Many students participated in the discussion.",
+    "例文（日本語訳）": "多くの学生がその議論に参加した。"
+  },
+  {
+    "日": 34,
+    "単語": "potential",
+    "意味": "潜在的な",
+    "例文（英語）": "She has the potential to become a great leader.",
+    "例文（日本語訳）": "彼女には素晴らしいリーダーになる可能性がある。"
+  },
+  {
+    "日": 35,
+    "単語": "evaluate",
+    "意味": "評価する",
+    "例文（英語）": "We need to evaluate the effectiveness of the new strategy.",
+    "例文（日本語訳）": "新しい戦略の有効性を評価する必要がある。"
+  },
+  {
+    "日": 36,
+    "単語": "interfere",
+    "意味": "干渉する",
+    "例文（英語）": "I don’t want to interfere in their private matters.",
+    "例文（日本語訳）": "彼らの私的な問題に干渉したくない。"
+  },
+  {
+    "日": 37,
+    "単語": "obstacle",
+    "意味": "障害",
+    "例文（英語）": "Lack of funding is a major obstacle to the project.",
+    "例文（日本語訳）": "資金不足はそのプロジェクトの大きな障害だ。"
+  },
+  {
+    "日": 38,
+    "単語": "regulate",
+    "意味": "規制する",
+    "例文（英語）": "The government regulates the sale of alcohol.",
+    "例文（日本語訳）": "政府はアルコールの販売を規制している。"
+  },
+  {
+    "日": 39,
+    "単語": "strategy",
+    "意味": "戦略",
+    "例文（英語）": "Their marketing strategy has been very successful.",
+    "例文（日本語訳）": "彼らのマーケティング戦略は非常に成功している。"
+  },
+  {
+    "日": 40,
+    "単語": "tendency",
+    "意味": "傾向",
+    "例文（英語）": "He has a tendency to speak without thinking.",
+    "例文（日本語訳）": "彼には考えずに話す傾向がある。"
+  },
+  {
+    "日": 41,
+    "単語": "capable",
+    "意味": "能力がある",
+    "例文（英語）": "She is capable of solving complex problems.",
+    "例文（日本語訳）": "彼女は複雑な問題を解決する能力がある。"
+  },
+  {
+    "日": 42,
+    "単語": "promote",
+    "意味": "推進する／昇進させる",
+    "例文（英語）": "The campaign aims to promote healthy eating habits.",
+    "例文（日本語訳）": "そのキャンペーンは健康的な食習慣を推進することを目的としている。"
+  },
+  {
+    "日": 43,
+    "単語": "rely",
+    "意味": "頼る",
+    "例文（英語）": "You can’t always rely on others for help.",
+    "例文（日本語訳）": "いつも他人に助けを頼るわけにはいかない。"
+  },
+  {
+    "日": 44,
+    "単語": "sustain",
+    "意味": "維持する",
+    "例文（英語）": "It's hard to sustain motivation without clear goals.",
+    "例文（日本語訳）": "明確な目標なしではモチベーションを維持するのは難しい。"
+  },
+  {
+    "日": 45,
+    "単語": "accurate",
+    "意味": "正確な",
+    "例文（英語）": "The report must be accurate and up to date.",
+    "例文（日本語訳）": "その報告は正確で最新でなければならない。"
+  },
+  {
+    "日": 46,
+    "単語": "illustrate",
+    "意味": "例示する",
+    "例文（英語）": "The chart illustrates the changes over time.",
+    "例文（日本語訳）": "その図は時間の経過による変化を示している。"
+  },
+  {
+    "日": 47,
+    "単語": "minimize",
+    "意味": "最小限にする",
+    "例文（英語）": "We must minimize the environmental impact.",
+    "例文（日本語訳）": "環境への影響を最小限に抑えなければならない。"
+  },
+  {
+    "日": 48,
+    "単語": "influence",
+    "意味": "影響",
+    "例文（英語）": "Social media has a strong influence on teenagers.",
+    "例文（日本語訳）": "ソーシャルメディアは10代に強い影響を与えている。"
+  },
+  {
+    "日": 49,
+    "単語": "generate",
+    "意味": "生み出す",
+    "例文（英語）": "The project generated a lot of interest.",
+    "例文（日本語訳）": "そのプロジェクトは多くの関心を生み出した。"
+  },
+  {
+    "日": 50,
+    "単語": "modify",
+    "意味": "修正する",
+    "例文（英語）": "You need to modify your plan to fit the new schedule.",
+    "例文（日本語訳）": "新しいスケジュールに合わせて計画を修正する必要がある。"
+  },
+  {
+    "日": 51,
+    "単語": "observe",
+    "意味": "観察する／順守する",
+    "例文（英語）": "Scientists observe animal behavior in the wild.",
+    "例文（日本語訳）": "科学者たちは自然の中で動物の行動を観察している。"
+  },
+  {
+    "日": 52,
+    "単語": "appropriate",
+    "意味": "適切な",
+    "例文（英語）": "Please wear appropriate clothes for the interview.",
+    "例文（日本語訳）": "面接には適切な服装でお越しください。"
+  },
+  {
+    "日": 53,
+    "単語": "consequence",
+    "意味": "結果、影響",
+    "例文（英語）": "Every action has a consequence.",
+    "例文（日本語訳）": "あらゆる行動には結果がある。"
+  },
+  {
+    "日": 54,
+    "単語": "distinguish",
+    "意味": "区別する",
+    "例文（英語）": "It's difficult to distinguish between the two twins.",
+    "例文（日本語訳）": "双子の二人を見分けるのは難しい。"
+  },
+  {
+    "日": 55,
+    "単語": "conclude",
+    "意味": "結論を出す／締めくくる",
+    "例文（英語）": "We can conclude that the results are reliable.",
+    "例文（日本語訳）": "この結果が信頼できると結論づけることができる。"
+  },
+  {
+    "日": 56,
+    "単語": "crucial",
+    "意味": "非常に重要な",
+    "例文（英語）": "Timing is crucial in this operation.",
+    "例文（日本語訳）": "この作戦ではタイミングが非常に重要だ。"
+  },
+  {
+    "日": 57,
+    "単語": "neglect",
+    "意味": "無視する／怠る",
+    "例文（英語）": "He often neglects his health.",
+    "例文（日本語訳）": "彼はよく健康をおろそかにする。"
+  },
+  {
+    "日": 58,
+    "単語": "imply",
+    "意味": "暗に示す",
+    "例文（英語）": "His tone implied that he was not happy.",
+    "例文（日本語訳）": "彼の口調は満足していないことを暗に示していた。"
+  },
+  {
+    "日": 59,
+    "単語": "indicate",
+    "意味": "示す",
+    "例文（英語）": "The results indicate a positive trend.",
+    "例文（日本語訳）": "結果は好ましい傾向を示している。"
+  },
+  {
+    "日": 60,
+    "単語": "decline",
+    "意味": "減少する／断る",
+    "例文（英語）": "The number of students has declined recently.",
+    "例文（日本語訳）": "最近、生徒の数が減少している。"
+  },
+  {
+    "日": 61,
+    "単語": "enhance",
+    "意味": "高める",
+    "例文（英語）": "New features enhance the user experience.",
+    "例文（日本語訳）": "新機能がユーザー体験を高める。"
+  },
+  {
+    "日": 62,
+    "単語": "cooperate",
+    "意味": "協力する",
+    "例文（英語）": "We must cooperate to solve this issue.",
+    "例文（日本語訳）": "この問題を解決するために協力しなければならない。"
+  },
+  {
+    "日": 63,
+    "単語": "perceive",
+    "意味": "知覚する",
+    "例文（英語）": "Children may perceive things differently from adults.",
+    "例文（日本語訳）": "子どもは大人とは違う感じ方をするかもしれない。"
+  },
+  {
+    "日": 64,
+    "単語": "restrict",
+    "意味": "制限する",
+    "例文（英語）": "They plan to restrict access to the database.",
+    "例文（日本語訳）": "彼らはデータベースへのアクセスを制限する予定だ。"
+  },
+  {
+    "日": 65,
+    "単語": "concentrate",
+    "意味": "集中する",
+    "例文（英語）": "Please concentrate on your work.",
+    "例文（日本語訳）": "仕事に集中してください。"
+  },
+  {
+    "日": 66,
+    "単語": "urge",
+    "意味": "強く促す",
+    "例文（英語）": "I urge you to reconsider your decision.",
+    "例文（日本語訳）": "あなたに決定を再考するよう強く促したい。"
+  },
+  {
+    "日": 67,
+    "単語": "pursue",
+    "意味": "追求する",
+    "例文（英語）": "She decided to pursue a career in medicine.",
+    "例文（日本語訳）": "彼女は医療の道を追求することを決めた。"
+  },
+  {
+    "日": 68,
+    "単語": "encounter",
+    "意味": "遭遇する",
+    "例文（英語）": "We encountered many challenges during the trip.",
+    "例文（日本語訳）": "旅の途中で多くの困難に遭遇した。"
+  },
+  {
+    "日": 69,
+    "単語": "investigate",
+    "意味": "調査する",
+    "例文（英語）": "The police are investigating the incident.",
+    "例文（日本語訳）": "警察がその事件を調査している。"
+  },
+  {
+    "日": 70,
+    "単語": "react",
+    "意味": "反応する",
+    "例文（英語）": "How did he react to the news?",
+    "例文（日本語訳）": "彼はそのニュースにどう反応した？"
+  },
+  {
+    "日": 71,
+    "単語": "tolerate",
+    "意味": "我慢する／許容する",
+    "例文（英語）": "She can't tolerate rude behavior.",
+    "例文（日本語訳）": "彼女は失礼な態度を我慢できない。"
+  },
+  {
+    "日": 72,
+    "単語": "possess",
+    "意味": "所有する",
+    "例文（英語）": "He possesses great talent.",
+    "例文（日本語訳）": "彼は素晴らしい才能を持っている。"
+  },
+  {
+    "日": 73,
+    "単語": "expose",
+    "意味": "暴露する／さらす",
+    "例文（英語）": "The article exposed the truth about the scandal.",
+    "例文（日本語訳）": "その記事はスキャンダルの真実を暴露した。"
+  },
+  {
+    "日": 74,
+    "単語": "alter",
+    "意味": "変更する",
+    "例文（英語）": "You can alter the design to fit your needs.",
+    "例文（日本語訳）": "あなたのニーズに合わせてデザインを変更できます。"
+  },
+  {
+    "日": 75,
+    "単語": "boost",
+    "意味": "高める",
+    "例文（英語）": "The new campaign helped boost sales.",
+    "例文（日本語訳）": "新しいキャンペーンは売り上げを高めるのに役立った。"
+  },
+  {
+    "日": 76,
+    "単語": "cease",
+    "意味": "やめる",
+    "例文（英語）": "The company ceased operations last year.",
+    "例文（日本語訳）": "その会社は昨年、業務を停止した。"
+  },
+  {
+    "日": 77,
+    "単語": "clarify",
+    "意味": "明確にする",
+    "例文（英語）": "Could you clarify your last point?",
+    "例文（日本語訳）": "最後のポイントを明確にしていただけますか？"
+  },
+  {
+    "日": 78,
+    "単語": "coincide",
+    "意味": "同時に起こる",
+    "例文（英語）": "Their opinions coincide with ours.",
+    "例文（日本語訳）": "彼らの意見は私たちのものと一致している。"
+  },
+  {
+    "日": 79,
+    "単語": "compel",
+    "意味": "強いる",
+    "例文（英語）": "The law compels parents to send their children to school.",
+    "例文（日本語訳）": "法律は親に子どもを学校に通わせることを強いている。"
+  },
+  {
+    "日": 80,
+    "単語": "comprise",
+    "意味": "含む",
+    "例文（英語）": "The book comprises ten chapters.",
+    "例文（日本語訳）": "その本は10章から成り立っている。"
+  },
+  {
+    "日": 81,
+    "単語": "consult",
+    "意味": "相談する",
+    "例文（英語）": "You should consult a doctor about your symptoms.",
+    "例文（日本語訳）": "症状については医者に相談すべきです。"
+  },
+  {
+    "日": 82,
+    "単語": "contradict",
+    "意味": "矛盾する",
+    "例文（英語）": "His actions contradict his words.",
+    "例文（日本語訳）": "彼の行動は言葉と矛盾している。"
+  },
+  {
+    "日": 83,
+    "単語": "dedicate",
+    "意味": "捧げる",
+    "例文（英語）": "He dedicated his life to science.",
+    "例文（日本語訳）": "彼は人生を科学に捧げた。"
+  },
+  {
+    "日": 84,
+    "単語": "detect",
+    "意味": "検出する",
+    "例文（英語）": "The test can detect even small changes.",
+    "例文（日本語訳）": "この検査は小さな変化でも検出できます。"
+  },
+  {
+    "日": 85,
+    "単語": "diminish",
+    "意味": "減少する",
+    "例文（英語）": "His influence has diminished over time.",
+    "例文（日本語訳）": "彼の影響力は時間とともに減少した。"
+  },
+  {
+    "日": 86,
+    "単語": "distort",
+    "意味": "歪める",
+    "例文（英語）": "The article distorted the facts.",
+    "例文（日本語訳）": "その記事は事実を歪めていた。"
+  },
+  {
+    "日": 87,
+    "単語": "exclude",
+    "意味": "除外する",
+    "例文（英語）": "They excluded him from the meeting.",
+    "例文（日本語訳）": "彼らは彼を会議から除外した。"
+  },
+  {
+    "日": 88,
+    "単語": "facilitate",
+    "意味": "促進する",
+    "例文（英語）": "The new system facilitates communication.",
+    "例文（日本語訳）": "新しいシステムはコミュニケーションを促進する。"
+  },
+  {
+    "日": 89,
+    "単語": "inspect",
+    "意味": "点検する",
+    "例文（英語）": "The manager will inspect the equipment tomorrow.",
+    "例文（日本語訳）": "マネージャーが明日その機器を点検する予定です。"
+  },
+  {
+    "日": 90,
+    "単語": "integrate",
+    "意味": "統合する",
+    "例文（英語）": "The new plan integrates feedback from users.",
+    "例文（日本語訳）": "新しい計画はユーザーの意見を統合している。"
+  },
+  {
+    "日": 91,
+    "単語": "oppose",
+    "意味": "反対する",
+    "例文（英語）": "Many people opposed the new law.",
+    "例文（日本語訳）": "多くの人が新しい法律に反対した。"
+  },
+  {
+    "日": 92,
+    "単語": "persist",
+    "意味": "持続する",
+    "例文（英語）": "If symptoms persist, consult your doctor.",
+    "例文（日本語訳）": "症状が続く場合は医師に相談してください。"
+  },
+  {
+    "日": 93,
+    "単語": "precise",
+    "意味": "正確な",
+    "例文（英語）": "Can you give me a more precise answer?",
+    "例文（日本語訳）": "もっと正確な答えをもらえますか？"
+  },
+  {
+    "日": 94,
+    "単語": "prohibit",
+    "意味": "禁止する",
+    "例文（英語）": "The law prohibits smoking in public places.",
+    "例文（日本語訳）": "法律は公共の場での喫煙を禁止している。"
+  },
+  {
+    "日": 95,
+    "単語": "reinforce",
+    "意味": "強化する",
+    "例文（英語）": "The findings reinforce our previous conclusion.",
+    "例文（日本語訳）": "その発見は以前の結論を強化する。"
+  },
+  {
+    "日": 96,
+    "単語": "resolve",
+    "意味": "解決する",
+    "例文（英語）": "They resolved the issue after a long discussion.",
+    "例文（日本語訳）": ""
+  },
+  {
+    "日": 97,
+    "単語": "assert",
+    "意味": "主張する",
+    "例文（英語）": "She asserted her innocence.",
+    "例文（日本語訳）": "彼女は無実を主張した。"
+  },
+  {
+    "日": 98,
+    "単語": "beneficial",
+    "意味": "有益な",
+    "例文（英語）": "Regular exercise is beneficial to your health.",
+    "例文（日本語訳）": "定期的な運動は健康に有益です。"
+  },
+  {
+    "日": 99,
+    "単語": "coherent",
+    "意味": "首尾一貫した",
+    "例文（英語）": "His explanation was clear and coherent.",
+    "例文（日本語訳）": "彼の説明は明確で首尾一貫していた。"
+  },
+  {
+    "日": 100,
+    "単語": "compile",
+    "意味": "編集する",
+    "例文（英語）": "She compiled the data into a report.",
+    "例文（日本語訳）": "彼女はデータを報告書にまとめた。"
+  },
+  {
+    "日": 101,
+    "単語": "conform",
+    "意味": "従う",
+    "例文（英語）": "Employees must conform to the company's policies.",
+    "例文（日本語訳）": "社員は会社の方針に従わなければならない。"
+  },
+  {
+    "日": 102,
+    "単語": "constrain",
+    "意味": "制約する",
+    "例文（英語）": "The budget constraints limited our options.",
+    "例文（日本語訳）": "予算の制約が私たちの選択肢を制限した。"
+  },
+  {
+    "日": 103,
+    "単語": "contemplate",
+    "意味": "熟考する",
+    "例文（英語）": "He contemplated changing his career.",
+    "例文（日本語訳）": "彼はキャリアを変えることを熟考した。"
+  },
+  {
+    "日": 104,
+    "単語": "controversy",
+    "意味": "論争",
+    "例文（英語）": "The new law caused a lot of controversy.",
+    "例文（日本語訳）": "新しい法律は多くの論争を引き起こした。"
+  },
+  {
+    "日": 105,
+    "単語": "convey",
+    "意味": "伝える",
+    "例文（英語）": "Words cannot convey how grateful I am.",
+    "例文（日本語訳）": "言葉では感謝の気持ちを十分に伝えられません。"
+  },
+  {
+    "日": 106,
+    "単語": "correlate",
+    "意味": "相関がある",
+    "例文（英語）": "Education and income often correlate.",
+    "例文（日本語訳）": "教育と収入はしばしば相関がある。"
+  },
+  {
+    "日": 107,
+    "単語": "credible",
+    "意味": "信頼できる",
+    "例文（英語）": "The witness gave a credible testimony.",
+    "例文（日本語訳）": "その証人は信頼できる証言をした。"
+  },
+  {
+    "日": 108,
+    "単語": "deliberate",
+    "意味": "意図的な／熟慮する",
+    "例文（英語）": "The attack was deliberate.",
+    "例文（日本語訳）": "その攻撃は意図的だった。"
+  },
+  {
+    "日": 109,
+    "単語": "discriminate",
+    "意味": "差別する／識別する",
+    "例文（英語）": "It's illegal to discriminate based on race.",
+    "例文（日本語訳）": "人種に基づく差別は違法です。"
+  },
+  {
+    "日": 110,
+    "単語": "elicit",
+    "意味": "引き出す",
+    "例文（英語）": "The teacher elicited a response from the student.",
+    "例文（日本語訳）": "教師は生徒から返答を引き出した。"
+  },
+  {
+    "日": 111,
+    "単語": "endorse",
+    "意味": "支持する",
+    "例文（英語）": "The celebrity endorsed the new product.",
+    "例文（日本語訳）": "その有名人は新商品を支持した。"
+  },
+  {
+    "日": 112,
+    "単語": "evident",
+    "意味": "明白な",
+    "例文（英語）": "It was evident that she was upset.",
+    "例文（日本語訳）": "彼女が動揺しているのは明らかだった。"
+  },
+  {
+    "日": 113,
+    "単語": "fluctuate",
+    "意味": "変動する",
+    "例文（英語）": "Prices fluctuate depending on the season.",
+    "例文（日本語訳）": "価格は季節によって変動する。"
+  },
+  {
+    "日": 114,
+    "単語": "inevitable",
+    "意味": "避けられない",
+    "例文（英語）": "Change is inevitable in life.",
+    "例文（日本語訳）": "人生において変化は避けられない。"
+  },
+  {
+    "日": 115,
+    "単語": "intervene",
+    "意味": "介入する",
+    "例文（英語）": "The teacher had to intervene in the argument.",
+    "例文（日本語訳）": "教師はその口論に介入せざるを得なかった。"
+  },
+  {
+    "日": 116,
+    "単語": "legitimate",
+    "意味": "合法の／正当な",
+    "例文（英語）": "They raised legitimate concerns about the project.",
+    "例文（日本語訳）": "彼らはそのプロジェクトについて正当な懸念を示した。"
+  },
+  {
+    "日": 117,
+    "単語": "manipulate",
+    "意味": "操作する",
+    "例文（英語）": "He knows how to manipulate people.",
+    "例文（日本語訳）": "彼は人を操る方法を知っている。"
+  },
+  {
+    "日": 118,
+    "単語": "mutual",
+    "意味": "相互の",
+    "例文（英語）": "They have mutual respect for each other.",
+    "例文（日本語訳）": "彼らは互いに相互の敬意を持っている。"
+  },
+  {
+    "日": 119,
+    "単語": "advocate",
+    "意味": "擁護する／主張する",
+    "例文（英語）": "She advocates for equal rights.",
+    "例文（日本語訳）": "彼女は平等な権利を擁護している。"
+  },
+  {
+    "日": 120,
+    "単語": "ambiguous",
+    "意味": "曖昧な",
+    "例文（英語）": "His message was ambiguous and unclear.",
+    "例文（日本語訳）": "彼のメッセージは曖昧で不明瞭だった。"
+  },
+  {
+    "日": 121,
+    "単語": "deduce",
+    "意味": "推論する",
+    "例文（英語）": "We can deduce his location from the clues.",
+    "例文（日本語訳）": "手がかりから彼の居場所を推測できる。"
+  },
+  {
+    "日": 122,
+    "単語": "denote",
+    "意味": "示す／意味する",
+    "例文（英語）": "The red sign denotes danger.",
+    "例文（日本語訳）": "赤いサインは危険を示している。"
+  },
+  {
+    "日": 123,
+    "単語": "dynamic",
+    "意味": "活発な／変化する",
+    "例文（英語）": "She is a dynamic speaker.",
+    "例文（日本語訳）": "彼女は活気に満ちた話し手だ。"
+  },
+  {
+    "日": 124,
+    "単語": "entity",
+    "意味": "実体",
+    "例文（英語）": "The company became a separate legal entity.",
+    "例文（日本語訳）": "その会社は独立した法人となった。"
+  },
+  {
+    "日": 125,
+    "単語": "feasible",
+    "意味": "実現可能な",
+    "例文（英語）": "The plan is technically feasible.",
+    "例文（日本語訳）": "その計画は技術的には実現可能だ。"
+  },
+  {
+    "日": 126,
+    "単語": "forthcoming",
+    "意味": "間近に迫った／率直な",
+    "例文（英語）": "The report will be forthcoming next week.",
+    "例文（日本語訳）": "レポートは来週出る予定だ。"
+  },
+  {
+    "日": 127,
+    "単語": "hierarchy",
+    "意味": "階層",
+    "例文（英語）": "The company has a strict hierarchy.",
+    "例文（日本語訳）": "その会社には厳格な階層構造がある。"
+  },
+  {
+    "日": 128,
+    "単語": "identical",
+    "意味": "同一の",
+    "例文（英語）": "Their opinions were almost identical.",
+    "例文（日本語訳）": "彼らの意見はほとんど同一だった。"
+  },
+  {
+    "日": 129,
+    "単語": "inhibit",
+    "意味": "抑制する",
+    "例文（英語）": "Fear can inhibit learning.",
+    "例文（日本語訳）": "恐れは学習を妨げることがある。"
+  },
+  {
+    "日": 130,
+    "単語": "insight",
+    "意味": "洞察",
+    "例文（英語）": "He has deep insight into human behavior.",
+    "例文（日本語訳）": "彼は人間の行動に対する深い洞察力を持っている。"
+  },
+  {
+    "日": 131,
+    "単語": "integrity",
+    "意味": "誠実さ／完全性",
+    "例文（英語）": "She is known for her integrity.",
+    "例文（日本語訳）": "彼女は誠実さで知られている。"
+  },
+  {
+    "日": 132,
+    "単語": "likewise",
+    "意味": "同様に",
+    "例文（英語）": "She is a great teacher. Her students are likewise excellent.",
+    "例文（日本語訳）": "彼女は素晴らしい教師で、生徒たちも同様に優れている。"
+  },
+  {
+    "日": 133,
+    "単語": "mature",
+    "意味": "成熟する",
+    "例文（英語）": "He matured quickly during his first year at university.",
+    "例文（日本語訳）": "彼は大学1年目で急速に成長した。"
+  },
+  {
+    "日": 134,
+    "単語": "notion",
+    "意味": "概念／考え",
+    "例文（英語）": "She rejected the notion of traditional roles.",
+    "例文（日本語訳）": "彼女は伝統的な役割という考えを拒絶した。"
+  },
+  {
+    "日": 135,
+    "単語": "orient",
+    "意味": "向ける／適応させる",
+    "例文（英語）": "The training helps new staff orient themselves.",
+    "例文（日本語訳）": "研修は新入社員が職場に慣れるのを助ける。"
+  },
+  {
+    "日": 136,
+    "単語": "preliminary",
+    "意味": "予備的な",
+    "例文（英語）": "These are just preliminary results.",
+    "例文（日本語訳）": "これらはあくまで予備的な結果です。"
+  },
+  {
+    "日": 137,
+    "単語": "reluctant",
+    "意味": "気が進まない",
+    "例文（英語）": "He was reluctant to speak in public.",
+    "例文（日本語訳）": "彼は人前で話すのを嫌がっていた。"
+  },
+  {
+    "日": 138,
+    "単語": "subsequent",
+    "意味": "次の／後の",
+    "例文（英語）": "Subsequent events proved him right.",
+    "例文（日本語訳）": "その後の出来事が彼の正しさを証明した。"
+  },
+  {
+    "日": 139,
+    "単語": "adjacent",
+    "意味": "隣接した",
+    "例文（英語）": "The library is adjacent to the main building.",
+    "例文（日本語訳）": "図書館は本館の隣にあります。"
+  },
+  {
+    "日": 140,
+    "単語": "arbitrary",
+    "意味": "任意の／恣意的な",
+    "例文（英語）": "His choice seemed arbitrary.",
+    "例文（日本語訳）": "彼の選択は恣意的に思えた。"
+  },
+  {
+    "日": 141,
+    "単語": "aspect",
+    "意味": "側面",
+    "例文（英語）": "One important aspect of the job is communication.",
+    "例文（日本語訳）": "その仕事の重要な側面の一つはコミュニケーションである。"
+  },
+  {
+    "日": 142,
+    "単語": "behalf",
+    "意味": "～の代わりに",
+    "例文（英語）": "He spoke on behalf of the entire team.",
+    "例文（日本語訳）": "彼はチーム全体を代表して話した。"
+  },
+  {
+    "日": 143,
+    "単語": "commodity",
+    "意味": "商品／日用品",
+    "例文（英語）": "Oil is an important global commodity.",
+    "例文（日本語訳）": "石油は重要な国際商品である。"
+  },
+  {
+    "日": 144,
+    "単語": "compatible",
+    "意味": "互換性のある",
+    "例文（英語）": "This software is compatible with Windows 11.",
+    "例文（日本語訳）": "このソフトはWindows 11と互換性がある。"
+  },
+  {
+    "日": 145,
+    "単語": "conceive",
+    "意味": "思いつく／想像する",
+    "例文（英語）": "He couldn’t conceive of a better solution.",
+    "例文（日本語訳）": "彼はそれ以上の解決策を思いつけなかった。"
+  },
+  {
+    "日": 146,
+    "単語": "concurrent",
+    "意味": "同時に起こる",
+    "例文（英語）": "The two trials were concurrent.",
+    "例文（日本語訳）": "その2つの裁判は同時に行われた。"
+  },
+  {
+    "日": 147,
+    "単語": "confine",
+    "意味": "制限する／閉じ込める",
+    "例文（英語）": "The patient was confined to bed for two weeks.",
+    "例文（日本語訳）": "患者は2週間ベッドに閉じ込められていた。"
+  },
+  {
+    "日": 148,
+    "単語": "consecutive",
+    "意味": "連続した",
+    "例文（英語）": "She won three consecutive championships.",
+    "例文（日本語訳）": "彼女は3回連続で優勝した。"
+  },
+  {
+    "日": 149,
+    "単語": "constitute",
+    "意味": "構成する",
+    "例文（英語）": "Women constitute the majority of the staff.",
+    "例文（日本語訳）": "女性はスタッフの大半を占めている。"
+  },
+  {
+    "日": 150,
+    "単語": "depict",
+    "意味": "描写する",
+    "例文（英語）": "The movie depicts life in the 19th century.",
+    "例文（日本語訳）": "映画は19世紀の生活を描写している。"
+  },
+  {
+    "日": 151,
+    "単語": "derive",
+    "意味": "引き出す／得る",
+    "例文（英語）": "The word ‘history’ is derived from Greek.",
+    "例文（日本語訳）": "「history」という言葉はギリシャ語に由来する。"
+  },
+  {
+    "日": 152,
+    "単語": "eliminate",
+    "意味": "排除する／なくす",
+    "例文（英語）": "We need to eliminate unnecessary steps.",
+    "例文（日本語訳）": "不要な手順を排除する必要がある。"
+  },
+  {
+    "日": 153,
+    "単語": "equip",
+    "意味": "装備する／備え付ける",
+    "例文（英語）": "The lab is equipped with modern tools.",
+    "例文（日本語訳）": "その研究室は最新の機器を備えている。"
+  },
+  {
+    "日": 154,
+    "単語": "framework",
+    "意味": "枠組み",
+    "例文（英語）": "This law provides a legal framework for action.",
+    "例文（日本語訳）": "この法律は行動のための法的枠組みを提供する。"
+  },
+  {
+    "日": 155,
+    "単語": "furthermore",
+    "意味": "さらに",
+    "例文（英語）": "The book is informative and, furthermore, very enjoyable.",
+    "例文（日本語訳）": "その本は情報が豊富で、さらにとても楽しい。"
+  },
+  {
+    "日": 156,
+    "単語": "incentive",
+    "意味": "動機、奨励",
+    "例文（英語）": "The bonus was a great incentive to finish early.",
+    "例文（日本語訳）": "そのボーナスは早く終わらせるための大きな動機となった。"
+  },
+  {
+    "日": 157,
+    "単語": "initiate",
+    "意味": "開始する／始める",
+    "例文（英語）": "They decided to initiate a new campaign.",
+    "例文（日本語訳）": "彼らは新しいキャンペーンを開始することに決めた。"
+  },
+  {
+    "日": 158,
+    "単語": "isolate",
+    "意味": "孤立させる／隔離する",
+    "例文（英語）": "The virus was isolated in the lab.",
+    "例文（日本語訳）": "ウイルスは研究室で隔離された。"
+  },
+  {
+    "日": 159,
+    "単語": "legislation",
+    "意味": "法律／立法",
+    "例文（英語）": "The government passed new legislation.",
+    "例文（日本語訳）": "政府は新しい法律を可決した。"
+  },
+  {
+    "日": 160,
+    "単語": "ministry",
+    "意味": "省／省庁",
+    "例文（英語）": "She works for the Ministry of Education.",
+    "例文（日本語訳）": "彼女は文部科学省で働いている。"
+  },
+  {
+    "日": 161,
+    "単語": "objective",
+    "意味": "目的／客観的な",
+    "例文（英語）": "Our main objective is to increase productivity.",
+    "例文（日本語訳）": "私たちの主な目的は生産性を高めることです。"
+  },
+  {
+    "日": 162,
+    "単語": "offset",
+    "意味": "相殺する／埋め合わせる",
+    "例文（英語）": "The benefits offset the costs.",
+    "例文（日本語訳）": "利益がコストを相殺する。"
+  },
+  {
+    "日": 163,
+    "単語": "ongoing",
+    "意味": "継続中の",
+    "例文（英語）": "The investigation is still ongoing.",
+    "例文（日本語訳）": "調査はまだ続いている。"
+  },
+  {
+    "日": 164,
+    "単語": "output",
+    "意味": "生産／出力",
+    "例文（英語）": "The factory increased its output last month.",
+    "例文（日本語訳）": "工場は先月、生産量を増やした。"
+  },
+  {
+    "日": 165,
+    "単語": "overall",
+    "意味": "全体的な／概して",
+    "例文（英語）": "Overall, the trip was a success.",
+    "例文（日本語訳）": "全体的に見て、その旅行は成功だった。"
+  },
+  {
+    "日": 166,
+    "単語": "presume",
+    "意味": "推定する／思う",
+    "例文（英語）": "I presume he is telling the truth.",
+    "例文（日本語訳）": "彼が本当のことを言っていると思う。"
+  },
+  {
+    "日": 167,
+    "単語": "proportion",
+    "意味": "割合／比率",
+    "例文（英語）": "A large proportion of students passed the exam.",
+    "例文（日本語訳）": "多くの学生が試験に合格した。"
+  },
+  {
+    "日": 168,
+    "単語": "rational",
+    "意味": "理性的な／合理的な",
+    "例文（英語）": "Try to be rational when making decisions.",
+    "例文（日本語訳）": "判断を下すときは理性的でいなさい。"
+  },
+  {
+    "日": 169,
+    "単語": "recover",
+    "意味": "回復する／取り戻す",
+    "例文（英語）": "He recovered quickly from the illness.",
+    "例文（日本語訳）": "彼は病気からすぐに回復した。"
+  },
+  {
+    "日": 170,
+    "単語": "render",
+    "意味": "～にする／与える",
+    "例文（英語）": "The accident rendered him unconscious.",
+    "例文（日本語訳）": "その事故で彼は意識を失った。"
+  },
+  {
+    "日": 171,
+    "単語": "resign",
+    "意味": "辞職する／辞める",
+    "例文（英語）": "She decided to resign from her position.",
+    "例文（日本語訳）": "彼女は職を辞めることに決めた。"
+  },
+  {
+    "日": 172,
+    "単語": "retain",
+    "意味": "保持する／保つ",
+    "例文（英語）": "It’s important to retain key staff members.",
+    "例文（日本語訳）": "重要なスタッフを保持することは大切だ。"
+  },
+  {
+    "日": 173,
+    "単語": "revenue",
+    "意味": "収益／歳入",
+    "例文（英語）": "The company’s revenue increased last year.",
+    "例文（日本語訳）": "その会社の収益は昨年増加した。"
+  },
+  {
+    "日": 174,
+    "単語": "reverse",
+    "意味": "逆にする／反転する",
+    "例文（英語）": "The new policy reversed the previous decision.",
+    "例文（日本語訳）": "新しい方針は前の決定を覆した。"
+  },
+  {
+    "日": 175,
+    "単語": "revise",
+    "意味": "修正する／見直す",
+    "例文（英語）": "We need to revise the report before submitting it.",
+    "例文（日本語訳）": "提出前に報告書を見直す必要がある。"
+  },
+  {
+    "日": 176,
+    "単語": "scenario",
+    "意味": "シナリオ／想定",
+    "例文（英語）": "They discussed different scenarios in case of emergency.",
+    "例文（日本語訳）": "緊急時の様々なシナリオについて議論した。"
+  },
+  {
+    "日": 177,
+    "単語": "scope",
+    "意味": "範囲／視野",
+    "例文（英語）": "The scope of the project is quite broad.",
+    "例文（日本語訳）": "そのプロジェクトの範囲はかなり広い。"
+  },
+  {
+    "日": 178,
+    "単語": "sector",
+    "意味": "部門／分野",
+    "例文（英語）": "He works in the public sector.",
+    "例文（日本語訳）": "彼は公共部門で働いている。"
+  },
+  {
+    "日": 179,
+    "単語": "seek",
+    "意味": "探し求める",
+    "例文（英語）": "She is seeking a new opportunity abroad.",
+    "例文（日本語訳）": "彼女は海外で新しい機会を探している。"
+  },
+  {
+    "日": 180,
+    "単語": "significant",
+    "意味": "重要な／意味のある",
+    "例文（英語）": "The findings are statistically significant.",
+    "例文（日本語訳）": "その結果は統計的に有意である。"
+  },
+  {
+    "日": 181,
+    "単語": "simulate",
+    "意味": "模擬する／シミュレートする",
+    "例文（英語）": "The flight simulator replicates real conditions.",
+    "例文（日本語訳）": "フライトシミュレーターは実際の状況を再現する。"
+  },
+  {
+    "日": 182,
+    "単語": "specify",
+    "意味": "明示する／詳しく述べる",
+    "例文（英語）": "Please specify your requirements.",
+    "例文（日本語訳）": "要件を明確にしてください。"
+  },
+  {
+    "日": 183,
+    "単語": "submit",
+    "意味": "提出する／服従する",
+    "例文（英語）": "Don’t forget to submit your application by Friday.",
+    "例文（日本語訳）": "金曜日までに申請書を提出するのを忘れないでください。"
+  },
+  {
+    "日": 184,
+    "単語": "substitute",
+    "意味": "代わりに使う／代用品",
+    "例文（英語）": "You can substitute honey for sugar.",
+    "例文（日本語訳）": "砂糖の代わりにハチミツを使えます。"
+  },
+  {
+    "日": 185,
+    "単語": "sufficient",
+    "意味": "十分な／足りている",
+    "例文（英語）": "Do you have sufficient information?",
+    "例文（日本語訳）": "十分な情報はありますか？"
+  },
+  {
+    "日": 186,
+    "単語": "tension",
+    "意味": "緊張／張り詰めた状態",
+    "例文（英語）": "There was a lot of tension in the room.",
+    "例文（日本語訳）": "部屋の中には緊張が漂っていた。"
+  },
+  {
+    "日": 187,
+    "単語": "terminate",
+    "意味": "終了させる／打ち切る",
+    "例文（英語）": "The contract was terminated early.",
+    "例文（日本語訳）": "契約は早期に打ち切られた。"
+  },
+  {
+    "日": 188,
+    "単語": "transfer",
+    "意味": "移す／転送する",
+    "例文（英語）": "He was transferred to the Tokyo office.",
+    "例文（日本語訳）": "彼は東京支社に異動した。"
+  },
+  {
+    "日": 189,
+    "単語": "transition",
+    "意味": "移行／変化",
+    "例文（英語）": "The country is in a period of transition.",
+    "例文（日本語訳）": "国は移行期にある。"
+  },
+  {
+    "日": 190,
+    "単語": "trend",
+    "意味": "傾向／流行",
+    "例文（英語）": "There is a trend toward remote work.",
+    "例文（日本語訳）": "リモートワークの傾向がある。"
+  },
+  {
+    "日": 191,
+    "単語": "undergo",
+    "意味": "経験する／受ける",
+    "例文（英語）": "He underwent surgery last month.",
+    "例文（日本語訳）": "彼は先月手術を受けた。"
+  },
+  {
+    "日": 192,
+    "単語": "unify",
+    "意味": "統一する／一体化する",
+    "例文（英語）": "The leader tried to unify the country.",
+    "例文（日本語訳）": "指導者は国を統一しようとした。"
+  },
+  {
+    "日": 193,
+    "単語": "utilize",
+    "意味": "活用する／使う",
+    "例文（英語）": "We should utilize our resources efficiently.",
+    "例文（日本語訳）": "私たちは資源を効率的に活用すべきだ。"
+  },
+  {
+    "日": 194,
+    "単語": "violate",
+    "意味": "違反する／侵害する",
+    "例文（英語）": "He violated the terms of the contract.",
+    "例文（日本語訳）": "彼は契約条件に違反した。"
+  },
+  {
+    "日": 195,
+    "単語": "accommodate",
+    "意味": "適応させる／収容する",
+    "例文（英語）": "The hotel can accommodate 500 guests.",
+    "例文（日本語訳）": "そのホテルは500人を収容できる。"
+  },
+  {
+    "日": 196,
+    "単語": "assure",
+    "意味": "保証する／安心させる",
+    "例文（英語）": "I assure you everything is under control.",
+    "例文（日本語訳）": "すべてうまくいっていると保証します。"
+  },
+  {
+    "日": 197,
+    "単語": "attain",
+    "意味": "達成する／到達する",
+    "例文（英語）": "She attained her goals through hard work.",
+    "例文（日本語訳）": "彼女は努力によって目標を達成した。"
+  },
+  {
+    "日": 198,
+    "単語": "consent",
+    "意味": "同意する／承諾する",
+    "例文（英語）": "He gave his consent to the surgery.",
+    "例文（日本語訳）": "彼は手術に同意した。"
+  },
+  {
+    "日": 199,
+    "単語": "convert",
+    "意味": "変える／転換する",
+    "例文（英語）": "They converted the warehouse into an office.",
+    "例文（日本語訳）": "彼らは倉庫をオフィスに改装した。"
+  },
+  {
+    "日": 200,
+    "単語": "coordinate",
+    "意味": "調整する／連携させる",
+    "例文（英語）": "The departments coordinated their efforts.",
+    "例文（日本語訳）": "部門同士が努力を調整した。"
+  },
+  {
+    "日": 201,
+    "単語": "differentiate",
+    "意味": "区別する／差別化する",
+    "例文（英語）": "It's important to differentiate between facts and opinions.",
+    "例文（日本語訳）": "事実と意見を区別することが大切だ。"
+  },
+  {
+    "日": 202,
+    "単語": "distribute",
+    "意味": "配る／分配する",
+    "例文（英語）": "Food was distributed to the refugees.",
+    "例文（日本語訳）": "食料が難民に配られた。"
+  },
+  {
+    "日": 203,
+    "単語": "enforce",
+    "意味": "施行する／強制する",
+    "例文（英語）": "The government will enforce the new regulations next month.",
+    "例文（日本語訳）": "政府は来月から新しい規制を施行する予定だ。"
+  },
+  {
+    "日": 204,
+    "単語": "exhibit",
+    "意味": "展示する／示す",
+    "例文（英語）": "The museum is exhibiting ancient artifacts.",
+    "例文（日本語訳）": "博物館は古代の遺物を展示している。"
+  },
+  {
+    "日": 205,
+    "単語": "exploit",
+    "意味": "活用する／搾取する",
+    "例文（英語）": "They exploit natural resources for profit.",
+    "例文（日本語訳）": "彼らは利益のために自然資源を利用している。"
+  },
+  {
+    "日": 206,
+    "単語": "highlight",
+    "意味": "強調する／目立たせる",
+    "例文（英語）": "The report highlights the importance of early detection.",
+    "例文（日本語訳）": "その報告書は早期発見の重要性を強調している。"
+  },
+  {
+    "日": 207,
+    "単語": "motivate",
+    "意味": "動機づける／やる気にさせる",
+    "例文（英語）": "Good leaders motivate their team effectively.",
+    "例文（日本語訳）": "優れたリーダーは効果的にチームをやる気にさせる。"
+  },
+  {
+    "日": 208,
+    "単語": "obtain",
+    "意味": "得る／手に入れる",
+    "例文（英語）": "She obtained a visa to study abroad.",
+    "例文（日本語訳）": "彼女は留学のためのビザを取得した。"
+  },
+  {
+    "日": 209,
+    "単語": "preserve",
+    "意味": "保護する／保存する",
+    "例文（英語）": "We must preserve our cultural heritage.",
+    "例文（日本語訳）": "文化遺産を守らなければならない。"
+  },
+  {
+    "日": 210,
+    "単語": "proceed",
+    "意味": "続ける／進む",
+    "例文（英語）": "Let’s proceed with the next topic.",
+    "例文（日本語訳）": "次のトピックに進みましょう。"
+  },
+  {
+    "日": 211,
+    "単語": "quote",
+    "意味": "引用する／示す",
+    "例文（英語）": "She quoted a famous author in her essay.",
+    "例文（日本語訳）": "彼女はエッセイで有名な作家を引用した。"
+  },
+  {
+    "日": 212,
+    "単語": "refer",
+    "意味": "言及する／参照する",
+    "例文（英語）": "He referred to the manual for instructions.",
+    "例文（日本語訳）": "彼は説明書を参照した。"
+  },
+  {
+    "日": 213,
+    "単語": "tackle",
+    "意味": "取り組む／立ち向かう",
+    "例文（英語）": "We must tackle climate change seriously.",
+    "例文（日本語訳）": "気候変動に真剣に取り組まなければならない。"
+  },
+  {
+    "日": 214,
+    "単語": "acquire",
+    "意味": "習得する／獲得する",
+    "例文（英語）": "Children acquire language quickly.",
+    "例文（日本語訳）": "子どもは言語を素早く習得する。"
+  },
+  {
+    "日": 215,
+    "単語": "allocate",
+    "意味": "割り当てる／配分する",
+    "例文（英語）": "The manager allocated tasks to each team member.",
+    "例文（日本語訳）": "マネージャーは各メンバーにタスクを割り当てた。"
+  },
+  {
+    "日": 216,
+    "単語": "anticipate",
+    "意味": "予期する／期待する",
+    "例文（英語）": "We anticipate a rise in demand.",
+    "例文（日本語訳）": "需要の増加を予期している。"
+  },
+  {
+    "日": 217,
+    "単語": "assess",
+    "意味": "評価する／査定する",
+    "例文（英語）": "The teacher assessed the students’ progress.",
+    "例文（日本語訳）": "教師は生徒の進歩を評価した。"
+  },
+  {
+    "日": 218,
+    "単語": "assume",
+    "意味": "仮定する／引き受ける",
+    "例文（英語）": "Don’t assume he’s guilty without evidence.",
+    "例文（日本語訳）": "証拠なしで彼が有罪だと決めつけてはいけない。"
+  },
+  {
+    "日": 219,
+    "単語": "collaborate",
+    "意味": "協力する／共同で行う",
+    "例文（英語）": "The two companies collaborated on the project.",
+    "例文（日本語訳）": "その2社はプロジェクトで協力した。"
+  },
+  {
+    "日": 220,
+    "単語": "compensate",
+    "意味": "補償する／埋め合わせる",
+    "例文（英語）": "The company compensated him for the damage.",
+    "例文（日本語訳）": "会社は彼に損害の補償をした。"
+  },
+  {
+    "日": 221,
+    "単語": "conduct",
+    "意味": "実施する／行う",
+    "例文（英語）": "The scientist conducted an experiment.",
+    "例文（日本語訳）": "科学者は実験を行った。"
+  },
+  {
+    "日": 222,
+    "単語": "confirm",
+    "意味": "確認する／確証する",
+    "例文（英語）": "Can you confirm your reservation?",
+    "例文（日本語訳）": "予約を確認していただけますか？"
+  },
+  {
+    "日": 223,
+    "単語": "confront",
+    "意味": "直面する／対立する",
+    "例文（英語）": "She had to confront her fears.",
+    "例文（日本語訳）": "彼女は自分の恐怖に立ち向かわなければならなかった。"
+  },
+  {
+    "日": 224,
+    "単語": "cope",
+    "意味": "対処する／うまくやる",
+    "例文（英語）": "He struggled to cope with the stress.",
+    "例文（日本語訳）": "彼はストレスへの対処に苦労した。"
+  },
+  {
+    "日": 225,
+    "単語": "recognize",
+    "意味": "認識する",
+    "例文（英語）": "It is important to recognize the efforts of the team.",
+    "例文（日本語訳）": "チームの努力を認識することが重要です。"
+  },
+  {
+    "日": 226,
+    "単語": "broaden",
+    "意味": "広げる",
+    "例文（英語）": "They want to broaden their market reach.",
+    "例文（日本語訳）": "彼らは市場の範囲を広げたいと考えています。"
+  },
+  {
+    "日": 227,
+    "単語": "reduce",
+    "意味": "減少させる",
+    "例文（英語）": "The medicine will reduce the pain.",
+    "例文（日本語訳）": "その薬は痛みを減少させます。"
+  },
+  {
+    "日": 228,
+    "単語": "include",
+    "意味": "含む",
+    "例文（英語）": "The report will include all relevant details.",
+    "例文（日本語訳）": "その報告書にはすべての関連情報が含まれます。"
+  },
+  {
+    "日": 229,
+    "単語": "validate",
+    "意味": "正当化する",
+    "例文（英語）": "We must validate our approach with data.",
+    "例文（日本語訳）": "私たちはデータでアプローチを正当化しなければなりません。"
+  },
+  {
+    "日": 230,
+    "単語": "overlap",
+    "意味": "重なる",
+    "例文（英語）": "Our opinions overlap in many areas.",
+    "例文（日本語訳）": "私たちの意見は多くの点で重なっています。"
+  },
+  {
+    "日": 231,
+    "単語": "explain",
+    "意味": "説明する",
+    "例文（英語）": "Can you explain the process again?",
+    "例文（日本語訳）": "もう一度手順を説明してくれますか？"
+  },
+  {
+    "日": 232,
+    "単語": "assign",
+    "意味": "割り当てる",
+    "例文（英語）": "The manager will assign the new task tomorrow.",
+    "例文（日本語訳）": "マネージャーは明日その新しい仕事を割り当てます。"
+  },
+  {
+    "日": 233,
+    "単語": "strive",
+    "意味": "努力する",
+    "例文（英語）": "You should strive to achieve your goals.",
+    "例文（日本語訳）": "目標を達成するために努力すべきです。"
+  },
+  {
+    "日": 234,
+    "単語": "gather",
+    "意味": "集める",
+    "例文（英語）": "Let’s gather information first.",
+    "例文（日本語訳）": "まず情報を集めましょう。"
+  },
+  {
+    "日": 235,
+    "単語": "sense",
+    "意味": "感知する",
+    "例文（英語）": "She could sense the tension in the room.",
+    "例文（日本語訳）": "彼女は部屋の緊張を感じ取った。"
+  },
+  {
+    "日": 236,
+    "単語": "appraise",
+    "意味": "評価する",
+    "例文（英語）": "We need to appraise the value of this project.",
+    "例文（日本語訳）": "このプロジェクトの価値を評価する必要があります。"
+  },
+  {
+    "日": 237,
+    "単語": "strengthen",
+    "意味": "強化する",
+    "例文（英語）": "This will strengthen our position.",
+    "例文（日本語訳）": "これで私たちの立場は強化されます。"
+  },
+  {
+    "日": 238,
+    "単語": "vital",
+    "意味": "重要な",
+    "例文（英語）": "It is vital to stay calm.",
+    "例文（日本語訳）": "冷静でいることが重要です。"
+  },
+  {
+    "日": 239,
+    "単語": "support",
+    "意味": "支援する",
+    "例文（英語）": "We came to support our friend.",
+    "例文（日本語訳）": "私たちは友人を支援しに来ました。"
+  },
+  {
+    "日": 240,
+    "単語": "halt",
+    "意味": "停止する",
+    "例文（英語）": "The machine will halt automatically.",
+    "例文（日本語訳）": "機械は自動で停止します。"
+  },
+  {
+    "日": 241,
+    "単語": "advise",
+    "意味": "助言する",
+    "例文（英語）": "He came to advise me on the matter.",
+    "例文（日本語訳）": "彼はその件について助言しに来ました。"
+  },
+  {
+    "日": 242,
+    "単語": "fortify",
+    "意味": "強化する",
+    "例文（英語）": "This move will fortify our defenses.",
+    "例文（日本語訳）": "この動きで防御が強化されます。"
+  },
+  {
+    "日": 243,
+    "単語": "twist",
+    "意味": "歪める",
+    "例文（英語）": "He tried to twist the facts.",
+    "例文（日本語訳）": "彼は事実を歪めようとした。"
+  },
+  {
+    "日": 244,
+    "単語": "articulate",
+    "意味": "はっきり話す",
+    "例文（英語）": "She can articulate her ideas clearly during meetings.",
+    "例文（日本語訳）": "彼女は会議中に自分の考えを明確に話すことができる。"
+  },
+  {
+    "日": 245,
+    "単語": "mediate",
+    "意味": "仲介する",
+    "例文（英語）": "He was asked to mediate the dispute between departments.",
+    "例文（日本語訳）": "彼は部門間の争いを仲裁するよう頼まれた。"
+  },
+  {
+    "日": 246,
+    "単語": "infer",
+    "意味": "推測する",
+    "例文（英語）": "From the tone of her voice, we can infer she is upset.",
+    "例文（日本語訳）": "彼女の声の調子から、怒っていると推測できる。"
+  },
+  {
+    "日": 247,
+    "単語": "refrain",
+    "意味": "控える",
+    "例文（英語）": "Please refrain from using your phone during the lecture.",
+    "例文（日本語訳）": "講義中に携帯電話を使うのは控えてください。"
+  },
+  {
+    "日": 248,
+    "単語": "authorize",
+    "意味": "許可する",
+    "例文（英語）": "The director authorized the use of company funds.",
+    "例文（日本語訳）": "取締役は会社の資金使用を許可した。"
+  },
+  {
+    "日": 249,
+    "単語": "exaggerate",
+    "意味": "誇張する",
+    "例文（英語）": "Don’t exaggerate the problem—it’s not that serious.",
+    "例文（日本語訳）": "問題を誇張しないで、それほど深刻ではないよ。"
+  },
+  {
+    "日": 250,
+    "単語": "speculate",
+    "意味": "推測する",
+    "例文（英語）": "They speculated about the cause of the delay.",
+    "例文（日本語訳）": "彼らは遅延の原因について推測した。"
+  },
+  {
+    "日": 251,
+    "単語": "simplify",
+    "意味": "簡素化する",
+    "例文（英語）": "We need to simplify the instructions for users.",
+    "例文（日本語訳）": "ユーザーのために手順を簡単にする必要がある。"
+  },
+  {
+    "日": 252,
+    "単語": "provoke",
+    "意味": "引き起こす",
+    "例文（英語）": "His comment provoked an angry response.",
+    "例文（日本語訳）": "彼のコメントが怒りの反応を引き起こした。"
+  },
+  {
+    "日": 253,
+    "単語": "implement",
+    "意味": "実行する",
+    "例文（英語）": "The company plans to implement new policies.",
+    "例文（日本語訳）": "会社は新しい方針を実施する予定だ。"
+  },
+  {
+    "日": 254,
+    "単語": "comply",
+    "意味": "従う",
+    "例文（英語）": "All employees must comply with safety regulations.",
+    "例文（日本語訳）": "全従業員は安全規則に従わなければならない。"
+  },
+  {
+    "日": 255,
+    "単語": "interpret",
+    "意味": "解釈する",
+    "例文（英語）": "How do you interpret this data?",
+    "例文（日本語訳）": "このデータをどう解釈しますか？"
+  },
+  {
+    "日": 256,
+    "単語": "interact",
+    "意味": "交流する",
+    "例文（英語）": "Children learn best when they interact with others.",
+    "例文（日本語訳）": "子供は他人と交流するときに最もよく学ぶ。"
+  },
+  {
+    "日": 257,
+    "単語": "alleviate",
+    "意味": "和らげる",
+    "例文（英語）": "The medicine helped to alleviate the pain.",
+    "例文（日本語訳）": "その薬は痛みを和らげるのに役立った。"
+  },
+  {
+    "日": 258,
+    "単語": "subsidize",
+    "意味": "補助金を与える",
+    "例文（英語）": "The government subsidizes public transportation.",
+    "例文（日本語訳）": "政府は公共交通機関に補助金を与えている。"
+  },
+  {
+    "日": 259,
+    "単語": "viable",
+    "意味": "実行可能な",
+    "例文（英語）": "This plan is not economically viable.",
+    "例文（日本語訳）": "この計画は経済的に実行可能ではない。"
+  },
+  {
+    "日": 260,
+    "単語": "deteriorate",
+    "意味": "悪化する",
+    "例文（英語）": "Her health deteriorated quickly.",
+    "例文（日本語訳）": "彼女の健康は急速に悪化した。"
+  },
+  {
+    "日": 261,
+    "単語": "trigger",
+    "意味": "引き金になる",
+    "例文（英語）": "Stress can trigger headaches.",
+    "例文（日本語訳）": "ストレスは頭痛の引き金になることがある。"
+  },
+  {
+    "日": 262,
+    "単語": "tedious",
+    "意味": "退屈な",
+    "例文（英語）": "The lecture was long and tedious.",
+    "例文（日本語訳）": "その講義は長くて退屈だった。"
+  },
+  {
+    "日": 263,
+    "単語": "mandatory",
+    "意味": "義務的な",
+    "例文（英語）": "Wearing a seatbelt is mandatory.",
+    "例文（日本語訳）": "シートベルトの着用は義務である。"
+  },
+  {
+    "日": 264,
+    "単語": "apprehensive",
+    "意味": "不安な",
+    "例文（英語）": "I'm apprehensive about tomorrow’s exam.",
+    "例文（日本語訳）": "明日の試験が不安だ。"
+  },
+  {
+    "日": 265,
+    "単語": "hinder",
+    "意味": "妨げる",
+    "例文（英語）": "The rain hindered our progress.",
+    "例文（日本語訳）": "雨が私たちの進行を妨げた。"
+  },
+  {
+    "日": 266,
+    "単語": "elaborate",
+    "意味": "詳しく述べる",
+    "例文（英語）": "Can you elaborate on your proposal?",
+    "例文（日本語訳）": "あなたの提案について詳しく説明してもらえますか？"
+  },
+  {
+    "日": 267,
+    "単語": "plausible",
+    "意味": "もっともらしい",
+    "例文（英語）": "His excuse sounded plausible.",
+    "例文（日本語訳）": "彼の言い訳はもっともらしく聞こえた。"
+  },
+  {
+    "日": 268,
+    "単語": "redundant",
+    "意味": "冗長な／余分な",
+    "例文（英語）": "The report was full of redundant information.",
+    "例文（日本語訳）": "その報告書は冗長な情報でいっぱいだった。"
+  },
+  {
+    "日": 269,
+    "単語": "morale",
+    "意味": "士気",
+    "例文（英語）": "Team morale is high after the recent victory.",
+    "例文（日本語訳）": "最近の勝利でチームの士気が高まっている。"
+  },
+  {
+    "日": 270,
+    "単語": "consensus",
+    "意味": "合意",
+    "例文（英語）": "The committee reached a consensus.",
+    "例文（日本語訳）": "委員会は合意に達した。"
+  },
+  {
+    "日": 271,
+    "単語": "skeptical",
+    "意味": "懐疑的な",
+    "例文（英語）": "I'm skeptical about that claim.",
+    "例文（日本語訳）": "私はその主張に懐疑的だ。"
+  },
+  {
+    "日": 272,
+    "単語": "thrive",
+    "意味": "成功する／繁栄する",
+    "例文（英語）": "Small businesses can thrive in this area.",
+    "例文（日本語訳）": "この地域では小規模ビジネスが繁栄できる。"
+  },
+  {
+    "日": 273,
+    "単語": "competent",
+    "意味": "有能な",
+    "例文（英語）": "She's a highly competent engineer.",
+    "例文（日本語訳）": "彼女は非常に有能なエンジニアだ。"
+  },
+  {
+    "日": 274,
+    "単語": "abrupt",
+    "意味": "急な",
+    "例文（英語）": "The meeting ended abruptly.",
+    "例文（日本語訳）": "会議は急に終わった。"
+  },
+  {
+    "日": 275,
+    "単語": "genuine",
+    "意味": "本物の／誠実な",
+    "例文（英語）": "He gave a genuine apology.",
+    "例文（日本語訳）": "彼は心からの謝罪をした。"
+  },
+  {
+    "日": 276,
+    "単語": "controversial",
+    "意味": "論争の的になる",
+    "例文（英語）": "That law is highly controversial.",
+    "例文（日本語訳）": "その法律は非常に論争の的になっている。"
+  },
+  {
+    "日": 277,
+    "単語": "compromise",
+    "意味": "妥協する",
+    "例文（英語）": "They finally compromised after long talks.",
+    "例文（日本語訳）": "長い議論の末、彼らはついに妥協した。"
+  },
+  {
+    "日": 278,
+    "単語": "optimistic",
+    "意味": "楽観的な",
+    "例文（英語）": "She remains optimistic about the future.",
+    "例文（日本語訳）": "彼女は未来について楽観的である。"
+  },
+  {
+    "日": 279,
+    "単語": "designate",
+    "意味": "指定する",
+    "例文（英語）": "This area has been designated as a national park.",
+    "例文（日本語訳）": "この地域は国立公園に指定された。"
+  },
+  {
+    "日": 280,
+    "単語": "affiliation",
+    "意味": "提携、所属",
+    "例文（英語）": "He had no political affiliation.",
+    "例文（日本語訳）": "彼には政治的な所属はなかった。"
+  },
+  {
+    "日": 281,
+    "単語": "asset",
+    "意味": "資産、有用なもの",
+    "例文（英語）": "His language skills are a valuable asset to the company.",
+    "例文（日本語訳）": "彼の語学力は会社にとって貴重な資産だ。"
+  },
+  {
+    "日": 282,
+    "単語": "belated",
+    "意味": "遅れた、遅延した",
+    "例文（英語）": "I sent her a belated birthday card.",
+    "例文（日本語訳）": "彼女に遅れて誕生日カードを送った。"
+  },
+  {
+    "日": 283,
+    "単語": "candid",
+    "意味": "率直な、遠慮のない",
+    "例文（英語）": "She gave a candid response to the question.",
+    "例文（日本語訳）": "彼女はその質問に率直に答えた。"
+  },
+  {
+    "日": 284,
+    "単語": "compulsory",
+    "意味": "強制的な、義務的な",
+    "例文（英語）": "Wearing a helmet is compulsory in this area.",
+    "例文（日本語訳）": "この地域ではヘルメットの着用が義務だ。"
+  },
+  {
+    "日": 285,
+    "単語": "conceal",
+    "意味": "隠す、秘密にする",
+    "例文（英語）": "He tried to conceal his disappointment.",
+    "例文（日本語訳）": "彼は失望を隠そうとした。"
+  },
+  {
+    "日": 286,
+    "単語": "contempt",
+    "意味": "軽蔑、侮辱",
+    "例文（英語）": "She looked at him with contempt.",
+    "例文（日本語訳）": "彼女は彼を軽蔑の目で見た。"
+  },
+  {
+    "日": 287,
+    "単語": "discipline",
+    "意味": "規律、しつけ",
+    "例文（英語）": "Good discipline is essential in a classroom.",
+    "例文（日本語訳）": "教室では良い規律が不可欠だ。"
+  },
+  {
+    "日": 288,
+    "単語": "eradicate",
+    "意味": "根絶する",
+    "例文（英語）": "The disease was eradicated from the region.",
+    "例文（日本語訳）": "その病気は地域から根絶された。"
+  },
+  {
+    "日": 289,
+    "単語": "meticulous",
+    "意味": "几帳面な、細心の注意を払う",
+    "例文（英語）": "She is meticulous about her work.",
+    "例文（日本語訳）": "彼女は仕事に対してとても几帳面だ。"
+  },
+  {
+    "日": 290,
+    "単語": "persevere",
+    "意味": "粘り強く続ける",
+    "例文（英語）": "He persevered despite many obstacles.",
+    "例文（日本語訳）": "彼は多くの障害にもかかわらず粘り強く続けた。"
+  },
+  {
+    "日": 291,
+    "単語": "prone",
+    "意味": "〜しがちな",
+    "例文（英語）": "He is prone to making careless mistakes.",
+    "例文（日本語訳）": "彼は不注意なミスをしがちだ。"
+  },
+  {
+    "日": 292,
+    "単語": "refute",
+    "意味": "反論する、否定する",
+    "例文（英語）": "The scientist refuted the theory with new evidence.",
+    "例文（日本語訳）": "その科学者は新しい証拠で理論を否定した。"
+  },
+  {
+    "日": 293,
+    "単語": "retrieve",
+    "意味": "取り戻す",
+    "例文（英語）": "She was able to retrieve the deleted files.",
+    "例文（日本語訳）": "彼女は削除されたファイルを取り戻すことができた。"
+  },
+  {
+    "日": 294,
+    "単語": "robust",
+    "意味": "頑丈な、強い",
+    "例文（英語）": "This laptop has a robust design.",
+    "例文（日本語訳）": "このノートパソコンは頑丈な設計になっている。"
+  },
+  {
+    "日": 295,
+    "単語": "spontaneous",
+    "意味": "自然発生的な、自発的な",
+    "例文（英語）": "The applause was spontaneous.",
+    "例文（日本語訳）": "拍手は自然に起こった。"
+  },
+  {
+    "日": 296,
+    "単語": "withstand",
+    "意味": "耐える、持ちこたえる",
+    "例文（英語）": "This material can withstand extreme temperatures.",
+    "例文（日本語訳）": "この素材は極端な温度に耐えられる。"
+  },
+  {
+    "日": 297,
+    "単語": "allege",
+    "意味": "主張する、断言する",
+    "例文（英語）": "The suspect is alleged to have stolen the car.",
+    "例文（日本語訳）": "容疑者はその車を盗んだと主張されている。"
+  },
+  {
+    "日": 298,
+    "単語": "amend",
+    "意味": "修正する",
+    "例文（英語）": "The contract was amended to reflect the new agreement.",
+    "例文（日本語訳）": "契約は新たな合意を反映するよう修正された。"
+  },
+  {
+    "日": 299,
+    "単語": "applaud",
+    "意味": "称賛する、拍手する",
+    "例文（英語）": "The audience applauded the speaker's efforts.",
+    "例文（日本語訳）": "聴衆は講演者の努力を称賛した。"
+  },
+  {
+    "日": 300,
+    "単語": "attrition",
+    "意味": "自然減、摩耗",
+    "例文（英語）": "Many employees left through attrition.",
+    "例文（日本語訳）": "多くの従業員が自然減で退職した。"
+  },
+  {
+    "日": 301,
+    "単語": "banish",
+    "意味": "追放する",
+    "例文（英語）": "He was banished from the kingdom.",
+    "例文（日本語訳）": "彼はその王国から追放された。"
+  },
+  {
+    "日": 302,
+    "単語": "blunder",
+    "意味": "重大なミス",
+    "例文（英語）": "He made a huge blunder in the report.",
+    "例文（日本語訳）": "彼は報告書で重大なミスを犯した。"
+  },
+  {
+    "日": 303,
+    "単語": "boast",
+    "意味": "誇る、自慢する",
+    "例文（英語）": "He boasted about his promotion.",
+    "例文（日本語訳）": "彼は昇進について自慢した。"
+  },
+  {
+    "日": 304,
+    "単語": "brace",
+    "意味": "備える、覚悟する",
+    "例文（英語）": "We need to brace for the upcoming storm.",
+    "例文（日本語訳）": "これから来る嵐に備える必要がある。"
+  },
+  {
+    "日": 305,
+    "単語": "cite",
+    "意味": "引用する、言及する",
+    "例文（英語）": "She cited several studies in her paper.",
+    "例文（日本語訳）": "彼女は論文でいくつかの研究を引用した。"
+  },
+  {
+    "日": 306,
+    "単語": "coerce",
+    "意味": "強制する、強いる",
+    "例文（英語）": "They were coerced into signing the agreement.",
+    "例文（日本語訳）": "彼らは合意書に署名するよう強制された。"
+  },
+  {
+    "日": 307,
+    "単語": "concede",
+    "意味": "認める、譲歩する",
+    "例文（英語）": "He conceded that he was wrong.",
+    "例文（日本語訳）": "彼は自分が間違っていたことを認めた。"
+  },
+  {
+    "日": 308,
+    "単語": "contemptuous",
+    "意味": "軽蔑的な",
+    "例文（英語）": "She gave him a contemptuous look.",
+    "例文（日本語訳）": "彼女は彼に軽蔑的な視線を向けた。"
+  },
+  {
+    "日": 309,
+    "単語": "daunt",
+    "意味": "ひるませる",
+    "例文（英語）": "The challenges did not daunt her.",
+    "例文（日本語訳）": "その困難は彼女をひるませなかった。"
+  },
+  {
+    "日": 310,
+    "単語": "debris",
+    "意味": "がれき、破片",
+    "例文（英語）": "The debris from the explosion was scattered everywhere.",
+    "例文（日本語訳）": "爆発の破片があちこちに散らばっていた。"
+  },
+  {
+    "日": 311,
+    "単語": "defy",
+    "意味": "逆らう、反抗する",
+    "例文（英語）": "She defied the expectations of others.",
+    "例文（日本語訳）": "彼女は他人の期待に逆らった。"
+  },
+  {
+    "日": 312,
+    "単語": "derail",
+    "意味": "脱線させる",
+    "例文（英語）": "The scandal could derail his career.",
+    "例文（日本語訳）": "そのスキャンダルは彼のキャリアを脱線させかねない。"
+  },
+  {
+    "日": 313,
+    "単語": "dismantle",
+    "意味": "分解する、取り壊す",
+    "例文（英語）": "They dismantled the old factory.",
+    "例文（日本語訳）": "彼らはその古い工場を取り壊した。"
+  },
+  {
+    "日": 314,
+    "単語": "disrupt",
+    "意味": "混乱させる、妨害する",
+    "例文（英語）": "The protest disrupted the meeting.",
+    "例文（日本語訳）": "抗議活動が会議を妨害した。"
+  },
+  {
+    "日": 315,
+    "単語": "encompass",
+    "意味": "含む、取り囲む",
+    "例文（英語）": "The course encompasses various topics.",
+    "例文（日本語訳）": "その講座はさまざまなトピックを含んでいる。"
+  },
+  {
+    "日": 316,
+    "単語": "entail",
+    "意味": "伴う、必要とする",
+    "例文（英語）": "This job entails a lot of responsibility.",
+    "例文（日本語訳）": "この仕事には多くの責任が伴う。"
+  },
+  {
+    "日": 317,
+    "単語": "exacerbate",
+    "意味": "悪化させる",
+    "例文（英語）": "The new rule only exacerbated the problem.",
+    "例文（日本語訳）": "新しい規則は問題を悪化させただけだった。"
+  },
+  {
+    "日": 318,
+    "単語": "heed",
+    "意味": "注意を払う",
+    "例文（英語）": "You should heed your teacher’s advice.",
+    "例文（日本語訳）": "先生の助言に注意を払うべきだ。"
+  },
+  {
+    "日": 319,
+    "単語": "immerse",
+    "意味": "浸る、没頭する",
+    "例文（英語）": "She immersed herself in studying.",
+    "例文（日本語訳）": "彼女は勉強に没頭した。"
+  },
+  {
+    "日": 320,
+    "単語": "valid",
+    "意味": "有効な",
+    "例文（英語）": "Your passport is not valid anymore.",
+    "例文（日本語訳）": "あなたのパスポートはもう有効ではありません。"
+  },
+  {
+    "日": 321,
+    "単語": "forecast",
+    "意味": "予測する",
+    "例文（英語）": "Experts forecast heavy rain tomorrow.",
+    "例文（日本語訳）": "専門家は明日大雨を予測している。"
+  },
+  {
+    "日": 322,
+    "単語": "counterpart",
+    "意味": "対応するもの",
+    "例文（英語）": "His counterpart in Japan is fluent in English.",
+    "例文（日本語訳）": "日本の彼の同職は英語が堪能だ。"
+  },
+  {
+    "日": 323,
+    "単語": "widespread",
+    "意味": "広範囲にわたる",
+    "例文（英語）": "The disease became widespread across the country.",
+    "例文（日本語訳）": "その病気は国内に広く広がった。"
+  },
+  {
+    "日": 324,
+    "単語": "deprive",
+    "意味": "奪う",
+    "例文（英語）": "The accident deprived him of his sight.",
+    "例文（日本語訳）": "その事故で彼は視力を失った。"
+  },
+  {
+    "日": 325,
+    "単語": "temporary",
+    "意味": "一時的な",
+    "例文（英語）": "The store is closed due to temporary maintenance.",
+    "例文（日本語訳）": "店は一時的なメンテナンスのため閉店中です。"
+  },
+  {
+    "日": 326,
+    "単語": "fraud",
+    "意味": "詐欺",
+    "例文（英語）": "The company was involved in a financial fraud.",
+    "例文（日本語訳）": "その会社は金融詐欺に関与していた。"
+  },
+  {
+    "日": 327,
+    "単語": "verify",
+    "意味": "確認する",
+    "例文（英語）": "Please verify your email address.",
+    "例文（日本語訳）": "メールアドレスを確認してください。"
+  },
+  {
+    "日": 328,
+    "単語": "suppress",
+    "意味": "抑える、鎮圧する",
+    "例文（英語）": "The police tried to suppress the protest.",
+    "例文（日本語訳）": "警察は抗議活動を鎮圧しようとした。"
+  },
+  {
+    "日": 329,
+    "単語": "foster",
+    "意味": "促進する、育てる",
+    "例文（英語）": "The program aims to foster creativity in children.",
+    "例文（日本語訳）": "そのプログラムは子どもの創造性を育てることを目的としている。"
+  },
+  {
+    "日": 330,
+    "単語": "absurd",
+    "意味": "ばかげた",
+    "例文（英語）": "It's absurd to think that money solves all problems.",
+    "例文（日本語訳）": "お金がすべての問題を解決するという考えはばかげている。"
+  },
+  {
+    "日": 331,
+    "単語": "jeopardize",
+    "意味": "危険にさらす",
+    "例文（英語）": "His actions could jeopardize the entire project.",
+    "例文（日本語訳）": "彼の行動はプロジェクト全体を危険にさらす可能性がある。"
+  },
+  {
+    "日": 332,
+    "単語": "subtle",
+    "意味": "微妙な、かすかな",
+    "例文（英語）": "The perfume has a subtle scent of jasmine.",
+    "例文（日本語訳）": "その香水はジャスミンのほのかな香りがする。"
+  },
+  {
+    "日": 333,
+    "単語": "undermine",
+    "意味": "弱体化させる",
+    "例文（英語）": "His constant criticism undermined her confidence.",
+    "例文（日本語訳）": "彼の絶え間ない批判が彼女の自信を損なった。"
+  },
+  {
+    "日": 334,
+    "単語": "obscure",
+    "意味": "不明瞭な、曖昧な",
+    "例文（英語）": "The meaning of the text was obscure.",
+    "例文（日本語訳）": "その文章の意味は曖昧だった。"
+  },
+  {
+    "日": 335,
+    "単語": "weary",
+    "意味": "疲れた、うんざりした",
+    "例文（英語）": "She felt weary after the long meeting.",
+    "例文（日本語訳）": "長い会議の後で彼女は疲れていた。"
+  },
+  {
+    "日": 336,
+    "単語": "indulge",
+    "意味": "甘やかす、ふける",
+    "例文（英語）": "He occasionally indulges in luxury desserts.",
+    "例文（日本語訳）": "彼は時々贅沢なデザートにふける。"
+  },
+  {
+    "日": 337,
+    "単語": "resent",
+    "意味": "憤慨する、腹を立てる",
+    "例文（英語）": "He resented being treated unfairly.",
+    "例文（日本語訳）": "彼は不公平な扱いに腹を立てた。"
+  },
+  {
+    "日": 338,
+    "単語": "distract",
+    "意味": "気をそらす",
+    "例文（英語）": "The noise distracted me from studying.",
+    "例文（日本語訳）": "騒音で勉強に集中できなかった。"
+  },
+  {
+    "日": 339,
+    "単語": "hostile",
+    "意味": "敵意のある",
+    "例文（英語）": "The villagers were hostile to outsiders.",
+    "例文（日本語訳）": "村人たちはよそ者に敵意を持っていた。"
+  },
+  {
+    "日": 340,
+    "単語": "withdraw",
+    "意味": "撤退する、引き出す",
+    "例文（英語）": "The troops were ordered to withdraw from the region.",
+    "例文（日本語訳）": "部隊は地域からの撤退を命じられた。"
+  },
+  {
+    "日": 341,
+    "単語": "embrace",
+    "意味": "受け入れる、抱きしめる",
+    "例文（英語）": "She embraced the new culture with enthusiasm.",
+    "例文（日本語訳）": "彼女は新しい文化を熱意を持って受け入れた。"
+  },
+  {
+    "日": 342,
+    "単語": "overwhelm",
+    "意味": "圧倒する",
+    "例文（英語）": "She was overwhelmed by emotion.",
+    "例文（日本語訳）": "彼女は感情に圧倒された。"
+  },
+  {
+    "日": 343,
+    "単語": "contaminate",
+    "意味": "汚染する",
+    "例文（英語）": "The river was contaminated with chemicals.",
+    "例文（日本語訳）": "川は化学物質で汚染されていた。"
+  },
+  {
+    "日": 344,
+    "単語": "restore",
+    "意味": "修復する、回復させる",
+    "例文（英語）": "The government plans to restore the historic building.",
+    "例文（日本語訳）": "政府はその歴史的建造物を修復する予定だ。"
+  },
+  {
+    "日": 345,
+    "単語": "acknowledge",
+    "意味": "認める、受け入れる",
+    "例文（英語）": "She acknowledged her mistake.",
+    "例文（日本語訳）": "彼女は自分のミスを認めた。"
+  },
+  {
+    "日": 346,
+    "単語": "agenda",
+    "意味": "議題",
+    "例文（英語）": "The manager distributed the agenda before the meeting.",
+    "例文（日本語訳）": "マネージャーは会議の前に議題を配布した。"
+  },
+  {
+    "日": 347,
+    "単語": "approximate",
+    "意味": "おおよその",
+    "例文（英語）": "The approximate cost is around $500.",
+    "例文（日本語訳）": "おおよその費用は約500ドルです。"
+  },
+  {
+    "日": 348,
+    "単語": "benefit",
+    "意味": "利益",
+    "例文（英語）": "All employees benefit from the new policy.",
+    "例文（日本語訳）": "すべての従業員が新しい方針の恩恵を受ける。"
+  },
+  {
+    "日": 349,
+    "単語": "cancel",
+    "意味": "取り消す",
+    "例文（英語）": "The flight was canceled due to bad weather.",
+    "例文（日本語訳）": "悪天候のためフライトはキャンセルされた。"
+  },
+  {
+    "日": 350,
+    "単語": "complaint",
+    "意味": "苦情",
+    "例文（英語）": "He filed a complaint about the poor service.",
+    "例文（日本語訳）": "彼は悪いサービスについて苦情を申し立てた。"
+  },
+  {
+    "日": 351,
+    "単語": "comprehensive",
+    "意味": "包括的な",
+    "例文（英語）": "We need a comprehensive report on the project.",
+    "例文（日本語訳）": "そのプロジェクトに関する包括的な報告が必要だ。"
+  },
+  {
+    "日": 352,
+    "単語": "conference",
+    "意味": "会議",
+    "例文（英語）": "She is attending a business conference in New York.",
+    "例文（日本語訳）": "彼女はニューヨークでビジネス会議に参加している。"
+  },
+  {
+    "日": 353,
+    "単語": "contract",
+    "意味": "契約",
+    "例文（英語）": "They signed a three-year contract yesterday.",
+    "例文（日本語訳）": "彼らは昨日、3年間の契約を結んだ。"
+  },
+  {
+    "日": 354,
+    "単語": "deduct",
+    "意味": "差し引く",
+    "例文（英語）": "Taxes will be deducted from your salary.",
+    "例文（日本語訳）": "税金は給料から差し引かれる。"
+  },
+  {
+    "日": 355,
+    "単語": "delivery",
+    "意味": "配達",
+    "例文（英語）": "The package is scheduled for delivery tomorrow.",
+    "例文（日本語訳）": "その荷物は明日配達予定です。"
+  },
+  {
+    "日": 356,
+    "単語": "eligible",
+    "意味": "資格がある",
+    "例文（英語）": "Only full-time staff are eligible for the bonus.",
+    "例文（日本語訳）": "フルタイムのスタッフだけがボーナスの対象です。"
+  },
+  {
+    "日": 357,
+    "単語": "expense",
+    "意味": "費用",
+    "例文（英語）": "We must reduce unnecessary expenses.",
+    "例文（日本語訳）": "不要な費用を削減しなければならない。"
+  },
+  {
+    "日": 358,
+    "単語": "feedback",
+    "意味": "意見",
+    "例文（英語）": "The manager asked for feedback on the new system.",
+    "例文（日本語訳）": "マネージャーは新しいシステムについての意見を求めた。"
+  },
+  {
+    "日": 359,
+    "単語": "financial",
+    "意味": "財政の",
+    "例文（英語）": "They are facing financial difficulties.",
+    "例文（日本語訳）": "彼らは財政的な困難に直面している。"
+  },
+  {
+    "日": 360,
+    "単語": "invoice",
+    "意味": "請求書",
+    "例文（英語）": "Please send the invoice to our accounting department.",
+    "例文（日本語訳）": "請求書を会計部に送ってください。"
+  },
+  {
+    "日": 361,
+    "単語": "postpone",
+    "意味": "延期する",
+    "例文（英語）": "The meeting was postponed until next week.",
+    "例文（日本語訳）": "会議は来週まで延期された。"
+  },
+  {
+    "日": 362,
+    "単語": "productivity",
+    "意味": "生産性",
+    "例文（英語）": "New software has improved productivity.",
+    "例文（日本語訳）": "新しいソフトウェアで生産性が向上した。"
+  },
+  {
+    "日": 363,
+    "単語": "proposal",
+    "意味": "提案",
+    "例文（英語）": "He submitted a proposal for the new project.",
+    "例文（日本語訳）": "彼は新しいプロジェクトの提案を提出した。"
+  },
+  {
+    "日": 364,
+    "単語": "quotation",
+    "意味": "見積もり",
+    "例文（英語）": "We received a quotation from the supplier.",
+    "例文（日本語訳）": "仕入先から見積もりを受け取った。"
+  },
+  {
+    "日": 365,
+    "単語": "recommendation",
+    "意味": "推薦",
+    "例文（英語）": "The committee accepted her recommendation.",
+    "例文（日本語訳）": "委員会は彼女の推薦を受け入れた。"
+  },
+  {
+    "日": 366,
+    "単語": "reduction",
+    "意味": "削減",
+    "例文（英語）": "The company plans a 10% cost reduction.",
+    "例文（日本語訳）": "会社は10％のコスト削減を計画している。"
+  },
+  {
+    "日": 367,
+    "単語": "reminder",
+    "意味": "催促、リマインダー",
+    "例文（英語）": "This is a reminder to submit your report.",
+    "例文（日本語訳）": "これはレポート提出のリマインダーです。"
+  },
+  {
+    "日": 368,
+    "単語": "reschedule",
+    "意味": "スケジュールを変更する",
+    "例文（英語）": "Can we reschedule the meeting for Friday?",
+    "例文（日本語訳）": "会議を金曜日に変更できますか？"
+  }
+]
