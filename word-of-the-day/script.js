@@ -1,5 +1,5 @@
 async function loadCSV() {
-  const response = await fetch('word_of_the_day.csv'); // 同フォルダにCSVを置いてください
+  const response = await fetch('word-of-the-day.csv'); // 同フォルダにCSVを置いてください
   const text = await response.text();
   const lines = text.trim().split('\n');
   const entries = lines.slice(1).map(line => {
