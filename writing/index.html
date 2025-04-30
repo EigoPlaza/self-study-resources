@@ -81,17 +81,43 @@
     チリも積もれば英語力 🐣 by エプラ
   </footer>
 
-  <script>
-    document.getElementById('writing-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const input = document.getElementById('writing-input').value.trim();
-      const output = document.getElementById('output-area');
-      if (input) {
-        output.textContent = `（デモ応答）あなたの英文：「${input}」 は良いスタートです！実際の添削は近日公開予定です。`;
-      } else {
-        output.textContent = '英文を入力してください。';
+<script>
+  document.getElementById('writing-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const input = document.getElementById('writing-input').value.trim();
+    const output = document.getElementById('output-area');
+
+    if (!input) {
+      output.textContent = '英文を入力してください。';
+      return;
+    }
+
+    output.textContent = '添削中...';
+
+    try {
+      const response = await fetch('https://correction-api.eigoplaza.workers.dev/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: input })
+      });
+
+      if (!response.ok) {
+        output.textContent = 'エラーが発生しました。もう一度お試しください。';
+        return;
       }
-    });
-  </script>
+
+      const data = await response.json();
+      const reply = data.choices?.[0]?.message?.content;
+      output.textContent = reply || '回答が得られませんでした。';
+    } catch (error) {
+      output.textContent = '通信エラーが発生しました。';
+      console.error(error);
+    }
+  });
+</script>
+
+  
 </body>
 </html>
