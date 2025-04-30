@@ -1,4 +1,4 @@
-<script>
+
 async function loadJSON() {
   const response = await fetch('word-of-the-day.json');
   const data = await response.json();
@@ -24,4 +24,4 @@ async function loadJSON() {
 loadJSON();
 
 
-</script>
+
