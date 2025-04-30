@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word of the Day</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background: #f9f0ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #8e44ad;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    .word {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #6c3483;
+    }
+    .meaning {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+    .sentence {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #555;
+    }
+    .translation {
+      margin-top: 0.5rem;
+      color: #888;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Word of the Day 🌸</h1>
+  <div class="card">
+    <div class="word" id="word">Loading...</div>
+    <div class="meaning" id="meaning"></div>
+    <div class="sentence" id="sentence"></div>
+    <div class="translation" id="translation"></div>
+  </div>
+  <footer>
+    Powered by your GitHub CSV 🌼
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
