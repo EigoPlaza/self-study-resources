@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英作文チャレンジ - エプラ自習室</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      color: #4b0082;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 1.5rem;
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 0.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #483d8b;
+    }
+    .output {
+      margin-top: 2rem;
+      background-color: #ffffff;
+      padding: 1rem;
+      border: 1px dashed #aaa;
+      border-radius: 8px;
+      min-height: 100px;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 英作文チャレンジ</h1>
+  <form id="writing-form">
+    <label for="writing-input">あなたの英文：</label>
+    <textarea id="writing-input" placeholder="ここに英文を書いてください"></textarea>
+    <button type="submit">添削リクエスト（デモ）</button>
+  </form>
+  <div class="output" id="output-area">
+    ※ このデモでは実際の添削は行われません。
+  </div>
+  <footer>
+    チリも積もれば英語力 🐣 by エプラ
+  </footer>
+
+  <script>
+    document.getElementById('writing-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('writing-input').value.trim();
+      const output = document.getElementById('output-area');
+      if (input) {
+        output.textContent = `（デモ応答）あなたの英文：「${input}」 は良いスタートです！実際の添削は近日公開予定です。`;
+      } else {
+        output.textContent = '英文を入力してください。';
+      }
+    });
+  </script>
+</body>
+</html>
