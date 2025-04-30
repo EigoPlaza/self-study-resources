@@ -1,4 +1,3 @@
-
 async function loadJSON() {
   const response = await fetch('word-of-the-day.json');
   const data = await response.json();
@@ -8,7 +7,6 @@ async function loadJSON() {
   const diff = today - start;
   const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-  // 通し番号に対応するエントリを探す（"日" キーを使う）
   const entry = data.find(item => item["日"] === (dayOfYear % data.length) + 1);
 
   if (entry) {
@@ -22,6 +20,3 @@ async function loadJSON() {
 }
 
 loadJSON();
-
-
-
