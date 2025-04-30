@@ -124,6 +124,14 @@
       console.error('Fetch error:', error);
     }
   });
+
+  const textarea = document.getElementById('writing-input');
+  const charCount = document.getElementById('char-count');
+  
+  textarea.addEventListener('input', () => {
+    const length = textarea.value.length;
+    charCount.textContent = `${length} / 500 文字`;
+  });
 </script>
 
 
