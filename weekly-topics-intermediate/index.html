@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This Week's Conversation Topic</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #fefefe;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 700px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #4a90e2;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #333;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>This Week's Conversation Topic</h1>
+    <div id="topic"></div>
+    <div class="note">Topic updates weekly based on calendar week number</div>
+  </div>
+
+  <script>
+    async function fetchTopic() {
+      const response = await fetch("weekly-topics-intermediate.json");
+      const data = await response.json();
+
+      const today = new Date();
+      const startOfYear = new Date(today.getFullYear(), 0, 1);
+      const weekNumber = Math.ceil(((today - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);
+
+      const topic = data["week" + weekNumber];
+
+      const topicDiv = document.getElementById("topic");
+      if (topic) {
+        topicDiv.innerHTML = `
+          <h2>${topic.title}</h2>
+          <p><strong>Subtopics:</strong></p>
+          <ul>${topic.examples.map(q => `<li>${q}</li>`).join('')}</ul>
+          <p><strong>Useful Phrases:</strong></p>
+          <ul>${topic.useful_phrases.map(p => `<li>${p}</li>`).join('')}</ul>
+        `;
+      } else {
+        topicDiv.innerHTML = `<p>No topic found for this week (Week ${weekNumber}).</p>`;
+      }
+    }
+
+    fetchTopic();
+  </script>
+</body>
+</html>
