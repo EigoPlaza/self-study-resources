@@ -2,104 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>This Week's Topic - Intermediate</title>
+  <title>This Week's Topic</title>
   <style>
     body {
-      font-family: "Helvetica Neue", "Arial", sans-serif;
-      background: #fff8f0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fdf6f0;
       color: #333;
+      max-width: 700px;
+      margin: 3rem auto;
       padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
 
     h1 {
-      color: #d17b8f;
-      text-align: center;
+      color: #d17c75;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    .section {
-      background: #ffffff;
-      border: 2px dashed #f3c1d3;
-      border-radius: 16px;
-      padding: 1rem 1.5rem;
-      margin: 1rem 0;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .section h2 {
-      color: #b25470;
-      margin-bottom: 0.5rem;
+    h2 {
       font-size: 1.2rem;
+      margin-top: 2rem;
+      color: #666;
     }
 
     ul {
-      list-style: disc;
-      padding-left: 1.2rem;
+      list-style-type: circle;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #bb4f4f;
     }
   </style>
 </head>
 <body>
-  <h1>This Week's Topic</h1>
+  <h1>This Week's English Conversation Topic</h1>
+  <div id="topic" class="highlight">Loading...</div>
 
-  <div class="section">
-    <h2 id="topic-title">Loading...</h2>
-    <p id="topic-description"></p>
-  </div>
-
-  <div class="section">
-    <h2>Example Questions</h2>
+  <div id="examples-section" style="display:none;">
+    <h2>❓ Example Questions</h2>
     <ul id="examples"></ul>
   </div>
 
-  <div class="section">
-    <h2>Useful Expressions</h2>
-    <ul id="expressions"></ul>
+  <div id="phrases-section" style="display:none;">
+    <h2>💬 Useful Expressions</h2>
+    <ul id="phrases"></ul>
   </div>
 
-  <div class="section">
-    <h2>Extra Prompts</h2>
-    <ul id="extras"></ul>
+  <div id="tips-section" style="display:none;">
+    <h2>💡 Conversation Tips</h2>
+    <ul id="tips"></ul>
   </div>
 
   <script>
-    async function loadTopic() {
-      const response = await fetch('weekly-topics-intermediate.json');
-      const topics = await response.json();
+    // ISO週番号取得（1年の最初の木曜を含む週がWeek 1）
+    Date.prototype.getWeekNumber = function () {
+      const date = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+      const dayNum = date.getUTCDay() || 7;
+      date.setUTCDate(date.getUTCDate() + 4 - dayNum);
+      const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+      return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+    };
 
-      const today = new Date();
-      const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
-      const pastDays = Math.floor((today - firstDayOfYear) / (24 * 60 * 60 * 1000));
-      const week = Math.ceil((pastDays + firstDayOfYear.getDay() + 1) / 7);
+    const currentWeek = new Date().getWeekNumber();
 
-      const topic = topics[`week${week}`];
+    fetch('weekly-topics-intermediate.json')
+      .then(response => response.json())
+      .then(data => {
+        const topic = data.find(item => item.week === String(currentWeek));
+        const topicDiv = document.getElementById('topic');
 
-      if (!topic) {
-        document.getElementById('topic-title').innerText = `No topic found for this week (Week ${week})`;
-        return;
-      }
+        if (topic) {
+          topicDiv.innerText = topic.title;
 
-      document.getElementById('topic-title').innerText = topic.topic;
-      document.getElementById('topic-description').innerText = topic.description;
+          // 例文
+          if (topic.examples?.length) {
+            document.getElementById('examples-section').style.display = 'block';
+            const examplesList = document.getElementById('examples');
+            topic.examples.forEach(ex => {
+              const li = document.createElement('li');
+              li.textContent = ex;
+              examplesList.appendChild(li);
+            });
+          }
 
-      const populateList = (id, items) => {
-        const list = document.getElementById(id);
-        list.innerHTML = '';
-        items.forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item;
-          list.appendChild(li);
-        });
-      };
+          // フレーズ
+          if (topic.phrases?.length) {
+            document.getElementById('phrases-section').style.display = 'block';
+            const phrasesList = document.getElementById('phrases');
+            topic.phrases.forEach(ph => {
+              const li = document.createElement('li');
+              li.textContent = ph;
+              phrasesList.appendChild(li);
+            });
+          }
 
-      populateList('examples', topic.examples);
-      populateList('expressions', topic.expressions);
-      populateList('extras', topic.extras);
-    }
+          // 補助ネタ
+          if (topic.tips?.length) {
+            document.getElementById('tips-section').style.display = 'block';
+            const tipsList = document.getElementById('tips');
+            topic.tips.forEach(tip => {
+              const li = document.createElement('li');
+              li.textContent = tip;
+              tipsList.appendChild(li);
+            });
+          }
 
-    loadTopic();
+        } else {
+          topicDiv.innerText = `No topic found for this week (Week ${currentWeek})`;
+        }
+      });
   </script>
 </body>
 </html>
