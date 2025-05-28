@@ -1,6 +1,6 @@
 [
   {
-    "week": 1,
+    "week": "1",
     "title": "What do you hope to achieve this year, both personally and professionally?",
     "examples": [
       "Do you usually set New Year's goals?",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "week": 2,
+    "week": "2",
     "title": "What aspects of your daily routine would you like to change or improve?",
     "examples": [
       "Are you a morning person or a night owl?",
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "week": 3,
+    "week": "3",
     "title": "How does your diet reflect your lifestyle and culture?",
     "examples": [
       "What kind of food do you usually eat during the week?",
@@ -78,7 +78,7 @@
     ]
   },
   {
-    "week": 4,
+    "week": "4",
     "title": "What role do hobbies play in your mental well-being?",
     "examples": [
       "What hobbies do you have now?",
@@ -104,7 +104,7 @@
     ]
   },
   {
-    "week": 5,
+    "week": "5",
     "title": "How has travel changed your perspective on life?",
     "examples": [
       "What’s the most memorable place you’ve ever visited?",
@@ -130,7 +130,7 @@
     ]
   },
   {
-    "week": 6,
+    "week": "6",
     "title": "What makes a relationship meaningful to you?",
     "examples": [
       "What qualities do you value in a friend or partner?",
@@ -156,7 +156,7 @@
     ]
   },  
   {
-    "week": 7,
+    "week": "7",
     "title": "How do you manage stress in your daily life?",
     "examples": [
       "What usually causes you stress?",
@@ -182,7 +182,7 @@
     ]
   },
   {
-    "week": 8,
+    "week": "8",
     "title": "How does the winter season affect your lifestyle or mood?",
     "examples": [
       "Do you like winter? Why or why not?",
@@ -208,7 +208,7 @@
     ]
   },
   {
-    "week": 9,
+    "week": "9",
     "title": "How do you try to balance work and personal life?",
     "examples": [
       "Do you feel satisfied with your current work-life balance?",
@@ -234,7 +234,7 @@
     ]
   },
   {
-    "week": 10,
+    "week": "10",
     "title": "What motivates you to start something new?",
     "examples": [
       "Do you enjoy trying new things or prefer routine?",
@@ -260,7 +260,7 @@
     ]
   },
   {
-    "week": 11,
+    "week": "11",
     "title": "How do you refresh or reorganize your life in spring?",
     "examples": [
       "Do you do any spring cleaning or organizing?",
@@ -286,7 +286,7 @@
     ]
   },
   {
-    "week": 12,
+    "week": "12",
     "title": "How do you deal with goodbyes and new beginnings?",
     "examples": [
       "Have you ever had a difficult goodbye?",
@@ -312,7 +312,7 @@
     ]
   },
   {
-    "week": 13,
+    "week": "13",
     "title": "What are some memories you will never forget?",
     "examples": [
       "What’s one childhood memory that stands out?",
@@ -338,7 +338,7 @@
     ]
   },
   {
-    "week": 14,
+    "week": "14",
     "title": "How do you approach meeting new people and making a good impression?",
     "examples": [
       "Do you enjoy meeting new people, or do you find it stressful?",
@@ -364,7 +364,7 @@
     ]
   },
   {
-    "week": 15,
+    "week": "15",
     "title": "What’s something new you've tried recently, and how did it go?",
     "examples": [
       "Have you tried anything outside your comfort zone lately?",
@@ -390,7 +390,7 @@
     ]
   },  
   {
-    "week": 16,
+    "week": "16",
     "title": "How do you adjust to change and build new habits?",
     "examples": [
       "How do you usually deal with new situations?",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "week": 17,
+    "week": "17",
     "title": "How do you like to spend long weekends or holidays?",
     "examples": [
       "What’s your ideal way to spend a day off?",
@@ -442,7 +442,7 @@
     ]
   },
   {
-    "week": 18,
+    "week": "18",
     "title": "What did you do during your recent time off, and how did it affect you?",
     "examples": [
       "Did you travel, stay home, or do something else?",
@@ -468,7 +468,7 @@
     ]
   },
   {
-    "week": 19,
+    "week": "19",
     "title": "How do you stay motivated when you're feeling low?",
     "examples": [
       "What do you do when you feel unmotivated?",
@@ -494,7 +494,7 @@
     ]
   },  
   {
-    "week": 20,
+    "week": "20",
     "title": "What role does nature play in your daily life?",
     "examples": [
       "Do you spend much time outdoors?",
@@ -520,7 +520,7 @@
     ]
   },
   {
-    "week": 21,
+    "week": "21",
     "title": "How do you take care of your mental health?",
     "examples": [
       "What activities help you relax or feel grounded?",
@@ -546,7 +546,7 @@
     ]
   },  
   {
-    "week": 22,
+    "week": "22",
     "title": "What does 'home' mean to you?",
     "examples": [
       "What makes a place feel like home?",
@@ -572,7 +572,7 @@
     ]
   },
   {
-    "week": 23,
+    "week": "23",
     "title": "How do you stay productive during rainy or lazy days?",
     "examples": [
       "Do you feel less motivated on gloomy days?",
@@ -598,7 +598,7 @@
     ]
   },
   {
-    "week": 24,
+    "week": "24",
     "title": "What are your favorite indoor activities?",
     "examples": [
       "How do you usually spend time indoors?",
@@ -624,7 +624,7 @@
     ]
   },
   {
-    "week": 25,
+    "week": "25",
     "title": "How do you take care of yourself emotionally and physically?",
     "examples": [
       "What are your favorite ways to de-stress?",
@@ -650,7 +650,7 @@
     ]
   },
   {
-    "week": 26,
+    "week": "26",
     "title": "What have you learned in the first half of the year?",
     "examples": [
       "What were your biggest challenges since January?",
@@ -676,7 +676,7 @@
     ]
   },
   {
-    "week": 27,
+    "week": "27",
     "title": "How do you stay cool and energized in summer?",
     "examples": [
       "Do you enjoy summer or find it difficult?",
@@ -702,7 +702,7 @@
     ]
   },  
   {
-    "week": 28,
+    "week": "28",
     "title": "What are your plans or hopes for this summer?",
     "examples": [
       "Do you have any summer goals or plans?",
@@ -728,7 +728,7 @@
     ]
   },
   {
-    "week": 29,
+    "week": "29",
     "title": "What do you enjoy learning, and how do you stay curious?",
     "examples": [
       "What’s something you’re interested in right now?",
@@ -754,7 +754,7 @@
     ]
   },  
   {
-    "week": 30,
+    "week": "30",
     "title": "What do you like to do when you have a lot of free time?",
     "examples": [
       "How do you usually spend a completely free day?",
@@ -780,7 +780,7 @@
     ]
   },
   {
-    "week": 31,
+    "week": "31",
     "title": "What kind of memories do you want to create this summer?",
     "examples": [
       "What makes a summer unforgettable for you?",
@@ -806,7 +806,7 @@
     ]
   },
   {
-    "week": 32,
+    "week": "32",
     "title": "How do you stay focused and energized during the hottest days of summer?",
     "examples": [
       "Do you find it hard to concentrate when it’s really hot?",
@@ -832,7 +832,7 @@
     ]
   },
   {
-    "week": 33,
+    "week": "33",
     "title": "How do you spend Obon, or holidays that honor the past?",
     "examples": [
       "Do you visit your family grave during Obon?",
@@ -858,7 +858,7 @@
     ]
   },
   {
-    "week": 34,
+    "week": "34",
     "title": "Did you enjoy any classic summer activities this year?",
     "examples": [
       "Did you go to the beach or a pool?",
@@ -884,7 +884,7 @@
     ]
   },
   {
-    "week": 35,
+    "week": "35",
     "title": "What’s your favorite part of summer, and did you get to enjoy it?",
     "examples": [
       "What’s your number one summer activity?",
@@ -910,7 +910,7 @@
     ]
   },
   {
-    "week": 36,
+    "week": "36",
     "title": "What signs of autumn do you notice around you?",
     "examples": [
       "Has the weather started to feel like autumn where you live?",
@@ -936,7 +936,7 @@
     ]
   },
   {
-    "week": 37,
+    "week": "37",
     "title": "What’s your favorite thing to eat or do in early autumn?",
     "examples": [
       "Do you look forward to any seasonal foods?",
@@ -962,7 +962,7 @@
     ]
   },
   {
-    "week": 38,
+    "week": "38",
     "title": "Have you taken any short trips or autumn outings recently?",
     "examples": [
       "Did you travel anywhere during the long weekend or holidays?",
@@ -988,7 +988,7 @@
     ]
   },
   {
-    "week": 39,
+    "week": "39",
     "title": "What do you enjoy most about autumn?",
     "examples": [
       "Is there a smell, sound, or scene that makes you love autumn?",
@@ -1015,7 +1015,7 @@
   },
 
   {
-    "week": 40,
+    "week": "40",
     "title": "Have you enjoyed any seasonal events or festivals recently?",
     "examples": [
       "Have you been to any autumn festivals or outdoor events?",
@@ -1041,7 +1041,7 @@
     ]
   },
   {
-    "week": 41,
+    "week": "41",
     "title": "Do you celebrate Halloween or enjoy the seasonal atmosphere?",
     "examples": [
       "Do you usually dress up for Halloween?",
@@ -1067,7 +1067,7 @@
     ]
   },
   {
-    "week": 42,
+    "week": "42",
     "title": "Have you gone to see the autumn leaves this year?",
     "examples": [
       "Have you visited any spots famous for autumn colors?",
@@ -1093,7 +1093,7 @@
     ]
   },
   {
-    "week": 43,
+    "week": "43",
     "title": "What helps you enjoy cozy, slow-paced autumn days?",
     "examples": [
       "Do you enjoy staying home more in autumn?",
@@ -1119,7 +1119,7 @@
     ]
   },
       {
-    "week": 44,
+    "week": "44",
     "title": "Do you enjoy seasonal foods in autumn?",
     "examples": [
       "What’s your favorite autumn food?",
@@ -1145,7 +1145,7 @@
     ]
   },
   {
-    "week": 45,
+    "week": "45",
     "title": "Have you read any good books or watched any good movies lately?",
     "examples": [
       "What book are you reading right now?",
@@ -1171,7 +1171,7 @@
     ]
   },
     {
-    "week": 46,
+    "week": "46",
     "title": "What do you like to do on a chilly autumn day?",
     "examples": [
       "What do you usually do on cold weekends?",
@@ -1197,7 +1197,7 @@
     ]
   },
   {
-    "week": 47,
+    "week": "47",
     "title": "Do you like any fall traditions or events?",
     "examples": [
       "Have you ever participated in any fall festivals?",
@@ -1223,7 +1223,7 @@
     ]
   },    
 {
-  "week": 48,
+  "week": "48",
   "title": "Do you feel the year is ending soon?",
   "examples": [
     "How do you feel when December is coming?",
@@ -1249,7 +1249,7 @@
   ]
 },
 {
-  "week": 49,
+  "week": "49",
   "title": "Do you like winter?",
   "examples": [
     "How do you usually spend time in winter?",
@@ -1275,7 +1275,7 @@
   ]
 },
 {
-  "week": 50,
+  "week": "50",
   "title": "What do you do for the holidays?",
   "examples": [
     "Do you have any plans for the holidays?",
@@ -1301,7 +1301,7 @@
   ]
 },
 {
-  "week": 51,
+  "week": "51",
   "title": "How do you prepare for the new year?",
   "examples": [
     "Do you do a big cleaning at the end of the year?",
@@ -1327,7 +1327,7 @@
   ]
 },
 {
-  "week": 52,
+  "week": "52",
   "title": "Looking back on the year",
   "examples": [
     "What was the best thing that happened this year?",
@@ -1353,7 +1353,7 @@
   ]
 },
 {
-  "week": 53,
+  "week": "53",
   "title": "How do you spend New Year’s Eve and New Year’s Day?",
   "examples": [
     "What do you usually do on December 31st?",
