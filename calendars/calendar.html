@@ -117,6 +117,11 @@
       return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
     }
 
+    function formatDescription(description) {
+      const withLineBreaks = description.replace(/\n/g, '<br>');
+      return linkify(withLineBreaks);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
 
@@ -171,7 +176,7 @@
             info.event.end?.toLocaleString('ja-JP', options) || '';
 
           document.getElementById('modalDescription').innerHTML =
-            isHtml ? rawDesc : linkify(rawDesc);
+            isHtml ? rawDesc : formatDescription(rawDesc);
 
           document.getElementById('eventModal').style.display = 'block';
           document.getElementById('modalOverlay').style.display = 'block';
