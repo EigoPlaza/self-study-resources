@@ -107,6 +107,8 @@
         locale: 'ja',
         initialView: 'timeGridWeek',
         firstDay: 1,
+        slotMinTime: "09:00:00", // 🕕 ← ここ！
+        slotMaxTime: "23:00:00", // 🌙 ← ここ！（オプション）
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
@@ -117,8 +119,20 @@
           info.jsEvent.preventDefault();
 
           document.getElementById('modalTitle').innerText = info.event.title;
-          document.getElementById('modalStart').innerText = info.event.start.toLocaleString();
-          document.getElementById('modalEnd').innerText = info.event.end?.toLocaleString() || '';
+          const options = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false // ← 24時間制にしたい場合
+          };
+
+document.getElementById('modalStart').innerText =
+  info.event.start.toLocaleString('ja-JP', options);
+
+document.getElementById('modalEnd').innerText =
+  info.event.end?.toLocaleString('ja-JP', options) || '';
 
           // 🔗 ZoomリンクなどをHTMLで表示（自動リンク化）
           const desc = info.event.extendedProps.description || '';
