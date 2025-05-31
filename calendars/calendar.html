@@ -109,12 +109,13 @@
       const calendarEl = document.getElementById('calendar');
 
       const calendar = new FullCalendar.Calendar(calendarEl, {
-        height: window.innerHeight - 20, // 必要なら微調整
         locale: 'ja',
         initialView: 'timeGridWeek',
         firstDay: 1,
         slotMinTime: "09:00:00",
         slotMaxTime: "23:00:00",
+        expandRows: true, // ←★ポイント：これで縦に全部表示する
+        height: 'auto',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
