@@ -19,31 +19,80 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       padding: 1em;
     }
+    /* モーダルスタイル */
+    #eventModal {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      padding: 1.5em;
+      z-index: 1000;
+      width: 80%;
+      max-width: 500px;
+    }
+    #eventModal h3 {
+      margin-top: 0;
+    }
+    #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+    #eventModal button {
+      margin-top: 1em;
+    }
   </style>
 </head>
 <body>
+
   <div id="calendar"></div>
+
+  <!-- モーダル＆オーバーレイ -->
+  <div id="modalOverlay"></div>
+  <div id="eventModal">
+    <h3 id="modalTitle"></h3>
+    <p><strong>開始:</strong> <span id="modalStart"></span></p>
+    <p><strong>終了:</strong> <span id="modalEnd"></span></p>
+    <p id="modalDescription"></p>
+    <button onclick="closeModal()">閉じる</button>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script>
+    function closeModal() {
+      document.getElementById('eventModal').style.display = 'none';
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
 
       const calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'ja',
-        initialView: 'timeGridWeek', // ← デフォルトは週表示
-        firstDay: 1,                 // ← 月曜日スタート
+        initialView: 'timeGridWeek',
+        firstDay: 1,
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay' // ← ビュー切替
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: 'https://epura-calendar-api.eigoplaza.workers.dev',
         eventClick: function(info) {
           info.jsEvent.preventDefault();
-          if (info.event.url) {
-            window.open(info.event.url, '_blank');
-          }
+
+          document.getElementById('modalTitle').innerText = info.event.title;
+          document.getElementById('modalStart').innerText = info.event.start.toLocaleString();
+          document.getElementById('modalEnd').innerText = info.event.end?.toLocaleString() || '';
+          document.getElementById('modalDescription').innerText = info.event.extendedProps.description || '';
+
+          document.getElementById('eventModal').style.display = 'block';
+          document.getElementById('modalOverlay').style.display = 'block';
         }
       });
 
