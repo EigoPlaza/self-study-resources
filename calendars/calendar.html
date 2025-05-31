@@ -19,33 +19,58 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       padding: 1em;
     }
-    /* モーダルスタイル */
-    #eventModal {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      padding: 1.5em;
-      z-index: 1000;
-      width: 80%;
-      max-width: 500px;
-    }
-    #eventModal h3 {
-      margin-top: 0;
-    }
+
+    /* モーダル */
     #modalOverlay {
       display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.4);
       z-index: 999;
     }
-    #eventModal button {
-      margin-top: 1em;
+    #eventModal {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      padding: 2em 2.5em;
+      z-index: 1000;
+      width: 90%;
+      max-width: 500px;
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+      position: fixed;
+    }
+
+    #eventModal h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #222;
+    }
+
+    #modalDescription a {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    /* ❌ボタン */
+    #modalCloseBtn {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: #999;
+      cursor: pointer;
+    }
+    #modalCloseBtn:hover {
+      color: #333;
     }
   </style>
 </head>
@@ -53,14 +78,14 @@
 
   <div id="calendar"></div>
 
-  <!-- モーダル＆オーバーレイ -->
+  <!-- モーダル構造 -->
   <div id="modalOverlay"></div>
   <div id="eventModal">
+    <button id="modalCloseBtn" onclick="closeModal()">✖</button>
     <h3 id="modalTitle"></h3>
     <p><strong>開始:</strong> <span id="modalStart"></span></p>
     <p><strong>終了:</strong> <span id="modalEnd"></span></p>
     <p id="modalDescription"></p>
-    <button onclick="closeModal()">閉じる</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
@@ -68,6 +93,11 @@
     function closeModal() {
       document.getElementById('eventModal').style.display = 'none';
       document.getElementById('modalOverlay').style.display = 'none';
+    }
+
+    // 説明文からリンクを自動生成する関数
+    function linkify(text) {
+      return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -89,7 +119,10 @@
           document.getElementById('modalTitle').innerText = info.event.title;
           document.getElementById('modalStart').innerText = info.event.start.toLocaleString();
           document.getElementById('modalEnd').innerText = info.event.end?.toLocaleString() || '';
-          document.getElementById('modalDescription').innerText = info.event.extendedProps.description || '';
+
+          // 🔗 ZoomリンクなどをHTMLで表示（自動リンク化）
+          const desc = info.event.extendedProps.description || '';
+          document.getElementById('modalDescription').innerHTML = linkify(desc);
 
           document.getElementById('eventModal').style.display = 'block';
           document.getElementById('modalOverlay').style.display = 'block';
