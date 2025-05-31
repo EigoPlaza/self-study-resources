@@ -37,10 +37,12 @@
           },
           locale: 'ja',
           firstDay: 1,  // ←★ここが月曜始まりの設定
-          googleCalendarApiKey: 'AIzaSyCVo3OymN4ujIZVyPdybwZbq6f2IfhkFOg',
-          events: {
+          eventSources: [
+          {
+            googleCalendarApiKey: 'AIzaSyCVo3OymN4ujIZVyPdybwZbq6f2IfhkFOg',
             googleCalendarId: '2212a816a8684d50ac0aba1fd8e0714556abbb0494560e16649a5891543e1226@group.calendar.google.com'
           }
+          ]
         });
         calendar.render();
       });
