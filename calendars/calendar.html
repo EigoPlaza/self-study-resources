@@ -44,6 +44,8 @@
       max-height: 200px;
       overflow-y: auto;
       overflow-x: hidden;
+      word-wrap: break-word;
+      white-space: normal;
     }
     /* モーダル */
     #modalOverlay {
@@ -117,6 +119,12 @@
       return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
     }
 
+    function formatDescription(description) {
+      // 改行を <br> に変換し、リンクも自動で <a> タグに変換
+      const withLineBreaks = description.replace(/\n/g, '<br>');
+      return linkify(withLineBreaks); // ← linkify はそのまま活用
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
 
@@ -147,14 +155,15 @@
           })()
         },
         events: 'https://epura-calendar-api.eigoplaza.workers.dev',
+
         eventClick: function(info) {
           info.jsEvent.preventDefault();
-
+        
           const rawDesc = info.event.extendedProps.description || '';
           const isHtml = /<\/?[a-z][\s\S]*>/i.test(rawDesc);
-
+        
           document.getElementById('modalTitle').innerText = info.event.title;
-
+        
           const options = {
             year: 'numeric',
             month: '2-digit',
@@ -163,16 +172,16 @@
             minute: '2-digit',
             hour12: false
           };
-
+        
           document.getElementById('modalStart').innerText =
             info.event.start.toLocaleString('ja-JP', options);
-
+        
           document.getElementById('modalEnd').innerText =
             info.event.end?.toLocaleString('ja-JP', options) || '';
-
+        
           document.getElementById('modalDescription').innerHTML =
-            isHtml ? rawDesc : linkify(rawDesc);
-
+            isHtml ? rawDesc : formatDescription(rawDesc); // ← ここを変更！
+        
           document.getElementById('eventModal').style.display = 'block';
           document.getElementById('modalOverlay').style.display = 'block';
         }
