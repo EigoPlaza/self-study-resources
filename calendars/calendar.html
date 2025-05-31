@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Epura Event Calendar</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <style>
+      body {
+        font-family: "Helvetica Neue", sans-serif;
+        margin: 30px;
+        background-color: #f9f9f9;
+      }
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Epura Event Calendar</h1>
+    <div id="calendar"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'timeGridWeek',  // ←★ 最初に「週表示」にする
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          },
+          locale: 'ja',
+          firstDay: 1,  // ←★ここが月曜始まりの設定
+          googleCalendarApiKey: 'AIzaSyCVo3OymN4ujIZVyPdybwZbq6f2IfhkFOg',
+          events: {
+            googleCalendarId: '2212a816a8684d50ac0aba1fd8e0714556abbb0494560e16649a5891543e1226@group.calendar.google.com'
+          }
+        });
+        calendar.render();
+      });
+    </script>
+  </body>
+</html>
