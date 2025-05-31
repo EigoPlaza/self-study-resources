@@ -16,22 +16,75 @@
       max-width: 1000px;
       margin: auto;
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       padding: 2em;
     }
 
     /* カード風イベント */
-.fc-event {
-  background: #a3d9b1 !important; /* 濃いめミント */
-  border: none !important;
-  border-radius: 12px !important;
-  padding: 4px 8px !important;
-  font-size: 14px;
-  color: #1f3a2f !important; /* 深い緑で読みやすく */
-  font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+    .fc-event {
+      background: #a3d9b1 !important;
+      border: none !important;
+      border-radius: 12px !important;
+      padding: 4px 8px !important;
+      font-size: 14px;
+      color: #1f3a2f !important;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ナビゲーションボタン */
+    .fc .fc-button {
+      background-color: #89c2d9;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-weight: bold;
+      font-family: 'Noto Sans JP', sans-serif;
+      transition: background 0.2s;
+    }
+    .fc .fc-button:hover {
+      background-color: #5faac4;
+    }
+    .fc .fc-button:disabled {
+      background-color: #ccc;
+    }
+
+    .fc-toolbar-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2b4d3f;
+    }
+
+    .fc-col-header-cell-cushion {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .fc-daygrid-day, .fc-timegrid-slot {
+      border-color: #e0e0e0;
+    }
+
+    .fc-scrollgrid {
+      border-radius: 12px;
+      overflow: hidden;
+      border: none;
+    }
+
+    /* リストビューのイベント */
+    .fc-list-event {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin: 8px 0;
+      padding: 10px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .fc-list-event-title {
+      font-weight: bold;
+      color: #2b4d3f;
+    }
 
     /* モーダル */
     #modalOverlay {
@@ -57,10 +110,12 @@
       color: #333;
       line-height: 1.6;
     }
-#eventModal h3 {
-  color: #2b4d3f;
-  font-weight: 600;
-}
+    #eventModal h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #2b4d3f;
+      font-weight: 600;
+    }
     #modalDescription a {
       color: #007b7b;
       text-decoration: underline;
@@ -78,55 +133,9 @@
     #modalCloseBtn:hover {
       color: #333;
     }
-    /* FullCalendarナビゲーションを可愛く */
-.fc .fc-button {
-  background-color: #89c2d9;
-  border: none;
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-weight: bold;
-  font-family: 'Noto Sans JP', sans-serif;
-  transition: background 0.2s;
-}
-.fc .fc-button:hover {
-  background-color: #5faac4;
-}
-.fc .fc-button:disabled {
-  background-color: #ccc;
-}
-
-/* タイトル部分のフォント＆整え */
-.fc-toolbar-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2b4d3f;
-}
-
-/* 曜日見出し */
-.fc-col-header-cell-cushion {
-  font-weight: 500;
-  color: #555;
-}
-
-/* セルまわりをやさしく */
-.fc-daygrid-day, .fc-timegrid-slot {
-  border-color: #e0e0e0;
-}
-.fc-scrollgrid {
-  border-radius: 12px;
-  overflow: hidden;
-  border: none;
-}
-
-/* カレンダー全体影・丸み */
-#calendar {
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
   </style>
 </head>
 <body>
-
   <div id="calendar"></div>
 
   <!-- モーダル -->
@@ -152,7 +161,6 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
-
       const calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'ja',
         initialView: 'timeGridWeek',
@@ -162,12 +170,18 @@
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        views: {
+          listWeek: {
+            type: 'list',
+            duration: { days: 7 },
+            buttonText: 'リスト'
+          }
         },
         events: 'https://epura-calendar-api.eigoplaza.workers.dev',
         eventClick: function(info) {
           info.jsEvent.preventDefault();
-
           const rawDesc = info.event.extendedProps.description || '';
           const isHtml = /<\/?[a-z][\s\S]*>/i.test(rawDesc);
 
