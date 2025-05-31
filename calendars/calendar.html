@@ -32,7 +32,10 @@
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
+.fc-event-past {
+  opacity: 0.6;
+  background-color: #ccc;
+}
     /* モーダル */
     #modalOverlay {
       display: none;
@@ -111,6 +114,13 @@
       const calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'ja',
         initialView: 'timeGridWeek',
+        initialDate: (() => {
+          const today = new Date();
+          const day = today.getDay(); // 0=Sun, 1=Mon, ...
+          const diff = today.getDate() - day + (day === 0 ? -6 : 1); // 今週月曜
+          const monday = new Date(today.setDate(diff));
+          return monday.toISOString().split('T')[0];
+        })(),
         firstDay: 1,
         slotMinTime: "09:00:00",
         slotMaxTime: "23:00:00",
