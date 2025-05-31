@@ -1,216 +1,164 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Epura カレンダー</title>
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>エプラカレンダー</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background: #f6f8f9;
+      font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
-      padding: 2em;
+      background: #f6f8f9;
     }
     #calendar {
-      max-width: 1000px;
-      margin: auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      padding: 2em;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 10px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
-    /* カード風イベント */
+    .fc .fc-toolbar-title {
+      font-size: 1.4rem;
+      color: #333;
+    }
+    .fc-button {
+      background: #5c9ead;
+      border: none;
+      padding: 5px 10px;
+    }
+    .fc-button:hover {
+      background: #407f8d;
+    }
+    .fc-button-primary:disabled {
+      background: #ccc;
+    }
     .fc-event {
-      background: #a3d9b1 !important;
-      border: none !important;
-      border-radius: 12px !important;
-      padding: 4px 8px !important;
-      font-size: 14px;
-      color: #1f3a2f !important;
-      font-weight: 500;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* ナビゲーションボタン */
-    .fc .fc-button {
-      background-color: #89c2d9;
-      border: none;
+      background-color: #e3f2fd;
+      border: 1px solid #90caf9;
+      color: #0d47a1;
       border-radius: 8px;
-      padding: 4px 10px;
-      font-weight: bold;
-      font-family: 'Noto Sans JP', sans-serif;
-      transition: background 0.2s;
-    }
-    .fc .fc-button:hover {
-      background-color: #5faac4;
-    }
-    .fc .fc-button:disabled {
-      background-color: #ccc;
-    }
-
-    .fc-toolbar-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: #2b4d3f;
-    }
-
-    .fc-col-header-cell-cushion {
-      font-weight: 500;
-      color: #555;
-    }
-
-    .fc-daygrid-day, .fc-timegrid-slot {
-      border-color: #e0e0e0;
-    }
-
-    .fc-scrollgrid {
-      border-radius: 12px;
-      overflow: hidden;
-      border: none;
-    }
-
-    /* リストビューのイベント */
-    .fc-list-event {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      margin: 8px 0;
-      padding: 10px;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    .fc-list-event-title {
-      font-weight: bold;
-      color: #2b4d3f;
+      padding: 2px 4px;
+      font-size: 0.85rem;
     }
 
     /* モーダル */
-    #modalOverlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 999;
-    }
     #eventModal {
       display: none;
       position: fixed;
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -25%);
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      padding: 2em;
-      z-index: 1000;
+      z-index: 9999;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    #eventModalContent {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
       width: 90%;
       max-width: 500px;
-      color: #333;
-      line-height: 1.6;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    #eventModal h3 {
-      margin-top: 0;
-      font-size: 20px;
-      color: #2b4d3f;
-      font-weight: 600;
-    }
-    #modalDescription a {
-      color: #007b7b;
-      text-decoration: underline;
-    }
-    #modalCloseBtn {
+
+    #modalClose {
+      color: #aaa;
       position: absolute;
-      top: 12px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 18px;
-      color: #999;
+      right: 15px;
+      top: 10px;
+      font-size: 24px;
+      font-weight: bold;
       cursor: pointer;
     }
-    #modalCloseBtn:hover {
-      color: #333;
+
+    #modalClose:hover {
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      .fc-toolbar-title {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <div id="calendar"></div>
 
-  <!-- モーダル -->
-  <div id="modalOverlay"></div>
   <div id="eventModal">
-    <button id="modalCloseBtn" onclick="closeModal()">✖</button>
-    <h3 id="modalTitle"></h3>
-    <p><strong>開始:</strong> <span id="modalStart"></span></p>
-    <p><strong>終了:</strong> <span id="modalEnd"></span></p>
-    <p id="modalDescription"></p>
+    <div id="eventModalContent">
+      <span id="modalClose">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalTime" style="font-weight: bold;"></p>
+      <div id="modalDescription"></div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script>
-    function closeModal() {
-      document.getElementById('eventModal').style.display = 'none';
-      document.getElementById('modalOverlay').style.display = 'none';
-    }
-
-    function linkify(text) {
-      return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
+
       const calendar = new FullCalendar.Calendar(calendarEl, {
-        locale: 'ja',
         initialView: 'timeGridWeek',
         firstDay: 1,
-        slotMinTime: "09:00:00",
-        slotMaxTime: "23:00:00",
+        slotMinTime: '09:00:00',
+        slotMaxTime: '23:00:00',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonthLike'
         },
         views: {
-          listWeek: {
+          listMonthLike: {
             type: 'list',
-            duration: { days: 7 },
-            buttonText: 'リスト'
+            duration: { days: 30 },
+            buttonText: 'List'
           }
         },
-        events: 'https://epura-calendar-api.eigoplaza.workers.dev',
-        eventClick: function(info) {
+        eventClick: function (info) {
           info.jsEvent.preventDefault();
-          const rawDesc = info.event.extendedProps.description || '';
-          const isHtml = /<\/?[a-z][\s\S]*>/i.test(rawDesc);
 
-          document.getElementById('modalTitle').innerText = info.event.title;
+          const modal = document.getElementById('eventModal');
+          document.getElementById('modalTitle').innerText = info.event.title || '(No title)';
+          document.getElementById('modalTime').innerText =
+            formatTime(info.event.start) + ' - ' + formatTime(info.event.end);
 
-          const options = {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false
-          };
+          const desc = info.event.extendedProps.description || '';
+          document.getElementById('modalDescription').innerHTML = linkify(desc);
 
-          document.getElementById('modalStart').innerText =
-            info.event.start.toLocaleString('ja-JP', options);
-
-          document.getElementById('modalEnd').innerText =
-            info.event.end?.toLocaleString('ja-JP', options) || '';
-
-          document.getElementById('modalDescription').innerHTML =
-            isHtml ? rawDesc : linkify(rawDesc);
-
-          document.getElementById('eventModal').style.display = 'block';
-          document.getElementById('modalOverlay').style.display = 'block';
-        }
+          modal.style.display = 'block';
+        },
+        events: '/your-api-endpoint-url', // ←ここをあなたのAPIエンドポイントに変更
       });
 
       calendar.render();
+
+      document.getElementById('modalClose').onclick = function () {
+        document.getElementById('eventModal').style.display = 'none';
+      };
+
+      function formatTime(date) {
+        return new Date(date).toLocaleTimeString('ja-JP', {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+      }
+
+      function linkify(text) {
+        return text.replace(
+          /(https?:\/\/[^\s]+)/g,
+          '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+        );
+      }
     });
   </script>
 </body>
