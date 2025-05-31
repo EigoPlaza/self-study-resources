@@ -30,6 +30,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
         plugins: ['dayGrid', 'timeGrid', 'interaction', 'googleCalendar'],
+        googleCalendarApiKey: 'AIzaSyCVo3OymN4ujIZVyPdybwZbq6f2IfhkFOg',
         initialView: 'timeGridWeek',
         headerToolbar: {
           left: 'prev,next today',
@@ -39,7 +40,6 @@
         locale: 'ja',
         firstDay: 1,
         eventSources: [{
-          googleCalendarApiKey: 'AIzaSyCVo3OymN4ujIZVyPdybwZbq6f2IfhkFOg',
           googleCalendarId: '2212a816a8684d50ac0aba1fd8e0714556abbb0494560e16649a5891543e1226@group.calendar.google.com'
         }]
       });
