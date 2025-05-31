@@ -29,6 +29,7 @@
       document.addEventListener('DOMContentLoaded', function() {
         const calendarEl = document.getElementById('calendar');
         const calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'dayGrid', 'timeGrid', 'interaction', 'googleCalendar' ],  // ←★ここ追加
           initialView: 'timeGridWeek',  // ←★ 最初に「週表示」にする
           headerToolbar: {
             left: 'prev,next today',
