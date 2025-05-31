@@ -96,6 +96,28 @@
     #modalCloseBtn:hover {
       color: #333;
     }
+
+    @media (max-width: 600px) {
+      #calendar {
+        padding: 1em;
+        font-size: 12px;
+      }
+    
+      .fc-toolbar-title {
+        font-size: 16px;
+      }
+    
+      .fc .fc-button {
+        padding: 4px 6px;
+        font-size: 12px;
+      }
+    
+      .fc-col-header-cell-cushion,
+      .fc-daygrid-day-number {
+        font-size: 11px;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -131,9 +153,12 @@
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
 
+      const defaultView =
+        window.innerWidth < 600 ? 'dayGridMonth' : 'timeGridWeek';
+      
       const calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'ja',
-        initialView: 'timeGridWeek',
+        initialView: defaultView,
         initialDate: new Date(), // ← 表示は今日からでOK
         firstDay: 1,
         slotMinTime: "09:00:00",
