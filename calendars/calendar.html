@@ -2,13 +2,12 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Epuraカレンダー</title>
+  <title>Epura カレンダー2</title>
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
   <style>
     body {
       font-family: sans-serif;
-      margin: 0;
-      padding: 2em;
+      margin: 2em;
     }
     #calendar {
       max-width: 800px;
@@ -27,7 +26,12 @@
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'ja',
-        events: 'https://epura-calendar-api.eigoplaza.workers.dev'
+        events: 'https://epura-calendar-api.eigoplaza.workers.dev', // ← JunkoさんのWorker
+        eventClick: function(info) {
+          // Googleカレンダーのリンクを新規タブで開く
+          info.jsEvent.preventDefault();
+          window.open(info.event.url, '_blank');
+        }
       });
 
       calendar.render();
