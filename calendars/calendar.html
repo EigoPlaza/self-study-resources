@@ -114,11 +114,7 @@
       const calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'ja',
         initialView: 'timeGridWeek',
-        initialDate: (() => {
-          const d = new Date();
-          d.setDate(d.getDate() - 7); // ← 過去1週間前にジャンプ
-          return d.toISOString().split('T')[0];
-        })(),
+        initialDate: new Date(), // ← 表示は今日からでOK
         firstDay: 1,
         slotMinTime: "09:00:00",
         slotMaxTime: "23:00:00",
@@ -130,17 +126,17 @@
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
           validRange: {
-            start: (() => {
-              const d = new Date();
-              d.setDate(d.getDate() - 7); // ← 7日前から有効
-              return d.toISOString().split('T')[0];
-            })(),
-            end: (() => {
-              const d = new Date();
-              d.setMonth(d.getMonth() + 2); // ← 2か月先まで
-              return d.toISOString().split('T')[0];
-            })()
-          },
+          start: (() => {
+            const d = new Date();
+            d.setDate(d.getDate() - 7); // ← 7日前までは有効にする
+            return d.toISOString().split('T')[0];
+          })(),
+          end: (() => {
+            const d = new Date();
+            d.setMonth(d.getMonth() + 2); // ← 2か月先まで
+            return d.toISOString().split('T')[0];
+          })()
+        },
         events: 'https://epura-calendar-api.eigoplaza.workers.dev',
         eventClick: function(info) {
           info.jsEvent.preventDefault();
