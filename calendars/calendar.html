@@ -1,58 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Epura Event Calendar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>シンプルカレンダー</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #calendar {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="calendar"></div>
 
-    <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
 
-    <!-- FullCalendar JS (全プラグイン入り) -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
-
-    <style>
-      body {
-        font-family: "Helvetica Neue", sans-serif;
-        background-color: #f9f9f9;
-        margin: 40px;
-      }
-
-      #calendar {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1>Epura Event Calendar</h1>
-    <div id="calendar"></div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const calendarEl = document.getElementById('calendar');
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: ['dayGrid', 'timeGrid', 'interaction', 'googleCalendar'],
-          initialView: 'timeGridWeek',
-          locale: 'ja',
-          firstDay: 1,
-          googleCalendarApiKey: 'AIzaSyCVo3OymN4ujIZVyPdybwZbq6f2IfhkFOg',
-          events: {
-            googleCalendarId: '2212a816a8684d50ac0aba1fd8e0714556abbb0494560e16649a5891543e1226@group.calendar.google.com'
-          }
-        });
-        calendar.render();
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'ja'
       });
-    </script>
-  </body>
+
+      calendar.render();
+    });
+  </script>
+</body>
 </html>
