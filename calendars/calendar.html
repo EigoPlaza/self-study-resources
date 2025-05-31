@@ -39,9 +39,10 @@
         },
         locale: 'ja',
         firstDay: 1,
-        eventSources: [{
-          googleCalendarId: '2212a816a8684d50ac0aba1fd8e0714556abbb0494560e16649a5891543e1226@group.calendar.google.com'
-        }]
+        events: {
+          googleCalendarId: '2212a816a8684d50ac0aba1fd8e0714556abbb0494560e16649a5891543e1226@group.calendar.google.com',
+          className: 'gcal-event'
+        }
       });
       calendar.render();
     });
