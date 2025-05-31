@@ -115,11 +115,9 @@
         locale: 'ja',
         initialView: 'timeGridWeek',
         initialDate: (() => {
-          const today = new Date();
-          const day = today.getDay(); // 0=Sun, 1=Mon, ...
-          const diff = today.getDate() - day + (day === 0 ? -6 : 1); // 今週月曜
-          const monday = new Date(today.setDate(diff));
-          return monday.toISOString().split('T')[0];
+          const d = new Date();
+          d.setDate(d.getDate() - 7); // ← 過去1週間前にジャンプ
+          return d.toISOString().split('T')[0];
         })(),
         firstDay: 1,
         slotMinTime: "09:00:00",
