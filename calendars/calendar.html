@@ -56,25 +56,28 @@
       z-index: 999;
     }
     #eventModal {
-      display: none;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: hidden;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
       position: fixed;
-      top: 25%;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, -25%);
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      padding: 2em;
-      z-index: 1000;
-      width: 90%;
-      max-width: 500px;
-      color: #333;
-      line-height: 1.6;
+      transform: translate(-50%, -50%);
     }
-#eventModal h3 {
-  color: #2b4d3f;
-  font-weight: 600;
-}
+    #eventModal h3 {
+      color: #2b4d3f;
+      font-weight: 600;
+    }
+    #modalDescription {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
     #modalDescription a {
       color: #007b7b;
       text-decoration: underline;
