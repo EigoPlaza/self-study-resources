@@ -36,6 +36,9 @@
   opacity: 0.6;
   background-color: #ccc;
 }
+  .fc-timegrid-slot {
+    height: 60px !important;  /* お好みで調整：60〜80pxぐらい */
+  }
     /* モーダル */
     #modalOverlay {
       display: none;
@@ -118,7 +121,6 @@
         firstDay: 1,
         slotMinTime: "09:00:00",
         slotMaxTime: "23:00:00",
-        slotHeight: 60, // ← ここだけ追加！
         expandRows: true, // ←★ポイント：これで縦に全部表示する
         height: 'auto',
         headerToolbar: {
