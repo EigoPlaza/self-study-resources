@@ -134,9 +134,10 @@ document.getElementById('modalStart').innerText =
 document.getElementById('modalEnd').innerText =
   info.event.end?.toLocaleString('ja-JP', options) || '';
 
-          // 🔗 ZoomリンクなどをHTMLで表示（自動リンク化）
-          const desc = info.event.extendedProps.description || '';
-          document.getElementById('modalDescription').innerHTML = linkify(desc);
+ const rawDesc = info.event.extendedProps.description || '';
+const isHtml = /<\/?[a-z][\s\S]*>/i.test(rawDesc); // HTMLタグが含まれてるか判定
+document.getElementById('modalDescription').innerHTML =
+  isHtml ? rawDesc : linkify(rawDesc);
 
           document.getElementById('eventModal').style.display = 'block';
           document.getElementById('modalOverlay').style.display = 'block';
