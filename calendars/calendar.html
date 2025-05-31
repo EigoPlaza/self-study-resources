@@ -56,18 +56,18 @@
     #eventModal {
       display: none;
       position: fixed;
-      top: 25%;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, -25%);
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 500px;
+      max-height: 80vh; /* ←画面の80%までに制限！ */
+      overflow: hidden;
       background: #fff;
       border-radius: 14px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       padding: 2em;
       z-index: 1000;
-      width: 90%;
-      max-width: 500px;
-      color: #333;
-      line-height: 1.6;
     }
 #eventModal h3 {
   color: #2b4d3f;
@@ -76,6 +76,12 @@
     #modalDescription a {
       color: #007b7b;
       text-decoration: underline;
+    }
+    #modalDescription {
+      max-height: 300px; /* ←内容が長いとここだけスクロール！ */
+      overflow-y: auto;
+      white-space: pre-wrap;
+      padding-right: 10px; /* スクロールバーの幅を避ける */
     }
     #modalCloseBtn {
       position: absolute;
