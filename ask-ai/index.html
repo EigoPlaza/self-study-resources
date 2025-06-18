@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>今日の英語日記 - エプラ自習室</title>
+  <title>Ask AI（英語の質問ボット）  - エプラ自習室</title>
   <style>
     body {
       font-family: "Helvetica Neue", sans-serif;
@@ -62,24 +62,24 @@
   </style>
 </head>
 <body>
-  <h1>🌱 今日の英語日記</h1>
+  <h1>Ask AI（英語の質問ボット） </h1>
     <p style="font-size: 1.1rem; color: #555; margin-top: -1rem;">
-    日々の出来事を英語で書いてみよう。短くてもOK！
+    英語に関する質問はここで聞いてみましょう！AIがやさしく教えてくれます。
   </p>
   <div style="margin-top: 2rem; font-size: 1.1rem; color: #444;">
-    <em>What did you do today? Write a short paragraph in English.</em>
+    <em>What do you want to ask?</em>
   </div>
   <form id="writing-form">
-    <label for="writing-input">あなたの英文：</label>
-    <textarea id="writing-input" placeholder="ここに英文を書いてください"></textarea>
+    <label for="writing-input">あなたの質問：</label>
+    <textarea id="writing-input" placeholder="ここに質問を書いてください"></textarea>
     <div id="char-count" style="text-align: right; font-size: 0.85rem; color: #666;">0 / 500 文字</div>
     <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
       ※500文字以内で入力してください
     </p>
-    <button type="submit">添削リクエスト</button>
+    <button type="submit">質問する</button>
   </form>
   <div class="output" id="output-area">
-    ※ ここに添削結果が表示されます
+    ※ ここに返答が表示されます
   </div>
   <footer>
     チリも積もれば英語力 🐣 by エプラ
@@ -90,7 +90,7 @@
     e.preventDefault();
     const input = document.getElementById('writing-input').value.trim();
     const output = document.getElementById('output-area');
-    output.textContent = '添削中です...';
+    output.textContent = '考え中です...';
 
     if (!input) {
       output.textContent = '英文を入力してください。';
