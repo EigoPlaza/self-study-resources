@@ -88,18 +88,30 @@
     </div>
   </div>
   <script>
-    function generateAudio() {
+    async function generateAudio() {
       const text = document.getElementById("inputText").value;
-      alert("このデモではまだ音声は生成されません。今後のバージョンで追加予定です。");
-
-      // 仮のプレースホルダー音声ファイル（デモ用）
-      const demoSrc = "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav";
-
-      document.getElementById("audioWithPause").src = demoSrc;
-      document.getElementById("audioWithoutPause").src = demoSrc;
-
-      document.getElementById("downloadWithPause").href = demoSrc;
-      document.getElementById("downloadWithoutPause").href = demoSrc;
+      const voiceName = document.getElementById("voice").value;
+  
+      const response = await fetch("https://your-worker-url.com/api/tts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          text: text,
+          voice: voiceName
+        })
+      });
+  
+      const blob = await response.blob();
+      const audioUrl = URL.createObjectURL(blob);
+  
+      // ポーズなし／あり 両方に同じ音声を仮適用（ここは後で分岐）
+      document.getElementById("audioWithPause").src = audioUrl;
+      document.getElementById("downloadWithPause").href = audioUrl;
+  
+      document.getElementById("audioWithoutPause").src = audioUrl;
+      document.getElementById("downloadWithoutPause").href = audioUrl;
     }
   </script>
 </body>
