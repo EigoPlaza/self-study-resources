@@ -7,8 +7,19 @@
   <style>
     body {
       font-family: sans-serif;
-      padding: 2em;
       background-color: #f4f4f9;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: #fff;
+      padding: 2em;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
     textarea {
       width: 100%;
@@ -35,23 +46,24 @@
   </style>
 </head>
 <body>
-  <h1>🗣️ 音読用音声作成AI（ベータ）</h1>
-  <p>スラッシュ <code>/</code> で区切った英文を入力してください。</p>
-
-  <textarea id="inputText" placeholder="例：How are you? / I'm fine, thank you. / And you?"></textarea>
-  <br />
-  <button onclick="generateAudio()">🎙 音声を生成</button>
-
-  <div class="output">
-    <h2>🔁 ポーズあり（リピーティング用）</h2>
-    <audio id="audioWithPause" controls></audio>
-    <a id="downloadWithPause" download="with_pause.mp3">⬇️ ダウンロード</a>
-
-    <h2>🚀 ポーズなし（シャドーイング用）</h2>
-    <audio id="audioWithoutPause" controls></audio>
-    <a id="downloadWithoutPause" download="without_pause.mp3">⬇️ ダウンロード</a>
+  <div class="container">
+    <h1>🗣️ 音読用音声作成AI（ベータ）</h1>
+    <p>スラッシュ <code>/</code> で区切った英文を入力してください。</p>
+  
+    <textarea id="inputText" placeholder="例：How are you? / I'm fine, thank you. / And you?"></textarea>
+    <br />
+    <button onclick="generateAudio()">🎙 音声を生成</button>
+  
+    <div class="output">
+      <h2>🔁 ポーズあり（リピーティング用）</h2>
+      <audio id="audioWithPause" controls></audio>
+      <a id="downloadWithPause" download="with_pause.mp3">⬇️ ダウンロード</a>
+  
+      <h2>🚀 ポーズなし（シャドーイング用）</h2>
+      <audio id="audioWithoutPause" controls></audio>
+      <a id="downloadWithoutPause" download="without_pause.mp3">⬇️ ダウンロード</a>
+    </div>
   </div>
-
   <script>
     function generateAudio() {
       const text = document.getElementById("inputText").value;
