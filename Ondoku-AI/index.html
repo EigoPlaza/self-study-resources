@@ -46,6 +46,19 @@
       max-width: 500px;  /* お好みで調整可能 */
       margin-top: 0.5em;
     }
+    a.download-btn {
+      display: inline-block;
+      margin-top: 0.5em;
+      padding: 0.4em 1em;
+      background-color: #e0e0e0;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    a.download-btn:hover {
+      background-color: #d0d0d0;
+    }
   </style>
 </head>
 <body>
@@ -60,11 +73,11 @@
     <div class="output">
       <h2>🔁 ポーズあり（リピーティング用）</h2>
       <audio id="audioWithPause" controls></audio>
-      <a id="downloadWithPause" download="with_pause.mp3">⬇️ ダウンロード</a>
+      <a id="downloadWithPause" href="#" class="download-btn" download="with_pause.mp3">⬇️ ダウンロード</a>
   
       <h2>🚀 ポーズなし（シャドーイング用）</h2>
       <audio id="audioWithoutPause" controls></audio>
-      <a id="downloadWithoutPause" download="without_pause.mp3">⬇️ ダウンロード</a>
+      <a id="downloadWithoutPause" href="#" class="download-btn" download="without_pause.mp3">⬇️ ダウンロード</a>
     </div>
   </div>
   <script>
