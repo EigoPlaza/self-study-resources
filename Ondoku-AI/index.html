@@ -91,22 +91,24 @@
       <a id="downloadWithoutPause" href="#" class="download-btn" download="without_pause.mp3">⬇️ ダウンロード</a>
     </div>
   </div>
+  
   <script>
+  document.addEventListener("DOMContentLoaded", () => {
     const textInput = document.getElementById("inputText");
     const wordCount = document.getElementById("wordCount");
     const generateBtn = document.querySelector("button");
-    
+
     textInput.addEventListener("input", () => {
       const text = textInput.value;
       const wordArray = text
-        .replace(/\\//g, ' ')  // スラッシュは無視
-        .replace(/[^a-zA-Z0-9'\\s]/g, '')  // 記号削除
+        .replace(/\\//g, ' ')
+        .replace(/[^a-zA-Z0-9'\\s]/g, '')
         .trim()
         .split(/\\s+/);
       const count = text.trim() === '' ? 0 : wordArray.length;
-    
+
       wordCount.textContent = `単語数：${count} / 150`;
-    
+
       if (count > 150) {
         wordCount.style.color = 'red';
         generateBtn.disabled = true;
@@ -114,7 +116,8 @@
         wordCount.style.color = '#666';
         generateBtn.disabled = false;
       }
-    });   
+    });
+  });
     
     async function generateAudio() {
       const text = document.getElementById("inputText").value;
