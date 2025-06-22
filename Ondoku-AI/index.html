@@ -67,6 +67,9 @@
     <p>スラッシュ <code>/</code> で区切った英文を入力してください。</p>
   
     <textarea id="inputText" placeholder="例：How are you? / I'm fine, thank you. / And you?"></textarea>
+    <div style="text-align: right; font-size: 0.9em; color: #666;" id="wordCount">
+      単語数：0 / 150
+    </div>
     <br />
     <label for="voice">🗣️ 音声の種類：</label>
     <select id="voice">
@@ -89,6 +92,30 @@
     </div>
   </div>
   <script>
+    const textInput = document.getElementById("inputText");
+    const wordCount = document.getElementById("wordCount");
+    const generateBtn = document.querySelector("button");
+    
+    textInput.addEventListener("input", () => {
+      const text = textInput.value;
+      const wordArray = text
+        .replace(/\\//g, ' ')  // スラッシュは無視
+        .replace(/[^a-zA-Z0-9'\\s]/g, '')  // 記号削除
+        .trim()
+        .split(/\\s+/);
+      const count = text.trim() === '' ? 0 : wordArray.length;
+    
+      wordCount.textContent = `単語数：${count} / 150`;
+    
+      if (count > 150) {
+        wordCount.style.color = 'red';
+        generateBtn.disabled = true;
+      } else {
+        wordCount.style.color = '#666';
+        generateBtn.disabled = false;
+      }
+    });   
+    
     async function generateAudio() {
       const text = document.getElementById("inputText").value;
       const voiceName = document.getElementById("voice").value;
