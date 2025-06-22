@@ -99,24 +99,27 @@
     const generateBtn = document.querySelector("button");
 
     textInput.addEventListener("input", () => {
-      const text = textInput.value;
-      const wordArray = text
-        .replace(/\\//g, ' ')
-        .replace(/[^a-zA-Z0-9'\\s]/g, '')
-        .trim()
-        .split(/\\s+/);
-      const count = text.trim() === '' ? 0 : wordArray.length;
+    const text = textInput.value;
+    const wordArray = text
+      .replace(/\//g, ' ')                // ← スラッシュ除去（1つのバックスラッシュでOK）
+      .replace(/[^a-zA-Z0-9'\s]/g, '')    // ← 記号除去（\s = 空白）
+      .trim()
+      .split(/\s+/);                      // ← 空白で区切る
+  
+    const count = text.trim() === '' ? 0 : wordArray.length;
+  
+    wordCount.textContent = `単語数：${count} / 150`;
+  
+    if (count > 150) {
+      wordCount.style.color = 'red';
+      generateBtn.disabled = true;
+    } else {
+      wordCount.style.color = '#666';
+      generateBtn.disabled = false;
+    }
+  });
+    
 
-      wordCount.textContent = `単語数：${count} / 150`;
-
-      if (count > 150) {
-        wordCount.style.color = 'red';
-        generateBtn.disabled = true;
-      } else {
-        wordCount.style.color = '#666';
-        generateBtn.disabled = false;
-      }
-    });
   });
     
     async function generateAudio() {
