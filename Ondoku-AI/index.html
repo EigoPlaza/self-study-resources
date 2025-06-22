@@ -72,9 +72,7 @@
     <p>スラッシュ <code>/</code> で区切った英文を入力してください。</p>
 
     <textarea id="inputText" placeholder="例：How are you? / I'm fine, thank you. / And you?"></textarea>
-    <div style="text-align: right; font-size: 0.9em; color: #666;" id="wordCount">
-      単語数：0 / 150
-    </div>
+    <div style="text-align: right; font-size: 0.9em; color: #666;" id="wordCount">単語数：0 / 150</div>
     <div class="error" id="errorMessage"></div>
     <br />
     <label for="voice">🗣️ 音声の種類：</label>
@@ -103,14 +101,64 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const textInput = document.getElementById("inputText");
-      const wordCount = document.getElementById("wordCount");
-      const generateBtn = document.querySelector("button");
-      const errorMessage = document.getElementById("errorMessage");
+    const textInput = document.getElementById("inputText");
+    const wordCount = document.getElementById("wordCount");
+    const errorMessage = document.getElementById("errorMessage");
 
-      textInput.addEventListener("input", () => {
-        const text = textInput.value;
-        const wordArray = text
-          .replace(/\//g, ' ')
-          .replace(/[^a
+    textInput.addEventListener("input", () => {
+      const text = textInput.value;
+      const words = text.replace(/\//g, " ").trim().split(/\s+/).filter(w => w.length > 0);
+      wordCount.textContent = `単語数：${words.length} / 150`;
+    });
+
+    async function generateAudio() {
+      const text = document.getElementById("inputText").value.trim();
+      const voice = document.getElementById("voice").value;
+
+      if (!text) {
+        errorMessage.textContent = "テキストを入力してください。";
+        return;
+      }
+
+      errorMessage.textContent = "音声を生成中です...";
+
+      try {
+        // 🔁 ポーズあり
+        const res1 = await fetch("https://ondoku.cloudflare.jp/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: text, voice: voice, pause: true })
+        });
+
+        // 🚀 ポーズなし
+        const res2 = await fetch("https://ondoku.cloudflare.jp/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: text.replace(/\s*\/\s*/g, ' '), voice: voice, pause: false })
+        });
+
+        if (!res1.ok || !res2.ok) {
+          throw new Error("音声生成に失敗しました");
+        }
+
+        const blob1 = await res1.blob();
+        const blob2 = await res2.blob();
+
+        const url1 = URL.createObjectURL(blob1);
+        const url2 = URL.createObjectURL(blob2);
+
+        document.getElementById("audioWithPause").src = url1;
+        document.getElementById("downloadWithPause").href = url1;
+
+        document.getElementById("audioWithoutPause").src = url2;
+        document.getElementById("downloadWithoutPause").href = url2;
+
+        errorMessage.textContent = "";
+      } catch (err) {
+        console.error(err);
+        errorMessage.textContent = "エラーが発生しました。もう一度お試しください。";
+      }
+    }
+  </script>
+</body>
+</html>
