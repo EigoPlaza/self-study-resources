@@ -124,14 +124,14 @@
 
       try {
         // 🔁 ポーズあり
-        const res1 = await fetch("https://ondoku.cloudflare.jp/api/generate", {
+        const res1 = await fetch("https://ondoku-ai.eigoplaza.workers.dev/generate"", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: text, voice: voice, pause: true })
         });
 
         // 🚀 ポーズなし
-        const res2 = await fetch("https://ondoku.cloudflare.jp/api/generate", {
+        const res2 = await fetch("https://ondoku-ai.eigoplaza.workers.dev/generate"", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: text.replace(/\s*\/\s*/g, ' '), voice: voice, pause: false })
