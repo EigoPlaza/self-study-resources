@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音読用音声作成AI</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background-color: #f4f4f9;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      font-size: 1em;
+      padding: 1em;
+    }
+    button {
+      font-size: 1em;
+      padding: 0.5em 1em;
+      margin-top: 1em;
+    }
+    .output {
+      margin-top: 2em;
+      background: white;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    audio {
+      display: block;
+      margin-top: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🗣️ 音読用音声作成AI（ベータ）</h1>
+  <p>スラッシュ <code>/</code> で区切った英文を入力してください。</p>
+
+  <textarea id="inputText" placeholder="例：How are you? / I'm fine, thank you. / And you?"></textarea>
+  <br />
+  <button onclick="generateAudio()">🎙 音声を生成</button>
+
+  <div class="output">
+    <h2>🔁 ポーズあり（リピーティング用）</h2>
+    <audio id="audioWithPause" controls></audio>
+    <a id="downloadWithPause" download="with_pause.mp3">⬇️ ダウンロード</a>
+
+    <h2>🚀 ポーズなし（シャドーイング用）</h2>
+    <audio id="audioWithoutPause" controls></audio>
+    <a id="downloadWithoutPause" download="without_pause.mp3">⬇️ ダウンロード</a>
+  </div>
+
+  <script>
+    function generateAudio() {
+      const text = document.getElementById("inputText").value;
+      alert("このデモではまだ音声は生成されません。今後のバージョンで追加予定です。");
+
+      // 仮のプレースホルダー音声ファイル（デモ用）
+      const demoSrc = "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav";
+
+      document.getElementById("audioWithPause").src = demoSrc;
+      document.getElementById("audioWithoutPause").src = demoSrc;
+
+      document.getElementById("downloadWithPause").href = demoSrc;
+      document.getElementById("downloadWithoutPause").href = demoSrc;
+    }
+  </script>
+</body>
+</html>
