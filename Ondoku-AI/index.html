@@ -25,7 +25,9 @@
       width: 100%;
       height: 120px;
       font-size: 1em;
-      padding: 1em;
+      padding: 1em; /* ← ここが重要 */
+      box-sizing: border-box; /* ← パディング込みでも幅を超えないように */
+      border-radius: 6px;
     }
     button {
       font-size: 1em;
