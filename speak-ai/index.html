@@ -378,30 +378,26 @@
         if (audioBase64) {
           const audioBlob = base64ToBlob(audioBase64, "audio/mp3");
           const audioUrl = URL.createObjectURL(audioBlob);
+          const audio = new Audio(audioUrl);
+          audio.load();
         
-          if (isMobile()) {
-            // モバイル：再生ボタンを表示
-            const playButton = document.getElementById("play-response");
-            playButton.style.display = "block";
+          const playPromise = audio.play();
         
-            playButton.onclick = () => {
-              const audio = new Audio(audioUrl);
-              audio.play().catch((e) => {
-                console.error("再生エラー:", e);
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                console.log("音声が自動再生されました");
+              })
+              .catch((error) => {
+                console.warn("音声の自動再生に失敗。再生ボタンを表示します", error);
+                // 再生ボタンを表示
+                const playBtn = document.getElementById("play-response");
+                playBtn.style.display = "inline-block";
+                playBtn.onclick = () => {
+                  audio.play();
+                  playBtn.style.display = "none"; // 再生後は非表示に
+                };
               });
-              playButton.style.display = "none"; // 再生後はボタン非表示に
-            };
-          } else {
-            // PC：自動再生
-            const audio = new Audio(audioUrl);
-            audio.addEventListener('canplaythrough', () => {
-              setTimeout(() => {
-                audio.play().catch((e) => {
-                  console.error("再生エラー:", e);
-                });
-              }, 150);
-            });
-            audio.load();
           }
         }
       } catch (err) {
