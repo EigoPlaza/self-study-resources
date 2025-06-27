@@ -366,6 +366,7 @@
           const audioBlob = base64ToBlob(audioBase64, "audio/mp3"); // または audio/webm に変更
           const audioUrl = URL.createObjectURL(audioBlob);
           const audio = new Audio(audioUrl);
+          audio.load(); // 🔺これを入れると安定する
           audio.play();
         }
       } catch (err) {
