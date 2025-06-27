@@ -91,6 +91,14 @@
     </span>
     <span style="font-size: 12px; color: gray; margin-left: 1.2em;">※少しロボットっぽく聞こえることがあります</span>
   </label>
+  <div class="level-select">
+  <label for="levelSelect">レベル選択：</label>
+  <select id="levelSelect">
+    <option value="beginner">初級</option>
+    <option value="intermediate">中級</option>
+    <option value="advanced">上級</option>
+  </select>
+</div>
 </div>
 
   <p id="recordingStatus" class="status-text">🔴 録音中...</p>
@@ -154,10 +162,21 @@
     async function sendToServer(audioBlob) {
       const apiUrl = "https://whisper-transcriber.eigoplaza.workers.dev/";
       const isSlow = document.getElementById("slowMode").checked;
+      const level = document.getElementById("levelSelect").value;
+    
+      let systemPrompt = "";
+      if (level === "beginner") {
+        systemPrompt = "You are a friendly English conversation partner for a beginner. Use very simple English, short sentences, and speak slowly. Avoid difficult vocabulary or grammar.";
+      } else if (level === "intermediate") {
+        systemPrompt = "You are a supportive English conversation partner for an intermediate learner. Use natural English and useful phrases. Speak at a normal speed and help correct small mistakes gently.";
+      } else if (level === "advanced") {
+        systemPrompt = "You are a fluent English conversation partner for an advanced learner. Speak naturally and use idiomatic expressions. Engage in deeper discussions and challenge the learner when appropriate.";
+      }
       
       const formData = new FormData();
       formData.append("file", audioBlob, "voice.webm");
       formData.append("slow", isSlow ? "true" : "false");
+      formData.append("prompt", systemPrompt);
       
       try {
         const res = await fetch(apiUrl, {
