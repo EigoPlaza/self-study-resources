@@ -172,6 +172,72 @@
       min-width: 140px;
     }
 
+    /* 中央に録音ボタンを大きく表示 */
+    .fixed-controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f5f7fa;
+      border-top: 1px solid #ddd;
+      box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+      z-index: 999;
+      padding: 1rem 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    /* メインボタン中央＆大きく */
+    .main-button button {
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      background-color: #2a4d69;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    /* 録音中のテキスト */
+    .main-button .status-text {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: red;
+      visibility: hidden;
+    }
+    
+    /* 設定エリア */
+    .settings-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: stretch;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .settings-panel button,
+    .settings-panel select {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+    }
+    
+    /* 再生ボタン */
+    .play-button button {
+      width: 100%;
+      max-width: 300px;
+      font-size: 1rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+    }
     
   </style>
 </head>
@@ -192,31 +258,32 @@
 
   <!-- 🎛 コントロールボタン -->
   <div class="fixed-controls">
-    <div class="top-controls">
-      <div class="button-row">
-        <div class="recording-block">
-          <button id="recordBtn">🎙️ 録音を開始</button>
-          <span id="recordingStatus" class="status-text">🔴 録音中...</span>
-        </div>
-        <button id="play-response" style="display: none;">🔊 AIの返事を聞く</button>
-        <button id="resetBtn">会話をリセット</button>
+    <!-- 🎙️ 録音ボタン（中央・大きめ） -->
+    <div class="main-button">
+      <button id="recordBtn">🎙️ 録音を開始</button>
+      <span id="recordingStatus" class="status-text">🔴 録音中...</span>
+    </div>
   
-        <!-- 👇 レベル選択も button-row 内に入れる！ -->
-        <label class="level-label">
-          レベル選択：
-          <select id="levelSelect">
-            <option value="beginner">初級</option>
-            <option value="intermediate">中級</option>
-            <option value="advanced">上級</option>
-          </select>
-        </label>
+    <!-- ⚙️ 設定パネル（折りたたみ可能にしたいなら将来JS追加） -->
+    <div class="settings-panel">
+      <button id="resetBtn">会話をリセット</button>
+      <label class="level-label">
+        レベル選択：
+        <select id="levelSelect">
+          <option value="beginner">初級</option>
+          <option value="intermediate">中級</option>
+          <option value="advanced">上級</option>
+        </select>
+      </label>
+      <label class="slow-label">
+        <input type="checkbox" id="slowMode" />ゆっくり話して
+        <span class="note">※少しロボットっぽく聞こえることがあります</span>
+      </label>
+    </div>
   
-        <!-- 👇 ゆっくり話しても同様に中へ -->
-        <label class="slow-label">
-          <input type="checkbox" id="slowMode" />ゆっくり話して
-          <span class="note">※少しロボットっぽく聞こえることがあります</span>
-        </label>
-      </div>
+    <!-- 🔊 再生ボタン（必要な時だけ表示） -->
+    <div class="play-button">
+      <button id="play-response" style="display: none;">🔊 AIの返事を聞く</button>
     </div>
   </div>
 
