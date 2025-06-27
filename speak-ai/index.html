@@ -145,28 +145,22 @@
 
     async function sendToServer(audioBlob) {
       const apiUrl = "https://whisper-transcriber.eigoplaza.workers.dev/";
-
+    
       const formData = new FormData();
       formData.append("file", audioBlob, "voice.webm");
-
+    
       try {
-        const whisperRes = await fetch(apiUrl, {
+        const res = await fetch(apiUrl, {
           method: "POST",
           body: formData,
         });
-        const whisperData = await whisperRes.json();
-        const userText = whisperData.text || "(認識できませんでした)";
+        const data = await res.json();
+    
+        const userText = data.text || "(認識できませんでした)";
+        const aiReply = data.reply || "(返答がありませんでした)";
+    
         appendMessage(userText, "user");
-
-        // ChatGPT に送信
-        const gptRes = await fetch(apiUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: userText }),
-        });
-
-        const gptData = await gptRes.json();
-        appendMessage(gptData.reply || "(返答がありませんでした)", "ai");
+        appendMessage(aiReply, "ai");
       } catch (err) {
         appendMessage("エラーが発生しました。", "ai");
         console.error(err);
