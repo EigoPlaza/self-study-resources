@@ -187,8 +187,10 @@
     }
 
     #log {
-      max-height: 300px; /* ここは必要に応じて */
+      max-height: 300px;        /* 必要に応じて調整（例：スマホなら 250px でもOK） */
       overflow-y: auto;
+      padding-right: 10px;      /* スクロールバーの分の余白 */
+      scroll-behavior: smooth;  /* スムーズスクロールにする */
     }
   </style>
 </head>
@@ -371,8 +373,10 @@
     }
 
     function scrollToBottom() {
-      const logContainer = document.getElementById('log');
-      logContainer.scrollTop = logContainer.scrollHeight;
+      const log = document.getElementById('log');
+      if (log) {
+        log.scrollTop = log.scrollHeight;
+      }
     }
 
     // 🔽 これを末尾に追加（base64をBlobに変換する関数）
