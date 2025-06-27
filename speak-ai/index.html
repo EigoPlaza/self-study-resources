@@ -63,17 +63,41 @@
     }
 
     .message {
-      margin: 0.5rem 0;
+      display: flex;
+      margin: 0.8rem 0;
+      max-width: 100%;
     }
-
-    .user {
-      text-align: right;
-      font-weight: bold;
+    
+    .message.user {
+      justify-content: flex-end;
     }
-
-    .ai {
-      text-align: left;
-      font-style: italic;
+    
+    .message.user p {
+      background-color: #d1ecf1;
+      color: #0c5460;
+      border-radius: 1rem 0 1rem 1rem;
+      align-self: flex-end;
+    }
+    
+    .message.ai {
+      justify-content: flex-start;
+    }
+    
+    .message.ai p {
+      background-color: #e2e3e5;
+      color: #383d41;
+      border-radius: 0 1rem 1rem 1rem;
+      align-self: flex-start;
+    }
+    
+    .message p {
+      padding: 0.6rem 1rem;
+      margin: 0;
+      display: inline-block;
+      max-width: 80%;
+      font-size: 1rem;
+      line-height: 1.4;
+      word-break: break-word;
     }
   </style>
 </head>
@@ -219,10 +243,14 @@
     }
 
     function appendMessage(text, sender) {
-      const p = document.createElement("p");
-      p.className = `message ${sender}`;
-      p.textContent = text;
-      logDiv.appendChild(p);
+      const wrapper = document.createElement("div");
+      wrapper.className = `message ${sender}`;
+    
+      const bubble = document.createElement("p");
+      bubble.textContent = text;
+    
+      wrapper.appendChild(bubble);
+      logDiv.appendChild(wrapper);
       logArea.style.display = "block";
     }
 
