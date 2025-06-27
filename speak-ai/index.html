@@ -338,6 +338,9 @@
       wrapper.appendChild(bubble);
       logDiv.appendChild(wrapper);
       logArea.style.display = "block";
+
+      // ✅ 常に最新の発言までスクロール
+      logDiv.scrollTop = logDiv.scrollHeight;
     }
 
     // 🔽 これを末尾に追加（base64をBlobに変換する関数）
