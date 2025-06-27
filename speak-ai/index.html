@@ -207,6 +207,17 @@
       padding-right: 10px;      /* スクロールバーの分の余白 */
       scroll-behavior: smooth;  /* スムーズスクロールにする */
     }
+
+    #play-response {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #2a4d69;
+      color: white;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -236,7 +247,9 @@
           <button id="recordBtn">🎙️ 録音を開始</button>
           <span id="recordingStatus" class="status-text">🔴 録音中...</span>
         </div>
-      
+        <button id="play-response" style="display: none;">
+          🔊 AIの返事を聞く
+        </button>
         <button id="resetBtn">会話をリセット</button>
       </div>
   
@@ -363,27 +376,42 @@
 
         // 🟡 音声を再生（Blobに変換してから）
         if (audioBase64) {
-          const audioBlob = base64ToBlob(audioBase64, "audio/mp3"); // または audio/webm
+          const audioBlob = base64ToBlob(audioBase64, "audio/mp3");
           const audioUrl = URL.createObjectURL(audioBlob);
-          const audio = new Audio();
         
-          audio.src = audioUrl;
+          if (isMobile()) {
+            // モバイル：再生ボタンを表示
+            const playButton = document.getElementById("play-response");
+            playButton.style.display = "block";
         
-          // Safari対策：再生準備が整ってから再生
-          audio.addEventListener('canplaythrough', () => {
-            setTimeout(() => {
-              audio.play().catch(e => {
-                console.error("音声再生エラー:", e);
+            playButton.onclick = () => {
+              const audio = new Audio(audioUrl);
+              audio.play().catch((e) => {
+                console.error("再生エラー:", e);
               });
-            }, 150); // ← スマホでの再生を安定させるための魔法の遅延
-          });
-        
-          audio.load(); // 明示的に読み込む
+              playButton.style.display = "none"; // 再生後はボタン非表示に
+            };
+          } else {
+            // PC：自動再生
+            const audio = new Audio(audioUrl);
+            audio.addEventListener('canplaythrough', () => {
+              setTimeout(() => {
+                audio.play().catch((e) => {
+                  console.error("再生エラー:", e);
+                });
+              }, 150);
+            });
+            audio.load();
+          }
         }
       } catch (err) {
         appendMessage("エラーが発生しました。", "ai");
         console.error(err);
       }
+    }
+
+    function isMobile() {
+      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
 
     function appendMessage(text, sender) {
