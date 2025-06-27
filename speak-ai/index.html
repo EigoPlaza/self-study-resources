@@ -150,9 +150,9 @@
       display: flex;
       flex-direction: column;
       font-size: 14px;
-      align-items: flex-start;
       align-items: center; /* ←これがポイント！中央寄せ */
       text-align: center;
+      margin-top: 0.3rem;
     }
     
     .slow-label .note {
@@ -170,6 +170,13 @@
       padding: 0.8rem 1rem;
       box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
       z-index: 999;
+    }
+    .top-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: flex-start;
     }
   </style>
 </head>
@@ -205,13 +212,15 @@
           <option value="advanced">上級</option>
         </select>
       </label>
+
+      <label class="slow-label">
+        <input type="checkbox" id="slowMode" />
+        ゆっくり話して
+        <span class="note">※少しロボットっぽく聞こえることがあります</span>
+      </label>
+      
     </div>
 
-    <label class="slow-label">
-      <input type="checkbox" id="slowMode" />
-      ゆっくり話して
-      <span class="note">※少しロボットっぽく聞こえることがあります</span>
-    </label>
   </div>
 
   <div class="result-area" id="logArea">
