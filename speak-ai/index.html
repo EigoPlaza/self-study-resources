@@ -83,6 +83,10 @@
   <div class="button-group">
     <button id="recordBtn">🎙️ 録音を開始</button>
     <button id="resetBtn">会話をリセット</button>
+    <label>
+      <input type="checkbox" id="slowMode" />
+      ゆっくり話して
+    </label>
   </div>
 
   <p id="recordingStatus" class="status-text">🔴 録音中...</p>
@@ -145,10 +149,12 @@
 
     async function sendToServer(audioBlob) {
       const apiUrl = "https://whisper-transcriber.eigoplaza.workers.dev/";
-    
+      const isSlow = document.getElementById("slowMode").checked;
+      
       const formData = new FormData();
       formData.append("file", audioBlob, "voice.webm");
-    
+      formData.append("slow", isSlow ? "true" : "false");
+      
       try {
         const res = await fetch(apiUrl, {
           method: "POST",
