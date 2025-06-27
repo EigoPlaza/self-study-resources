@@ -99,31 +99,101 @@
       line-height: 1.4;
       word-break: break-word;
     }
+
+    .guide {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    
+    .guide ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    
+    .guide li {
+      margin-bottom: 0.3rem;
+    }
+    
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .top-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .level-label {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .slow-label {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .slow-label .note {
+      font-size: 12px;
+      color: gray;
+      margin-left: 1.2em;
+    }
   </style>
 </head>
 <body>
   <h1>🎙️ エプラ音声英会話AI</h1>
 
-<div class="button-group">
-  <button id="recordBtn">🎙️ 録音を開始</button>
-  <button id="resetBtn">会話をリセット</button>
-  
-  <label style="display: flex; flex-direction: column; font-size: 14px; margin-left: 1rem;">
-    <span>
+  <!-- 🆕 使い方ガイド -->
+  <div class="guide">
+    <p>このAIと英語でおしゃべりしてみましょう🎤</p>
+    <ul>
+      <li><strong>まず「録音を開始」ボタン</strong>を押してください</li>
+      <li>ブラウザに<strong>マイクの使用を許可</strong>してください（初回のみ）</li>
+      <li>ピッと鳴ったら<strong>英語で話してください</strong></li>
+      <li>話し終えたら<strong>録音を停止</strong>して、AIの返事を聞きましょう</li>
+      <li>録音がうまくいかない場合は、別のブラウザをお試しください</li>
+    </ul>
+  </div>
+
+  <!-- 🎛 コントロールボタン -->
+  <div class="button-group">
+    <div class="top-controls">
+      <button id="recordBtn">🎙️ 録音を開始</button>
+      <button id="resetBtn">会話をリセット</button>
+      <label class="level-label">
+        レベル選択：
+        <select id="levelSelect">
+          <option value="beginner">初級</option>
+          <option value="intermediate">中級</option>
+          <option value="advanced">上級</option>
+        </select>
+      </label>
+    </div>
+
+    <label class="slow-label">
       <input type="checkbox" id="slowMode" />
       ゆっくり話して
-    </span>
-    <span style="font-size: 12px; color: gray; margin-left: 1.2em;">※少しロボットっぽく聞こえることがあります</span>
-  </label>
-  <div class="level-select">
-  <label for="levelSelect">レベル選択：</label>
-  <select id="levelSelect">
-    <option value="beginner">初級</option>
-    <option value="intermediate">中級</option>
-    <option value="advanced">上級</option>
-  </select>
-</div>
-</div>
+      <span class="note">※少しロボットっぽく聞こえることがあります</span>
+    </label>
+  </div>
 
   <p id="recordingStatus" class="status-text">🔴 録音中...</p>
 
