@@ -11,6 +11,7 @@
       padding: 1.5rem;
       max-width: 600px;
       margin: 0 auto;
+      padding-bottom: 160px; /* ← fixed-controls に被らないように余白
     }
 
     h1 {
@@ -156,6 +157,17 @@
       color: gray;
       margin-left: 1.2em;
     }
+    .fixed-controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f5f7fa;
+      border-top: 1px solid #ddd;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
@@ -176,7 +188,7 @@
   </div>
 
   <!-- 🎛 コントロールボタン -->
-  <div class="button-group">
+  <div class="fixed-controls">
     <div class="top-controls">
       <button id="recordBtn">🎙️ 録音を開始</button>
       <button id="resetBtn">会話をリセット</button>
