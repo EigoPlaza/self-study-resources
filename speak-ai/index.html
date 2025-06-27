@@ -158,9 +158,18 @@
     
         const userText = data.text || "(認識できませんでした)";
         const aiReply = data.reply || "(返答がありませんでした)";
+        const audioBase64 = data.audio;
     
         appendMessage(userText, "user");
         appendMessage(aiReply, "ai");
+
+        // 🟡 音声を再生（Blobに変換してから）
+        if (audioBase64) {
+          const audioBlob = base64ToBlob(audioBase64, "audio/mp3"); // または audio/webm に変更
+          const audioUrl = URL.createObjectURL(audioBlob);
+          const audio = new Audio(audioUrl);
+          audio.play();
+        }
       } catch (err) {
         appendMessage("エラーが発生しました。", "ai");
         console.error(err);
@@ -173,6 +182,16 @@
       p.textContent = text;
       logDiv.appendChild(p);
       logArea.style.display = "block";
+    }
+
+    // 🔽 これを末尾に追加（base64をBlobに変換する関数）
+    function base64ToBlob(base64, mime) {
+      const binary = atob(base64);
+      const array = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) {
+        array[i] = binary.charCodeAt(i);
+      }
+      return new Blob([array], { type: mime });
     }
   </script>
 </body>
