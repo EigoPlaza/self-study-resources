@@ -393,6 +393,11 @@
       if (log) {
         log.scrollTop = log.scrollHeight;
       }
+      // 🔽 ページ全体も下へスクロールさせる
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
     }
 
     // 🔽 これを末尾に追加（base64をBlobに変換する関数）
