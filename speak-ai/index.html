@@ -129,13 +129,12 @@
       padding-right: 10px;
       scroll-behavior: smooth;
     }
-    .button-row > * {
-      margin: 0.3rem 0.6rem;
-    }
+    /* PCでは横並び、スマホでは縦並び */
     @media (min-width: 600px) {
       .button-row {
         flex-direction: row;
         align-items: center;
+        justify-content: center;
       }
     }
     
@@ -144,6 +143,24 @@
         flex-direction: column;
         align-items: stretch;
       }
+    }
+    
+    /* ボタン間のスペース */
+    .button-row > * {
+      margin: 0.3rem 0.6rem;
+    }
+    
+    /* 録音ブロックを横に並べても崩れないように */
+    .recording-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 140px; /* ← ボタンの横幅と合わせる */
+    }
+    
+    /* flexラップを確実に有効にする */
+    .top-controls {
+      flex-wrap: wrap;
     }
   </style>
 </head>
