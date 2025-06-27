@@ -129,6 +129,22 @@
       padding-right: 10px;
       scroll-behavior: smooth;
     }
+    .button-row > * {
+      margin: 0.3rem 0.6rem;
+    }
+    @media (min-width: 600px) {
+      .button-row {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 599px) {
+      .button-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
   </style>
 </head>
 <body>
