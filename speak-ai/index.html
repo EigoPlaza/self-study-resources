@@ -380,6 +380,7 @@
       const formData = new FormData();
       formData.append("file", audioBlob, "voice.webm");
       formData.append("slow", document.getElementById("slowMode").checked);
+      formData.append("language", "en");
       const level = document.getElementById("levelSelect").value;
       let prompt = "";
       if (level === "beginner") prompt = "You are a friendly English conversation partner for a beginner. Use very simple English and short sentences. Avoid difficult vocabulary or grammar. Avoid long or complicated explanations.";
