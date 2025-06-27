@@ -363,11 +363,20 @@
 
         // 🟡 音声を再生（Blobに変換してから）
         if (audioBase64) {
-          const audioBlob = base64ToBlob(audioBase64, "audio/mp3"); // または audio/webm に変更
+          const audioBlob = base64ToBlob(audioBase64, "audio/mp3"); // または audio/webm
           const audioUrl = URL.createObjectURL(audioBlob);
-          const audio = new Audio(audioUrl);
-          audio.load(); // 🔺これを入れると安定する
-          audio.play();
+          const audio = new Audio();
+        
+          audio.src = audioUrl;
+        
+          // Safari対策：再生準備が整ってから再生
+          audio.addEventListener('canplaythrough', () => {
+            audio.play().catch((e) => {
+              console.error("再生エラー:", e);
+            });
+          });
+        
+          audio.load(); // 明示的に読み込む
         }
       } catch (err) {
         appendMessage("エラーが発生しました。", "ai");
