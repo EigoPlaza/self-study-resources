@@ -120,6 +120,15 @@
     let isRecording = false;
     let currentStream = null;
 
+    const conversationLog = [];
+
+    function addMessage(role, content) {
+      conversationLog.push({ role, content });
+      if (conversationLog.length > 10) {
+        conversationLog.shift(); // 古いものを削除（最大10件＝5往復）
+      }
+    }
+
     recordBtn.onclick = async () => {
       if (!isRecording) {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -188,7 +197,9 @@
         const userText = data.text || "(認識できませんでした)";
         const aiReply = data.reply || "(返答がありませんでした)";
         const audioBase64 = data.audio;
-    
+
+        addMessage("user", userText);
+        
         appendMessage(userText, "user");
         appendMessage(aiReply, "ai");
 
