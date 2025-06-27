@@ -190,6 +190,7 @@
     resetBtn.onclick = () => {
       logDiv.innerHTML = "";
       logArea.style.display = "none";
+      conversationLog.length = 0;
     };
 
     async function sendToServer(audioBlob) {
