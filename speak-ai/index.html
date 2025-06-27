@@ -112,11 +112,13 @@
     let mediaRecorder;
     let audioChunks = [];
     let isRecording = false;
+    let currentStream = null;  // ← 追加：マイクのstreamを保持
 
     recordBtn.onclick = async () => {
       if (!isRecording) {
         // 録音開始
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        currentStream = stream;
         mediaRecorder = new MediaRecorder(stream);
         audioChunks = [];
 
@@ -138,6 +140,13 @@
       } else {
         // 録音停止
         mediaRecorder.stop();
+
+        // マイク解放（🔴を消すために必要）
+        if (currentStream) {
+          currentStream.getTracks().forEach(track => track.stop());
+          currentStream = null;
+        }
+
         isRecording = false;
         recordBtn.textContent = "🎙️ 録音を開始";
         recordBtn.classList.remove("recording");
