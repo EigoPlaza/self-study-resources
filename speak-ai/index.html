@@ -53,7 +53,7 @@
       font-size: 0.95rem;
       font-weight: bold;
       color: red;
-      display: none;
+      visibility: hidden;
     }
 
     .result-area {
@@ -173,13 +173,7 @@
       box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .top-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      align-items: flex-start;
-    }
+
     .recording-block {
       display: flex;
       flex-direction: column;
@@ -287,7 +281,7 @@
         isRecording = true;
         recordBtn.textContent = "⏹️ 録音を停止";
         recordBtn.classList.add("recording");
-        recordingStatus.style.display = "block";
+        recordingStatus.style.visibility = "visible";
       } else {
         mediaRecorder.stop();
         if (currentStream) {
@@ -297,7 +291,7 @@
         isRecording = false;
         recordBtn.textContent = "🎙️ 録音を開始";
         recordBtn.classList.remove("recording");
-        recordingStatus.style.display = "none";
+        recordingStatus.style.visibility = "hidden";
       }
     };
 
