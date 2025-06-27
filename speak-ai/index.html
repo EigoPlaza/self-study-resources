@@ -94,51 +94,73 @@
     const resetBtn = document.getElementById("resetBtn");
     const logArea = document.getElementById("logArea");
     const logDiv = document.getElementById("log");
-
-    let messages = [];
-
-    startBtn.onclick = () => {
+    const whisperResult = document.getElementById("whisperResult");
+    const recognizedText = document.getElementById("recognizedText");
+  
+    let mediaRecorder;
+    let audioChunks = [];
+  
+    startBtn.onclick = async () => {
       startBtn.disabled = true;
       stopBtn.disabled = false;
-      // 録音開始処理（あとで実装）
+  
+      // マイク許可と録音開始
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+  
+      audioChunks = [];
+      mediaRecorder.ondataavailable = (event) => {
+        audioChunks.push(event.data);
+      };
+  
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        console.log("録音終了。Blobを作成しました。");
+  
+        // Whisperへ送る（ステップ2で実装）
+        sendToWhisper(audioBlob);
+      };
+  
+      mediaRecorder.start();
       console.log("録音開始");
     };
-
+  
     stopBtn.onclick = () => {
       startBtn.disabled = false;
       stopBtn.disabled = true;
-      // 録音停止＋Whisper連携（あとで実装）
-      console.log("録音終了 → 音声認識 → ChatGPTへ送信");
-
-      // 会話例の仮ログ（デモ表示）
-      messages = [
-        { role: "user", content: "こんにちは" },
-        { role: "assistant", content: "こんにちは！今日はどんな気分ですか？" },
-        { role: "user", content: "ちょっと疲れています" },
-        { role: "assistant", content: "それは大変ですね。少しリラックスしてみませんか？" }
-      ];
-
-      showLog();
+      mediaRecorder.stop();
     };
-
+  
     resetBtn.onclick = () => {
-      messages = [];
       logDiv.innerHTML = "";
       logArea.style.display = "none";
-      console.log("リセット");
+      whisperResult.style.display = "none";
     };
-
-    function showLog() {
-      logDiv.innerHTML = "";
-      messages.forEach(msg => {
-        const div = document.createElement("div");
-        div.className = "message " + (msg.role === "user" ? "user" : "ai");
-        div.textContent = (msg.role === "user" ? "🧑 " : "🤖 ") + msg.content;
-        logDiv.appendChild(div);
-      });
-      logArea.style.display = "block";
+  
+    async function sendToWhisper(audioBlob) {
+      // ステップ2でCloudflare WorkerのURLをここに書く
+      const apiUrl = 'https://your-cloudflare-worker-url/transcribe';
+  
+      const formData = new FormData();
+      formData.append('file', audioBlob, 'voice.webm');
+  
+      try {
+        const res = await fetch(apiUrl, {
+          method: 'POST',
+          body: formData,
+        });
+  
+        const data = await res.json();
+        const text = data.text || "(認識できませんでした)";
+        recognizedText.textContent = text;
+        whisperResult.style.display = "block";
+      } catch (err) {
+        recognizedText.textContent = "エラーが発生しました。";
+        whisperResult.style.display = "block";
+        console.error(err);
+      }
     }
-  </script>
+</script>
 
 </body>
 </html>
