@@ -139,7 +139,7 @@
   
     async function sendToWhisper(audioBlob) {
       // ステップ2でCloudflare WorkerのURLをここに書く
-      const apiUrl = 'https://your-cloudflare-worker-url/transcribe';
+      const apiUrl = 'https://whisper-transcriber.eigoplaza.workers.dev/';
   
       const formData = new FormData();
       formData.append('file', audioBlob, 'voice.webm');
