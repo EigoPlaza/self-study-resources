@@ -129,12 +129,24 @@
       padding-right: 10px;
       scroll-behavior: smooth;
     }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .button-row > * {
+      margin: 0.3rem 0.6rem;
+    }
+    
     /* PCでは横並び、スマホでは縦並び */
     @media (min-width: 600px) {
       .button-row {
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
       }
     }
     
@@ -145,23 +157,15 @@
       }
     }
     
-    /* ボタン間のスペース */
-    .button-row > * {
-      margin: 0.3rem 0.6rem;
-    }
-    
-    /* 録音ブロックを横に並べても崩れないように */
+    /* 録音ブロックだけは少し幅をもたせて整える */
     .recording-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 140px; /* ← ボタンの横幅と合わせる */
+      min-width: 140px;
     }
+
     
-    /* flexラップを確実に有効にする */
-    .top-controls {
-      flex-wrap: wrap;
-    }
   </style>
 </head>
 <body>
@@ -178,6 +182,8 @@
       <li>録音がうまくいかない場合は、別のブラウザをお試しください</li>
     </ul>
   </div>
+
+  <!-- 🎛 コントロールボタン -->
   <div class="fixed-controls">
     <div class="top-controls">
       <div class="button-row">
@@ -187,21 +193,27 @@
         </div>
         <button id="play-response" style="display: none;">🔊 AIの返事を聞く</button>
         <button id="resetBtn">会話をリセット</button>
+  
+        <!-- 👇 レベル選択も button-row 内に入れる！ -->
+        <label class="level-label">
+          レベル選択：
+          <select id="levelSelect">
+            <option value="beginner">初級</option>
+            <option value="intermediate">中級</option>
+            <option value="advanced">上級</option>
+          </select>
+        </label>
+  
+        <!-- 👇 ゆっくり話しても同様に中へ -->
+        <label class="slow-label">
+          <input type="checkbox" id="slowMode" />ゆっくり話して
+          <span class="note">※少しロボットっぽく聞こえることがあります</span>
+        </label>
       </div>
-      <label class="level-label">
-        レベル選択：
-        <select id="levelSelect">
-          <option value="beginner">初級</option>
-          <option value="intermediate">中級</option>
-          <option value="advanced">上級</option>
-        </select>
-      </label>
-      <label class="slow-label">
-        <input type="checkbox" id="slowMode" />ゆっくり話して
-        <span class="note">※少しロボットっぽく聞こえることがあります</span>
-      </label>
     </div>
   </div>
+
+  
   <div class="result-area" id="logArea">
     <h2>💬 会話ログ</h2>
     <div id="log"></div>
