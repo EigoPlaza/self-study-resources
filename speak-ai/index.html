@@ -382,9 +382,9 @@
       formData.append("slow", document.getElementById("slowMode").checked);
       const level = document.getElementById("levelSelect").value;
       let prompt = "";
-      if (level === "beginner") prompt = "You are a friendly English conversation partner for a beginner. Use very simple English, short sentences, and speak slowly.";
-      else if (level === "intermediate") prompt = "You are a friendly English speaker talking to an intermediate learner.";
-      else prompt = "You are a native English speaker talking to an advanced learner.";
+      if (level === "beginner") prompt = "You are a friendly English conversation partner for a beginner. Use very simple English and short sentences. Avoid difficult vocabulary or grammar. Avoid long or complicated explanations.";
+      else if (level === "intermediate") prompt = "You are a friendly English speaker talking to an intermediate learner. Speak naturally, but keep your replies short and easy to follow. Avoid long or complicated explanations.";
+      else prompt = "You are a native English speaker talking to an advanced English learner. Give concise, natural, and friendly replies. Avoid long explanations or formal language. Keep it short and conversational.";
       formData.append("prompt", prompt);
       formData.append("history", JSON.stringify(conversationLog));
 
