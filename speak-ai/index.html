@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エプラ音声会話AI</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1.5rem;
+      background-color: #f5f7fa;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #2a4d69;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background-color: #1e3b52;
+    }
+
+    .result-area {
+      display: none;
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+
+    .message {
+      margin: 0.5rem 0;
+    }
+
+    .user {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .ai {
+      text-align: left;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎙️ エプラ音声英会話AI</h1>
+
+  <div class="button-group">
+    <button id="startBtn">録音開始</button>
+    <button id="stopBtn" disabled>録音終了</button>
+    <button id="resetBtn">会話をリセット</button>
+  </div>
+
+  <div class="result-area" id="logArea">
+    <h2>💬 会話ログ</h2>
+    <div id="log"></div>
+  </div>
+
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const logArea = document.getElementById("logArea");
+    const logDiv = document.getElementById("log");
+
+    let messages = [];
+
+    startBtn.onclick = () => {
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+      // 録音開始処理（あとで実装）
+      console.log("録音開始");
+    };
+
+    stopBtn.onclick = () => {
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      // 録音停止＋Whisper連携（あとで実装）
+      console.log("録音終了 → 音声認識 → ChatGPTへ送信");
+
+      // 会話例の仮ログ（デモ表示）
+      messages = [
+        { role: "user", content: "こんにちは" },
+        { role: "assistant", content: "こんにちは！今日はどんな気分ですか？" },
+        { role: "user", content: "ちょっと疲れています" },
+        { role: "assistant", content: "それは大変ですね。少しリラックスしてみませんか？" }
+      ];
+
+      showLog();
+    };
+
+    resetBtn.onclick = () => {
+      messages = [];
+      logDiv.innerHTML = "";
+      logArea.style.display = "none";
+      console.log("リセット");
+    };
+
+    function showLog() {
+      logDiv.innerHTML = "";
+      messages.forEach(msg => {
+        const div = document.createElement("div");
+        div.className = "message " + (msg.role === "user" ? "user" : "ai");
+        div.textContent = (msg.role === "user" ? "🧑 " : "🤖 ") + msg.content;
+        logDiv.appendChild(div);
+      });
+      logArea.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
