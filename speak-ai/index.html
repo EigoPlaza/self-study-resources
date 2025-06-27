@@ -371,9 +371,11 @@
         
           // Safari対策：再生準備が整ってから再生
           audio.addEventListener('canplaythrough', () => {
-            audio.play().catch((e) => {
-              console.error("再生エラー:", e);
-            });
+            setTimeout(() => {
+              audio.play().catch(e => {
+                console.error("音声再生エラー:", e);
+              });
+            }, 150); // ← スマホでの再生を安定させるための魔法の遅延
           });
         
           audio.load(); // 明示的に読み込む
