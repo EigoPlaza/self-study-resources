@@ -12,23 +12,20 @@
       padding: 1.5rem;
       max-width: 600px;
       margin: 0 auto;
-      padding-bottom: 160px; /* ← fixed-controls に被らないように余白 */
+      padding-bottom: 160px;
     }
-
     h1 {
       text-align: center;
       font-size: 1.6rem;
       margin-bottom: 1rem;
     }
-
-    .button-group {
+    .button-group, .top-controls {
       display: flex;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
       margin-bottom: 2rem;
     }
-
     button {
       font-size: 1rem;
       padding: 0.8rem 1.5rem;
@@ -39,15 +36,10 @@
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
     button:hover {
       background-color: #1e3b52;
     }
-
-    .recording {
-      background-color: #d9534f !important;
-    }
-
+    .recording { background-color: #d9534f !important; }
     .status-text {
       height: 1.2rem;
       margin-top: 0.4rem;
@@ -56,7 +48,6 @@
       color: red;
       visibility: hidden;
     }
-
     .result-area {
       display: none;
       background: white;
@@ -65,35 +56,19 @@
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
       margin-top: 2rem;
     }
-
-    .message {
-      display: flex;
-      margin: 0.8rem 0;
-      max-width: 100%;
-    }
-    
-    .message.user {
-      justify-content: flex-end;
-    }
-    
+    .message { display: flex; margin: 0.8rem 0; max-width: 100%; }
+    .message.user { justify-content: flex-end; }
     .message.user p {
       background-color: #d1ecf1;
       color: #0c5460;
       border-radius: 1rem 0 1rem 1rem;
-      align-self: flex-end;
     }
-    
-    .message.ai {
-      justify-content: flex-start;
-    }
-    
+    .message.ai { justify-content: flex-start; }
     .message.ai p {
       background-color: #e2e3e5;
       color: #383d41;
       border-radius: 0 1rem 1rem 1rem;
-      align-self: flex-start;
     }
-    
     .message p {
       padding: 0.6rem 1rem;
       margin: 0;
@@ -103,7 +78,6 @@
       line-height: 1.4;
       word-break: break-word;
     }
-
     .guide {
       background-color: #ffffff;
       border: 1px solid #ddd;
@@ -114,50 +88,15 @@
       font-size: 0.95rem;
       color: #333;
     }
-    
-    .guide ul {
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    
-    .guide li {
-      margin-bottom: 0.3rem;
-    }
-    
-    .button-group {
+    .guide ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    .guide li { margin-bottom: 0.3rem; }
+    .level-label, .slow-label {
+      font-size: 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    
-    .top-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .level-label {
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    
-    /* ゆっくり話して の中央寄せ調整 */
-    .slow-label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 14px;
       text-align: left;
-      margin-top: 0.3rem;
-      align-self: center;  /* ← 追加でバランスよく中央揃え */
     }
-    
     .slow-label .note {
       font-size: 12px;
       color: gray;
@@ -174,25 +113,9 @@
       box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
       z-index: 999;
     }
-
-    .button-row {
-      display: flex;
-      align-items: flex-start; /* 上下揃え */
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-    
-    .recording-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #recordBtn, #resetBtn {
-      padding: 0.7rem 1.5rem;
+    #recordBtn, #resetBtn, #play-response {
       font-size: 1rem;
+      padding: 0.7rem 1.5rem;
       border: none;
       border-radius: 10px;
       background-color: #2a4d69;
@@ -200,30 +123,16 @@
       cursor: pointer;
       min-height: 3rem;
     }
-
     #log {
-      max-height: 300px;        /* 必要に応じて調整（例：スマホなら 250px でもOK） */
+      max-height: 300px;
       overflow-y: auto;
-      padding-right: 10px;      /* スクロールバーの分の余白 */
-      scroll-behavior: smooth;  /* スムーズスクロールにする */
-    }
-
-    #play-response {
-      font-size: 1rem;
-      padding: 0.6rem 1.2rem;
-      margin-top: 1rem;
-      border: none;
-      border-radius: 10px;
-      background-color: #2a4d69;
-      color: white;
-      cursor: pointer;
+      padding-right: 10px;
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
   <h1>🎙️ エプラ音声英会話AI</h1>
-
-  <!-- 🆕 使い方ガイド -->
   <div class="guide">
     <p>このAIと英語でおしゃべりしてみましょう🎤</p>
     <ul>
@@ -233,26 +142,19 @@
       <li>話し終えたら<strong>録音を停止</strong>して、AIの返事を聞きましょう</li>
       <li>続けて話したいときは<strong>もう一度「録音を開始」</strong>を押してください</li>
       <li>会話の内容は最大5往復分までAIが覚えています</li>
-      <li>返事がくるまで少し待つことがありますが、ゆっくりお待ちください</li>
       <li>録音がうまくいかない場合は、別のブラウザをお試しください</li>
     </ul>
   </div>
-
-  <!-- 🎛 コントロールボタン -->
   <div class="fixed-controls">
     <div class="top-controls">
-  
       <div class="button-row">
         <div class="recording-block">
           <button id="recordBtn">🎙️ 録音を開始</button>
           <span id="recordingStatus" class="status-text">🔴 録音中...</span>
         </div>
-        <button id="play-response" style="display: none;">
-          🔊 AIの返事を聞く
-        </button>
+        <button id="play-response" style="display: none;">🔊 AIの返事を聞く</button>
         <button id="resetBtn">会話をリセット</button>
       </div>
-  
       <label class="level-label">
         レベル選択：
         <select id="levelSelect">
@@ -261,40 +163,51 @@
           <option value="advanced">上級</option>
         </select>
       </label>
-  
       <label class="slow-label">
-        <input type="checkbox" id="slowMode" />
-        ゆっくり話して
+        <input type="checkbox" id="slowMode" />ゆっくり話して
         <span class="note">※少しロボットっぽく聞こえることがあります</span>
       </label>
-  
     </div>
   </div>
-
   <div class="result-area" id="logArea">
     <h2>💬 会話ログ</h2>
     <div id="log"></div>
   </div>
-
   <script>
     const recordBtn = document.getElementById("recordBtn");
     const resetBtn = document.getElementById("resetBtn");
+    const playBtn = document.getElementById("play-response");
     const logArea = document.getElementById("logArea");
     const logDiv = document.getElementById("log");
     const recordingStatus = document.getElementById("recordingStatus");
 
-    let mediaRecorder;
-    let audioChunks = [];
-    let isRecording = false;
-    let currentStream = null;
-
+    let mediaRecorder, audioChunks = [], isRecording = false, currentStream = null;
+    let globalAudio = new Audio();
+    let audioUrl = null;
     const conversationLog = [];
 
     function addMessage(role, content) {
       conversationLog.push({ role, content });
-      if (conversationLog.length > 10) {
-        conversationLog.shift(); // 古いものを削除（最大10件＝5往復）
-      }
+      if (conversationLog.length > 10) conversationLog.shift();
+    }
+
+    function appendMessage(text, sender) {
+      const wrapper = document.createElement("div");
+      wrapper.className = `message ${sender}`;
+      const bubble = document.createElement("p");
+      bubble.textContent = text;
+      wrapper.appendChild(bubble);
+      logDiv.appendChild(wrapper);
+      logArea.style.display = "block";
+      logDiv.scrollTop = logDiv.scrollHeight;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    function base64ToBlob(base64, mime) {
+      const binary = atob(base64);
+      const array = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) array[i] = binary.charCodeAt(i);
+      return new Blob([array], { type: mime });
     }
 
     recordBtn.onclick = async () => {
@@ -303,16 +216,25 @@
         currentStream = stream;
         mediaRecorder = new MediaRecorder(stream);
         audioChunks = [];
-
-        mediaRecorder.ondataavailable = (event) => {
-          audioChunks.push(event.data);
-        };
-
-        mediaRecorder.onstop = () => {
+        mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
+        mediaRecorder.onstop = async () => {
           const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-          sendToServer(audioBlob);
+          const response = await sendToServer(audioBlob);
+          if (audioUrl) URL.revokeObjectURL(audioUrl);
+          const audioBlobReply = base64ToBlob(response, "audio/mp3");
+          audioUrl = URL.createObjectURL(audioBlobReply);
+          globalAudio.src = audioUrl;
+          try {
+            await globalAudio.play();
+            playBtn.style.display = "none";
+          } catch (err) {
+            playBtn.style.display = "inline-block";
+            playBtn.onclick = () => {
+              globalAudio.play();
+              playBtn.style.display = "none";
+            };
+          }
         };
-
         mediaRecorder.start();
         isRecording = true;
         recordBtn.textContent = "⏹️ 録音を停止";
@@ -320,10 +242,8 @@
         recordingStatus.style.visibility = "visible";
       } else {
         mediaRecorder.stop();
-        if (currentStream) {
-          currentStream.getTracks().forEach(track => track.stop());
-          currentStream = null;
-        }
+        if (currentStream) currentStream.getTracks().forEach(t => t.stop());
+        currentStream = null;
         isRecording = false;
         recordBtn.textContent = "🎙️ 録音を開始";
         recordBtn.classList.remove("recording");
@@ -338,113 +258,26 @@
     };
 
     async function sendToServer(audioBlob) {
-      const apiUrl = "https://whisper-transcriber.eigoplaza.workers.dev/";
-      const isSlow = document.getElementById("slowMode").checked;
-      const level = document.getElementById("levelSelect").value;
-    
-      let systemPrompt = "";
-      if (level === "beginner") {
-        systemPrompt = "You are a friendly English conversation partner for a beginner. Use very simple English, short sentences, and speak slowly. Avoid difficult vocabulary or grammar.";
-      } else if (level === "intermediate") {
-        systemPrompt = "You are a friendly English speaker talking to an intermediate learner. Speak naturally, but keep your replies short and easy to follow. Avoid long or complicated explanations.";
-      } else if (level === "advanced") {
-        systemPrompt = "You are a native English speaker talking to an advanced English learner. Give concise, natural, and friendly replies. Avoid long explanations or formal language. Keep it short and conversational.";
-      }
-      
       const formData = new FormData();
       formData.append("file", audioBlob, "voice.webm");
-      formData.append("slow", isSlow ? "true" : "false");
-      formData.append("prompt", systemPrompt);
+      formData.append("slow", document.getElementById("slowMode").checked);
+      const level = document.getElementById("levelSelect").value;
+      let prompt = "";
+      if (level === "beginner") prompt = "You are a friendly English conversation partner for a beginner. Use very simple English, short sentences, and speak slowly.";
+      else if (level === "intermediate") prompt = "You are a friendly English speaker talking to an intermediate learner.";
+      else prompt = "You are a native English speaker talking to an advanced learner.";
+      formData.append("prompt", prompt);
       formData.append("history", JSON.stringify(conversationLog));
-      
-      try {
-        const res = await fetch(apiUrl, {
-          method: "POST",
-          body: formData,
-        });
-        const data = await res.json();
-    
-        const userText = data.text || "(認識できませんでした)";
-        const aiReply = data.reply || "(返答がありませんでした)";
-        const audioBase64 = data.audio;
 
-        addMessage("user", userText);
-        addMessage("assistant", aiReply);
-        
-        appendMessage(userText, "user");
-        appendMessage(aiReply, "ai");
-
-        // 🟡 音声を再生（Blobに変換してから）
-        if (audioBase64) {
-          const audioBlob = base64ToBlob(audioBase64, "audio/mp3");
-          const audioUrl = URL.createObjectURL(audioBlob);
-          const audio = new Audio(audioUrl);
-          audio.load();
-        
-          const playPromise = audio.play();
-        
-          if (playPromise !== undefined) {
-            playPromise
-              .then(() => {
-                console.log("音声が自動再生されました");
-              })
-              .catch((error) => {
-                console.warn("音声の自動再生に失敗。再生ボタンを表示します", error);
-                // 再生ボタンを表示
-                const playBtn = document.getElementById("play-response");
-                playBtn.style.display = "inline-block";
-                playBtn.onclick = () => {
-                  audio.play();
-                  playBtn.style.display = "none"; // 再生後は非表示に
-                };
-              });
-          }
-        }
-      } catch (err) {
-        appendMessage("エラーが発生しました。", "ai");
-        console.error(err);
-      }
-    }
-
-    function isMobile() {
-      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    }
-
-    function appendMessage(text, sender) {
-      const wrapper = document.createElement("div");
-      wrapper.className = `message ${sender}`;
-    
-      const bubble = document.createElement("p");
-      bubble.textContent = text;
-    
-      wrapper.appendChild(bubble);
-      logDiv.appendChild(wrapper);
-      logArea.style.display = "block";
-
-      // 会話ログに新しいメッセージを追加した後に…
-      scrollToBottom();
-    }
-
-    function scrollToBottom() {
-      const log = document.getElementById('log');
-      if (log) {
-        log.scrollTop = log.scrollHeight;
-      }
-      // 🔽 ページ全体も下へスクロールさせる
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
-    }
-
-    // 🔽 これを末尾に追加（base64をBlobに変換する関数）
-    function base64ToBlob(base64, mime) {
-      const binary = atob(base64);
-      const array = new Uint8Array(binary.length);
-      for (let i = 0; i < binary.length; i++) {
-        array[i] = binary.charCodeAt(i);
-      }
-      return new Blob([array], { type: mime });
+      const res = await fetch("https://whisper-transcriber.eigoplaza.workers.dev/", { method: "POST", body: formData });
+      const data = await res.json();
+      const userText = data.text || "(認識できませんでした)";
+      const aiReply = data.reply || "(返答がありませんでした)";
+      appendMessage(userText, "user");
+      appendMessage(aiReply, "ai");
+      addMessage("user", userText);
+      addMessage("assistant", aiReply);
+      return data.audio;
     }
   </script>
 </body>
