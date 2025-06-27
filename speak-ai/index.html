@@ -186,6 +186,7 @@
       formData.append("file", audioBlob, "voice.webm");
       formData.append("slow", isSlow ? "true" : "false");
       formData.append("prompt", systemPrompt);
+      formData.append("history", JSON.stringify(conversationLog));
       
       try {
         const res = await fetch(apiUrl, {
@@ -199,6 +200,7 @@
         const audioBase64 = data.audio;
 
         addMessage("user", userText);
+        addMessage("assistant", aiReply);
         
         appendMessage(userText, "user");
         appendMessage(aiReply, "ai");
