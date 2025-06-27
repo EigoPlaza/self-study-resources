@@ -185,6 +185,11 @@
       flex-direction: column;
       align-items: center;
     }
+
+    #log {
+      max-height: 300px; /* ここは必要に応じて */
+      overflow-y: auto;
+    }
   </style>
 </head>
 <body>
@@ -361,8 +366,13 @@
       logDiv.appendChild(wrapper);
       logArea.style.display = "block";
 
-      // ✅ 常に最新の発言までスクロール
-      logDiv.scrollTop = logDiv.scrollHeight;
+      // 会話ログに新しいメッセージを追加した後に…
+      scrollToBottom();
+    }
+
+    function scrollToBottom() {
+      const logContainer = document.getElementById('log');
+      logContainer.scrollTop = logContainer.scrollHeight;
     }
 
     // 🔽 これを末尾に追加（base64をBlobに変換する関数）
