@@ -161,7 +161,9 @@
       document.getElementById('output').style.display = 'block';
       document.getElementById('englishText').textContent = '生成中...';
       document.getElementById('japaneseText').textContent = '生成中...';
-    
+      // 自動スクロール！
+      document.getElementById('output').scrollIntoView({ behavior: 'smooth' }); 
+      
       try {
         const response = await fetch('https://create-english.eigoplaza.workers.dev', {
           method: 'POST',
@@ -183,13 +185,9 @@
         const data = await response.json();
           document.getElementById('englishText').innerHTML = (data.english || '(英語がありません)').replace(/\n/g, '<br>');
           document.getElementById('japaneseText').innerHTML = (data.japanese || '(日本語訳がありません)').replace(/\n/g, '<br>');
-        // 自動スクロール！
-        document.getElementById('output').scrollIntoView({ behavior: 'smooth' });
       } catch (error) {
         document.getElementById('englishText').textContent = 'エラーが発生しました';
         document.getElementById('japaneseText').textContent = '';
-        // 自動スクロール！
-        document.getElementById('output').scrollIntoView({ behavior: 'smooth' });
         console.error(error);
       }
     }
