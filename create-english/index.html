@@ -142,7 +142,7 @@
       });
     });
 
-    function generateText() {
+    async function generateText() {
       const level = document.getElementById('level').value;
       const wordCount = document.getElementById('wordCount').value;
       const keyword = document.getElementById('keyword').value;
@@ -152,10 +152,20 @@
         return;
       }
 
-      // ダミー出力（後でAIと連携）
       document.getElementById('output').style.display = 'block';
-      document.getElementById('englishText').textContent = `Sample English text for topic: ${selectedTopic}`;
-      document.getElementById('japaneseText').textContent = `トピック「${selectedTopic}」のサンプル日本語訳です。`;
+      document.getElementById('englishText').textContent = '生成中...';
+      document.getElementById('japaneseText').textContent = '生成中...';
+
+      const response = await fetch('https://your-worker-url.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level, wordCount, topic: selectedTopic, keyword })
+      });
+
+      const result = await response.json();
+
+      document.getElementById('englishText').textContent = result.english;
+      document.getElementById('japaneseText').textContent = result.japanese;
     }
   </script>
 </body>
