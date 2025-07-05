@@ -146,26 +146,43 @@
       const level = document.getElementById('level').value;
       const wordCount = document.getElementById('wordCount').value;
       const keyword = document.getElementById('keyword').value;
-
+    
       if (!selectedTopic) {
         alert('トピックを選んでください');
         return;
       }
-
+    
+      // 出力欄を先に表示（ローディング状態）
       document.getElementById('output').style.display = 'block';
       document.getElementById('englishText').textContent = '生成中...';
       document.getElementById('japaneseText').textContent = '生成中...';
-
-      const response = await fetch('https://your-worker-url.workers.dev', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ level, wordCount, topic: selectedTopic, keyword })
-      });
-
-      const result = await response.json();
-
-      document.getElementById('englishText').textContent = result.english;
-      document.getElementById('japaneseText').textContent = result.japanese;
+    
+      try {
+        const response = await fetch('https://create-english.eigoplaza.workers.dev', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            level,
+            wordCount,
+            topic: selectedTopic,
+            keyword
+          })
+        });
+    
+        if (!response.ok) {
+          throw new Error('生成に失敗しました');
+        }
+    
+        const data = await response.json();
+        document.getElementById('englishText').textContent = data.english || '(英語がありません)';
+        document.getElementById('japaneseText').textContent = data.japanese || '(日本語訳がありません)';
+      } catch (error) {
+        document.getElementById('englishText').textContent = 'エラーが発生しました';
+        document.getElementById('japaneseText').textContent = '';
+        console.error(error);
+      }
     }
   </script>
 </body>
