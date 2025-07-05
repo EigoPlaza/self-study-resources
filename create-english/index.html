@@ -185,6 +185,10 @@
         const data = await response.json();
           document.getElementById('englishText').innerHTML = (data.english || '(英語がありません)').replace(/\n/g, '<br>');
           document.getElementById('japaneseText').innerHTML = (data.japanese || '(日本語訳がありません)').replace(/\n/g, '<br>');
+        // 念のためもう一度スクロール（内容が増えていれば追従）
+        setTimeout(() => {
+          outputDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
       } catch (error) {
         document.getElementById('englishText').textContent = 'エラーが発生しました';
         document.getElementById('japaneseText').textContent = '';
