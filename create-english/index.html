@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英文作成AI</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem;
+      background-color: #f8f9fa;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .topic-button {
+      flex: 1 1 calc(50% - 0.5rem);
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .topic-button.selected {
+      background-color: #ffd54f;
+      font-weight: bold;
+    }
+    button.generate {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      font-size: 1.1rem;
+      width: 100%;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    }
+    .output p {
+      margin: 0.5rem 0;
+    }
+    .ondoku-button {
+      margin-top: 1rem;
+      background-color: #2196f3;
+      color: white;
+      padding: 0.75rem;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>英文作成AI</h1>
+
+  <label for="level">レベル</label>
+  <select id="level">
+    <option value="A1">A1</option>
+    <option value="A2">A2</option>
+    <option value="B1">B1</option>
+  </select>
+
+  <label for="wordCount">語数</label>
+  <select id="wordCount">
+    <option value="100">100語</option>
+    <option value="200">200語</option>
+    <option value="300">300語</option>
+    <option value="500">500語</option>
+  </select>
+
+  <label>トピック（1つ選択）</label>
+  <div class="topics" id="topics">
+    <button class="topic-button">自己紹介</button>
+    <button class="topic-button">日常のルーティン</button>
+    <button class="topic-button">週末の過ごし方</button>
+    <button class="topic-button">家族について</button>
+    <button class="topic-button">友達との時間</button>
+    <button class="topic-button">趣味・好きなこと</button>
+    <button class="topic-button">旅行・観光</button>
+    <button class="topic-button">買い物</button>
+    <button class="topic-button">食べ物・食事</button>
+    <button class="topic-button">学校・仕事</button>
+    <button class="topic-button">特別な日・イベント</button>
+    <button class="topic-button">健康・体調</button>
+    <button class="topic-button">日本文化の紹介</button>
+    <button class="topic-button">環境や社会の話題</button>
+    <button class="topic-button">未来の夢や計画</button>
+  </div>
+
+  <label for="keyword">キーワード（任意入力）</label>
+  <input type="text" id="keyword" placeholder="例：岡山、母と二人旅、雨の日" />
+
+  <button class="generate" onclick="generateText()">英文を作る</button>
+
+  <div class="output" id="output" style="display: none">
+    <p><strong>英語：</strong> <span id="englishText">Loading...</span></p>
+    <p><strong>日本語訳：</strong> <span id="japaneseText">Loading...</span></p>
+    <button class="ondoku-button">音読用音声を作成（開発中）</button>
+  </div>
+
+  <script>
+    const topicButtons = document.querySelectorAll('.topic-button');
+    let selectedTopic = '';
+
+    topicButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        topicButtons.forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+        selectedTopic = button.textContent;
+      });
+    });
+
+    function generateText() {
+      const level = document.getElementById('level').value;
+      const wordCount = document.getElementById('wordCount').value;
+      const keyword = document.getElementById('keyword').value;
+
+      if (!selectedTopic) {
+        alert('トピックを選んでください');
+        return;
+      }
+
+      // ダミー出力（後でAIと連携）
+      document.getElementById('output').style.display = 'block';
+      document.getElementById('englishText').textContent = `Sample English text for topic: ${selectedTopic}`;
+      document.getElementById('japaneseText').textContent = `トピック「${selectedTopic}」のサンプル日本語訳です。`;
+    }
+  </script>
+</body>
+</html>
