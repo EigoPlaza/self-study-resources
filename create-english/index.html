@@ -187,7 +187,7 @@
           document.getElementById('japaneseText').innerHTML = (data.japanese || '(日本語訳がありません)').replace(/\n/g, '<br>');
         // 念のためもう一度スクロール（内容が増えていれば追従）
         setTimeout(() => {
-          outputDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.getElementById('output').scrollIntoView({ behavior: 'smooth' }); 
         }, 100);
       } catch (error) {
         document.getElementById('englishText').textContent = 'エラーが発生しました';
