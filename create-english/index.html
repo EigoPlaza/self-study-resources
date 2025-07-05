@@ -67,9 +67,10 @@
     }
     .output p {
       margin: 0.5rem 0;
+      line-height: 1.6; /* ★追加：行間を広めにする */
     }
     .output p + p {
-      margin-top: 0.75em; /* または 8px, 12px, お好みで */
+      margin-top: 1.5em; /* または 8px, 12px, お好みで */
     }
     .ondoku-button {
       margin-top: 1rem;
@@ -179,8 +180,8 @@
         }
     
         const data = await response.json();
-        document.getElementById('englishText').textContent = data.english || '(英語がありません)';
-        document.getElementById('japaneseText').textContent = data.japanese || '(日本語訳がありません)';
+          document.getElementById('englishText').innerHTML = (data.english || '(英語がありません)').replace(/\n/g, '<br>');
+          document.getElementById('japaneseText').innerHTML = (data.japanese || '(日本語訳がありません)').replace(/\n/g, '<br>');
       } catch (error) {
         document.getElementById('englishText').textContent = 'エラーが発生しました';
         document.getElementById('japaneseText').textContent = '';
