@@ -323,7 +323,8 @@
   
       for (let i = 0; i < currentFlashcards.length; i++) {
         const { jp, en } = currentFlashcards[i];
-  
+        jp = jp.replace(/。/g, '。 ');
+        
         const jpLines = splitText(jp, customFont, fontSize, maxTextWidth);
   
         if (y < 60 + jpLines.length * lineHeight) {
