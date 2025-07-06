@@ -293,18 +293,20 @@
   
   <script>
     // 🔒 フォント登録は addFonts イベントに任せる
-    window.jspdf.jsPDF.API.events.push([
-      'addFonts',
-      function () {
-        if (window.jspdf?.jsPDF?.VFS?.["NotoSansCJKjp-Regular.ttf"]) {
-          this.addFileToVFS("NotoSansCJKjp-Regular.ttf", window.jspdf.jsPDF.VFS["NotoSansCJKjp-Regular.ttf"]);
-          this.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
-          console.log("✅ フォントをaddFontsイベントで登録しました");
-        } else {
-          console.warn("⚠️ フォントデータがVFSに存在しません");
+    if (window.jspdf?.jsPDF?.API?.events?.push) {
+      window.jspdf.jsPDF.API.events.push([
+        'addFonts',
+        function () {
+          if (window.jspdf?.jsPDF?.VFS?.["NotoSansCJKjp-Regular.ttf"]) {
+            this.addFileToVFS("NotoSansCJKjp-Regular.ttf", window.jspdf.jsPDF.VFS["NotoSansCJKjp-Regular.ttf"]);
+            this.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
+            console.log("✅ フォントをaddFontsイベントで登録しました");
+          } else {
+            console.warn("⚠️ フォントデータがVFSに存在しません");
+          }
         }
-      }
-    ]);
+      ]);
+    }
   </script>
   
   <script>
