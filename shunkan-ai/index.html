@@ -288,6 +288,8 @@
   <button id="downloadPdfBtn">📄 PDFダウンロード</button>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/jspdf@2.5.1/dist/fonts/NotoSansJP-normal.js"></script>
   <script>
     document.getElementById('downloadPdfBtn').addEventListener('click', () => {
       if (!cards || cards.length === 0) {
@@ -297,6 +299,7 @@
   
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
+      doc.setFont('NotoSansJP');
       const margin = 10;
       const lineHeight = 10;
       let y = margin;
