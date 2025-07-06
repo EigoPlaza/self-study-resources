@@ -121,7 +121,14 @@
     }
     
     /* Collapsible structure list */
-    #structureList { width:100%; max-width:600px; margin-top:0.5rem; border:1px solid #ccc; border-radius:8px; padding:0.5rem; display:none; }
+    #structureList {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
     #structureList ul { list-style:none; margin:0; padding:0; }
     #structureList li { padding:0.25rem 0; cursor:pointer; }
     #structureList li:hover { background:#f0f0f0; }
@@ -230,23 +237,23 @@
         <button id="toggleListBtn">中級構文リスト</button>
       </div>
     </div>
-  
+    <div id="structureList">
+      <strong>中級構文リスト</strong>
+      <ul>
+        <li data-structure="be supposed to">be supposed to</li>
+        <li data-structure="have something done">have something done</li>
+        <li data-structure="used to / be used to">used to / be used to</li>
+        <li data-structure="wish + 過去形/過去完了">wish + 過去形/過去完了</li>
+        <li data-structure="仮定法">仮定法</li>
+        <li data-structure="関係代名詞の省略">関係代名詞の省略</li>
+      </ul>
+    </div>
     <div class="row row3">
       <button id="generateBtn">瞬間英作文スタート！</button>
     </div>
   </div>
 
-  <div id="structureList">
-    <strong>中級構文リスト</strong>
-    <ul>
-      <li data-structure="be supposed to">be supposed to</li>
-      <li data-structure="have something done">have something done</li>
-      <li data-structure="used to / be used to">used to / be used to</li>
-      <li data-structure="wish + 過去形/過去完了">wish + 過去形/過去完了</li>
-      <li data-structure="仮定法">仮定法</li>
-      <li data-structure="関係代名詞の省略">関係代名詞の省略</li>
-    </ul>
-  </div>
+
 
   <div id="flashcardContainer">
     <div id="cardInner" class="card-inner">
