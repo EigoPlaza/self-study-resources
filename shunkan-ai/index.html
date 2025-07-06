@@ -327,7 +327,14 @@
         const { jp, en } = currentFlashcards[i];
         
         const jpLines = splitText(jp, customFont, fontSize, maxTextWidth);
-  
+        // 現在のページにフッターを追加
+        page.drawText('© Epla（エプラ） https://eigoplaza.com', {
+          x: 50,
+          y: 30,
+          size: 10,
+          font: customFont,
+          color: rgb(0.5, 0.5, 0.5),
+        });
         if (y < 60 + jpLines.length * lineHeight) {
           page = pdfDoc.addPage([595, 842]);
           page.setFont(customFont);
@@ -355,7 +362,15 @@
   
         y -= Math.max(jpLines.length, 1) * lineHeight + 10;
       }
-  
+      // 最後のページにもフッターを追加
+      page.drawText('© Epla（エプラ） https://eigoplaza.com', {
+        x: 50,
+        y: 30,
+        size: 10,
+        font: customFont,
+        color: rgb(0.5, 0.5, 0.5),
+      });
+      
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
