@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>瞬間英作文フラッシュカード</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; display:flex; flex-direction:column; align-items:center; }
+    .controls { width:100%; max-width:600px; display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; }
+    .controls select, .controls input { flex:1 1 45%; padding:0.5rem; font-size:1rem; }
+    .controls button { padding:0.5rem 1rem; font-size:1rem; cursor:pointer; }
+
+    /* Collapsible structure list */
+    #structureList { width:100%; max-width:600px; margin-top:0.5rem; border:1px solid #ccc; border-radius:8px; padding:0.5rem; display:none; }
+    #structureList ul { list-style:none; margin:0; padding:0; }
+    #structureList li { padding:0.25rem 0; cursor:pointer; }
+    #structureList li:hover { background:#f0f0f0; }
+
+    /* Flashcard styles */
+    #flashcardContainer { perspective: 1000px; width: 90%; max-width: 400px; height: 250px; margin-bottom:1rem; }
+    .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; cursor:pointer; }
+    .flipped { transform: rotateY(180deg); }
+    .card-face { position: absolute; width:100%; height:100%; backface-visibility:hidden; display:flex; align-items:center; justify-content:center; border:1px solid #333; border-radius:12px; padding:1rem; text-align:center; font-size:1.25rem; }
+    .card-front { background:#fff; }
+    .card-back { background:#fafafa; transform: rotateY(180deg); }
+
+    .nav { display:flex; gap:1rem; align-items:center; }
+    .nav button { padding:0.5rem 1rem; font-size:1rem; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <select id="levelSelect">
+      <option value="中1">中1</option>
+      <option value="中2">中2</option>
+      <option value="中3">中3</option>
+      <option value="高校以上">高校以上</option>
+    </select>
+    <select id="topicSelect">
+      <option value="日常生活">日常生活</option>
+      <option value="買い物">買い物</option>
+      <option value="旅行">旅行</option>
+      <option value="学校">学校</option>
+      <option value="仕事">仕事</option>
+    </select>
+    <input id="structureInput" placeholder="構文 (任意)" />
+    <button id="generateBtn">この条件で例文生成</button>
+    <button id="toggleListBtn">中級構文リスト</button>
+  </div>
+
+  <div id="structureList">
+    <strong>中級構文リスト</strong>
+    <ul>
+      <li data-structure="be supposed to">be supposed to</li>
+      <li data-structure="have something done">have something done</li>
+      <li data-structure="used to / be used to">used to / be used to</li>
+      <li data-structure="wish + 過去形/過去完了">wish + 過去形/過去完了</li>
+      <li data-structure="仮定法">仮定法</li>
+      <li data-structure="関係代名詞の省略">関係代名詞の省略</li>
+    </ul>
+  </div>
+
+  <div id="flashcardContainer">
+    <div id="cardInner" class="card-inner">
+      <div class="card-face card-front" id="cardFront">ここに日本語文が表示されます</div>
+      <div class="card-face card-back" id="cardBack">English sentence appears here</div>
+    </div>
+  </div>
+  <div class="nav">
+    <button id="prevBtn">Prev</button>
+    <span id="cardCounter">0 / 0</span>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    // Dummy data (initial)
+    const dummyCards = [
+      { jp: '私は昨日宿題をした。', en: 'I did my homework yesterday.' },
+      { jp: '彼は今サッカーをしている。', en: 'He is playing soccer now.' },
+      { jp: 'あなたは猫が好きですか？', en: 'Do you like cats?' },
+      { jp: '私は東京に行ったことがあります。', en: 'I have been to Tokyo.' },
+      { jp: '明日雨が降るかもしれない。', en: 'It may rain tomorrow.' },
+      { jp: '私は音楽を聴くのが好きです。', en: 'I like listening to music.' },
+      { jp: '英語を話すことは楽しい。', en: 'Speaking English is fun.' },
+      { jp: '彼女は昨日テレビを見なかった。', en: 'She didn\'t watch TV yesterday.' }
+    ];
+
+    let cards = [...dummyCards];
+    let current = 0;
+
+    const cardInner = document.getElementById('cardInner');
+    const cardFront = document.getElementById('cardFront');
+    const cardBack = document.getElementById('cardBack');
+    const cardCounter = document.getElementById('cardCounter');
+
+    function renderCard() {
+      cardFront.textContent = cards[current].jp;
+      cardBack.textContent = cards[current].en;
+      cardCounter.textContent = `${current + 1} / ${cards.length}`;
+      cardInner.classList.remove('flipped');
+    }
+
+    // Navigation
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (current < cards.length - 1) current++; else current = 0;
+      renderCard();
+    });
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (current > 0) current--; else current = cards.length - 1;
+      renderCard();
+    });
+
+    // Flip on click/tap
+    cardInner.addEventListener('click', () => {
+      cardInner.classList.toggle('flipped');
+    });
+
+    // Swipe support
+    let startX = null;
+    cardInner.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+    cardInner.addEventListener('touchend', e => {
+      if (startX === null) return;
+      let endX = e.changedTouches[0].clientX;
+      let diff = startX - endX;
+      if (Math.abs(diff) > 30) {
+        if (diff > 0) { // swipe left
+          document.getElementById('nextBtn').click();
+        } else {
+          document.getElementById('prevBtn').click();
+        }
+      }
+      startX = null;
+    });
+
+    // Toggle structure list
+    document.getElementById('toggleListBtn').addEventListener('click', () => {
+      const list = document.getElementById('structureList');
+      list.style.display = list.style.display === 'none' || list.style.display === '' ? 'block' : 'none';
+    });
+
+    // Click on structure to fill input
+    document.querySelectorAll('#structureList li').forEach(li => {
+      li.addEventListener('click', () => {
+        document.getElementById('structureInput').value = li.dataset.structure;
+        document.getElementById('structureList').style.display = 'none';
+      });
+    });
+
+    // Generate button (currently loads dummy cards)
+    document.getElementById('generateBtn').addEventListener('click', async () => {
+      // TODO: Integrate with OpenAI via Cloudflare variables
+      // For now, use dummy set and shuffle slightly
+      cards = [...dummyCards].sort(() => Math.random() - 0.5);
+      current = 0;
+      renderCard();
+    });
+
+    // Initial render
+    renderCard();
+  </script>
+</body>
+</html>
