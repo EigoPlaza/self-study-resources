@@ -301,8 +301,8 @@
       const doc = new jsPDF();
 
       doc.addFileToVFS("NotoSansCJKjp-Regular.ttf", window.jsPDF.VFS["NotoSansCJKjp-Regular.ttf"]);
-      doc.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
-      doc.setFont("NotoSansCJKjp"); // ←これがないと文字化けします！
+      doc.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal", "Identity-H");
+      doc.setFont("NotoSansCJKjp");
 
       
       doc.autoTable({
