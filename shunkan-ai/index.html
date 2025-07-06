@@ -302,7 +302,6 @@
       const pdfDoc = await PDFDocument.create();
       pdfDoc.registerFontkit(fontkit);
   
-      // 📁 ipaexg.ttf の読み込み
       const fontUrl = './ipaexg.ttf';
       const fontBytes = await fetch(fontUrl).then(res => res.arrayBuffer());
       const customFont = await pdfDoc.embedFont(fontBytes, { subset: true });
@@ -312,32 +311,37 @@
   
       const leftX = 50;
       const rightX = 300;
-      const lineHeight = 30;
+      const maxTextWidth = 230; // 日本語の最大幅
       const fontSize = 12;
+      const lineHeight = 20;
       let y = height - 50;
   
       page.setFont(customFont);
       page.setFontSize(14);
       page.drawText('瞬間英作文フラッシュカード一覧', { x: leftX, y });
-      y -= 40;
+      y -= 30;
   
       for (let i = 0; i < currentFlashcards.length; i++) {
         const { jp, en } = currentFlashcards[i];
   
-        if (y < 60) {
+        const jpLines = splitText(jp, customFont, fontSize, maxTextWidth);
+  
+        if (y < 60 + jpLines.length * lineHeight) {
           page = pdfDoc.addPage([595, 842]);
           page.setFont(customFont);
           page.setFontSize(fontSize);
           y = height - 50;
         }
   
-        page.drawText(`${i + 1}. ${jp}`, {
-          x: leftX,
-          y,
-          size: fontSize,
-          font: customFont,
-          color: rgb(0, 0, 0),
-        });
+        for (let j = 0; j < jpLines.length; j++) {
+          page.drawText(j === 0 ? `${i + 1}. ${jpLines[j]}` : `    ${jpLines[j]}`, {
+            x: leftX,
+            y: y - j * lineHeight,
+            size: fontSize,
+            font: customFont,
+            color: rgb(0, 0, 0),
+          });
+        }
   
         page.drawText(en, {
           x: rightX,
@@ -347,7 +351,7 @@
           color: rgb(0, 0, 0),
         });
   
-        y -= lineHeight;
+        y -= Math.max(jpLines.length, 1) * lineHeight + 10;
       }
   
       const pdfBytes = await pdfDoc.save();
@@ -355,9 +359,30 @@
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'flashcards_横並び.pdf';
+      link.download = 'flashcards.pdf';
       link.click();
     });
+  
+    // ヘルパー関数：日本語を折り返す
+    function splitText(text, font, size, maxWidth) {
+      const chars = text.split('');
+      let line = '';
+      const lines = [];
+  
+      for (let i = 0; i < chars.length; i++) {
+        const nextLine = line + chars[i];
+        const width = font.widthOfTextAtSize(nextLine, size);
+        if (width > maxWidth) {
+          lines.push(line);
+          line = chars[i];
+        } else {
+          line = nextLine;
+        }
+      }
+  
+      if (line) lines.push(line);
+      return lines;
+    }
   </script>
     
   <script>
