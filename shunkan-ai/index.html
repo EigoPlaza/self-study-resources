@@ -165,6 +165,8 @@
       <div>
         <label for="grammarSelect">🧠 文法項目</label>
         <select id="grammarSelect">
+          <option value="">-- 文法項目（任意） --</option>
+          
           <optgroup label="中1">
             <option value="be動詞">be動詞</option>
             <option value="一般動詞">一般動詞</option>
@@ -219,13 +221,21 @@
       <!-- トピック -->
       <div>
         <label for="topicSelect">🗂️ トピック</label>
-        <select id="topicSelect">
-          <option value="日常生活">日常生活</option>
-          <option value="買い物">買い物</option>
-          <option value="旅行">旅行</option>
-          <option value="学校">学校</option>
-          <option value="仕事">仕事</option>
-        </select>
+          <select id="topicSelect">
+            <option value="">-- トピック（任意） --</option>
+            <option value="日常生活">日常生活</option>
+            <option value="買い物">買い物</option>
+            <option value="旅行">旅行</option>
+            <option value="学校">学校</option>
+            <option value="仕事">仕事</option>
+            <option value="健康・病院">健康・病院</option>
+            <option value="家族・友人">家族・友人</option>
+            <option value="趣味・娯楽">趣味・娯楽</option>
+            <option value="食べ物・レストラン">食べ物・レストラン</option>
+            <option value="感情・気持ち">感情・気持ち</option>
+            <option value="天気・自然">天気・自然</option>
+            <option value="将来・夢">将来・夢</option>
+          </select>
       </div>
     </div>
     
@@ -344,6 +354,12 @@
       });
     });
 
+    const topic = document.getElementById("topicSelect").value;
+    // 送信時に topic が空でも OK にしておく（空なら無視 or 全体からランダム）
+    const grammar = document.getElementById("grammarSelect").value;
+    // grammarが空ならAI側プロンプトで「特定しない（自由）」とみなすよう処理
+    
+    
     // Generate button (currently loads dummy cards)
     document.getElementById('generateBtn').addEventListener('click', async () => {
       // TODO: Integrate with OpenAI via Cloudflare variables
