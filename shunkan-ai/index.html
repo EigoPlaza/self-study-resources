@@ -293,7 +293,7 @@
       { jp: '彼女は昨日テレビを見なかった。', en: 'She didn\'t watch TV yesterday.' }
     ];
 
-    let cards = [...dummyCards];
+    let cards = [];
     let current = 0;
 
     const cardInner = document.getElementById('cardInner');
@@ -302,6 +302,14 @@
     const cardCounter = document.getElementById('cardCounter');
 
     function renderCard() {
+      if (cards.length === 0) {
+        cardFront.textContent = "👉 条件を選んで『瞬間英作文スタート！』を押してください";
+        cardBack.textContent = "English sentence will appear here";
+        cardCounter.textContent = "0 / 0";
+        cardInner.classList.remove('flipped');
+        return;
+      }
+    
       cardFront.textContent = cards[current].jp;
       cardBack.textContent = cards[current].en;
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
