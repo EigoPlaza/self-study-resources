@@ -292,11 +292,11 @@
   <script src="../fonts/NotoSansCJKjp-Regular.js"></script>
   <script>
     document.getElementById('downloadPdfBtn').addEventListener('click', () => {
-      if (!cards || cards.length === 0) {
+      if (!Array.isArray(cards) || cards.length === 0) {
         alert('ダウンロードできるカードがありません。');
         return;
       }
-  
+    
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
 
@@ -304,13 +304,12 @@
       doc.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
       doc.setFont("NotoSansCJKjp", "normal");
       doc.setFontSize(12);
-
-      
+    
       doc.autoTable({
         head: [['日本語', 'English']],
-        body: currentFlashcards.map(card => [card.jp, card.en]),
+        body: cards.map(card => [card.jp, card.en]),
       });
-  
+    
       doc.save('flashcards.pdf');
     });
   </script>
