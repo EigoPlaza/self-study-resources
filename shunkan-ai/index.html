@@ -264,6 +264,9 @@
     <div class="row row3">
       <button id="generateBtn">瞬間英作文スタート！</button>
     </div>
+    <div id="loadingMessage" style="text-align:center; font-weight:bold; color:#007bff; margin-bottom:1rem; display:none;">
+      🔄 生成中です... 少々お待ちください
+    </div>
   </div>
 
 
@@ -376,21 +379,29 @@
       const grammar = document.getElementById("grammarSelect").value;
       const topic = document.getElementById("topicSelect").value;
       const structure = document.getElementById("structureInput").value;
+
+      const loadingMsg = document.getElementById("loadingMessage");
+      loadingMsg.style.display = "block"; // ← 表示開始
+      
+      try {
+        const res = await fetch('https://shunkan-ai.eigoplaza.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ level, grammar, topic, structure }),
+        });
     
-      const res = await fetch('https://shunkan-ai.eigoplaza.workers.dev', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ level, grammar, topic, structure }),
-      });
-    
-      if (res.ok) {
-        cards = await res.json();
-        current = 0;
-        renderCard();
-      } else {
-        alert("カードの生成に失敗しました。もう一度お試しください。");
+        if (res.ok) {
+          cards = await res.json();
+          current = 0;
+          renderCard();
+        } else {
+          alert("カードの生成に失敗しました。もう一度お試しください。");
+        }
+      } catch (e) {
+        alert("エラーが発生しました：" + e.message);
+      } finally {
+        loadingMsg.style.display = "none"; // ← 完了後に非表示
       }
-    });
 
     // Initial render
     renderCard();
