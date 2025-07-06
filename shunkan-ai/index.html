@@ -288,7 +288,7 @@
   <button id="downloadPdfBtn">📄 PDFダウンロード</button>
 
   <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-  <script src="https://unpkg.com/jspdf@2.5.1/dist/fonts/NotoSansJP-normal.js"></script>
+  <script src="../fonts/NotoSansCJKjp-Regular.js"></script>
   <script src="https://unpkg.com/jspdf-autotable"></script>
   <script>
     document.getElementById('downloadPdfBtn').addEventListener('click', () => {
@@ -298,8 +298,13 @@
       }
   
       const { jsPDF } = window.jspdf;
+      jsPDF.API.events.push(['addFonts', function () {
+        this.addFileToVFS('NotoSansCJKjp.ttf', fontData);
+        this.addFont('NotoSansCJKjp.ttf', 'NotoSansCJKjp', 'normal');
+      }]);
       const doc = new jsPDF();
-      doc.setFont('NotoSansJP');
+      doc.setFont('NotoSansCJKjp');
+      
       doc.autoTable({
         head: [['日本語', 'English']],
         body: currentFlashcards.map(card => [card.jp, card.en]),
