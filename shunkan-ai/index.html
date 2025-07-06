@@ -299,7 +299,11 @@
   
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
-      doc.setFont('NotoSansCJKjp');
+
+      doc.addFileToVFS("NotoSansCJKjp-Regular.ttf", window.jsPDF.VFS["NotoSansCJKjp-Regular.ttf"]);
+      doc.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
+      doc.setFont("NotoSansCJKjp"); // ←これがないと文字化けします！
+
       
       doc.autoTable({
         head: [['日本語', 'English']],
