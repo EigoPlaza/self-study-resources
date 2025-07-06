@@ -287,7 +287,6 @@
   <button id="downloadCsvBtn">📥 CSVダウンロード</button>
   <button id="downloadPdfBtn">📄 PDFダウンロード</button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <script src="https://unpkg.com/jspdf@2.5.1/dist/fonts/NotoSansJP-normal.js"></script>
   <script>
@@ -300,6 +299,7 @@
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
       doc.setFont('NotoSansJP');
+      
       const margin = 10;
       const lineHeight = 10;
       let y = margin;
@@ -308,14 +308,31 @@
       doc.text('瞬間英作文フラッシュカード', margin, y);
       y += lineHeight * 2;
   
+      // 改行処理用
+      const splitText = (doc, text, maxWidth) => doc.splitTextToSize(text, maxWidth);
+      
       cards.forEach((pair, index) => {
         const jp = `【${index + 1}】${pair.jp}`;
         const en = pair.en;
-        doc.text(jp, margin, y);
-        doc.text(en, 105, y); // 右列
-        y += lineHeight;
-  
-        // 改ページ
+      
+        const jpLines = splitText(doc, jp, 80);
+        const enLines = splitText(doc, en, 80);
+      
+        const maxLines = Math.max(jpLines.length, enLines.length);
+      
+        // 日本語（左列）
+        jpLines.forEach((line, i) => {
+          doc.text(line, margin, y + i * lineHeight);
+        });
+      
+        // 英語（右列）
+        enLines.forEach((line, i) => {
+          doc.text(line, 105, y + i * lineHeight);
+        });
+      
+        y += maxLines * lineHeight + 5;
+      
+        // 改ページ処理
         if (y > 280) {
           doc.addPage();
           y = margin;
