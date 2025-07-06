@@ -292,6 +292,22 @@
   <script src="../fonts/NotoSansCJKjp-Regular.js"></script>
   
   <script>
+    // 🔒 フォント登録は addFonts イベントに任せる
+    window.jspdf.jsPDF.API.events.push([
+      'addFonts',
+      function () {
+        if (window.jspdf?.jsPDF?.VFS?.["NotoSansCJKjp-Regular.ttf"]) {
+          this.addFileToVFS("NotoSansCJKjp-Regular.ttf", window.jspdf.jsPDF.VFS["NotoSansCJKjp-Regular.ttf"]);
+          this.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
+          console.log("✅ フォントをaddFontsイベントで登録しました");
+        } else {
+          console.warn("⚠️ フォントデータがVFSに存在しません");
+        }
+      }
+    ]);
+  </script>
+  
+  <script>
     document.getElementById('downloadPdfBtn').addEventListener('click', () => {
       if (!Array.isArray(cards) || cards.length === 0) {
         alert('ダウンロードできるカードがありません。');
@@ -299,11 +315,7 @@
       }
   
       const doc = new window.jspdf.jsPDF();
-  
-      // 🔽 フォントをここで手動登録
-      doc.addFileToVFS("NotoSansCJKjp-Regular.ttf", window.jspdf.jsPDF.VFS["NotoSansCJKjp-Regular.ttf"]);
-      doc.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
-      doc.setFont("NotoSansCJKjp", "normal");
+      doc.setFont("NotoSansCJKjp", "normal");  // 🔑 ここでは使用するだけ
       doc.setFontSize(12);
   
       doc.autoTable({
