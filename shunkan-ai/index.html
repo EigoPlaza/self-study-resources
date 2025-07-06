@@ -55,6 +55,26 @@
       background-color: #0056b3;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     }
+
+    .structure-row {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 0.5rem;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 1rem;
+    }
+    
+    .structure-input {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .structure-button {
+      flex-shrink: 0;
+    }
     
     /* Collapsible structure list */
     #structureList { width:100%; max-width:600px; margin-top:0.5rem; border:1px solid #ccc; border-radius:8px; padding:0.5rem; display:none; }
@@ -156,12 +176,12 @@
     </div>
     
     <!-- 特定構文 + 中級構文リスト -->
-    <div style="display: flex; flex-direction: row; gap: 0.5rem; align-items: flex-end;">
-      <div style="display: flex; flex-direction: column; flex: 1;">
+    <div class="structure-row">
+      <div class="structure-input">
         <label for="structureInput">✏️ 特定構文（任意）</label>
         <input id="structureInput" placeholder="構文 (任意)" />
       </div>
-      <div style="margin-bottom: 0.2rem;">
+      <div class="structure-button">
         <button id="toggleListBtn">中級構文リスト</button>
       </div>
     </div>
