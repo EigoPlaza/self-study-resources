@@ -284,7 +284,8 @@
     <span id="cardCounter">0 / 0</span>
     <button id="nextBtn">Next</button>
   </div>
-
+  <button id="downloadCsvBtn">📥 CSVダウンロード</button>
+  
   <script>
     // Dummy data (initial)
     const dummyCards = [
@@ -407,6 +408,26 @@
     });
     // Initial render
     renderCard();
+
+    document.getElementById('downloadCsvBtn').addEventListener('click', () => {
+    if (!currentFlashcards || currentFlashcards.length === 0) {
+      alert('ダウンロードできるカードがありません。');
+      return;
+    }
+  
+    const csvHeader = `"日本語","英語"\n`;
+    const csvRows = currentFlashcards.map(pair =>
+      `"${pair.jp.replace(/"/g, '""')}","${pair.en.replace(/"/g, '""')}"`
+    ).join('\n');
+  
+    const blob = new Blob([csvHeader + csvRows], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'flashcards.csv';
+    link.click();
+  });
+    
   </script>
 </body>
 </html>
