@@ -300,6 +300,7 @@
     ];
 
     let cards = [];
+    let currentFlashcards = [];
     let current = 0;
 
     const cardInner = document.getElementById('cardInner');
@@ -395,6 +396,7 @@
     
         if (res.ok) {
           cards = await res.json();
+          currentFlashcards = cards; // ← この行を追加！
           current = 0;
           renderCard();
         } else {
