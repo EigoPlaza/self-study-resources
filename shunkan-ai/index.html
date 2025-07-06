@@ -314,7 +314,7 @@
   
       const leftX = 50;
       const rightX = 300;
-      const maxTextWidth = 230; // 日本語の最大幅
+      const maxLineWidth = 230; // ← 共通の最大行幅
       const fontSize = 12;
       const lineHeight = 20;
       let y = height - 50;
@@ -327,22 +327,27 @@
       for (let i = 0; i < currentFlashcards.length; i++) {
         const { jp, en } = currentFlashcards[i];
         
-        const jpLines = splitText(jp, customFont, fontSize, maxTextWidth);
-        // 現在のページにフッターを追加
-        page.drawText('© Epla（エプラ） https://eigoplaza.com', {
-          x: 50,
-          y: 30,
-          size: 10,
-          font: customFont,
-          color: rgb(0.5, 0.5, 0.5),
-        });
-        if (y < 60 + jpLines.length * lineHeight) {
+        const jpLines = splitText(jp, customFont, fontSize, maxLineWidth);
+        const enLines = splitText(en, customFont, fontSize, maxLineWidth);
+        
+        // 改ページ必要なら追加
+        if (y < 60 + Math.max(jpLines.length, enLines.length) * lineHeight) {
           page = pdfDoc.addPage([595, 842]);
           page.setFont(customFont);
           page.setFontSize(fontSize);
           y = height - 50;
+        
+          // 新しいページにもフッターを
+          page.drawText('© Epla（エプラ） https://eigoplaza.com', {
+            x: 50,
+            y: 30,
+            size: 10,
+            font: customFont,
+            color: rgb(0.5, 0.5, 0.5),
+          });
         }
-  
+        
+        // 日本語
         for (let j = 0; j < jpLines.length; j++) {
           page.drawText(j === 0 ? `${i + 1}. ${jpLines[j]}` : `    ${jpLines[j]}`, {
             x: leftX,
@@ -352,16 +357,19 @@
             color: rgb(0, 0, 0),
           });
         }
-  
-        page.drawText(en, {
-          x: rightX,
-          y,
-          size: fontSize,
-          font: customFont,
-          color: rgb(0, 0, 0),
-        });
-  
-        y -= Math.max(jpLines.length, 1) * lineHeight + 10;
+        
+        // 英語
+        for (let j = 0; j < enLines.length; j++) {
+          page.drawText(enLines[j], {
+            x: rightX,
+            y: y - j * lineHeight,
+            size: fontSize,
+            font: customFont,
+            color: rgb(0, 0, 0),
+          });
+        }
+        
+        y -= Math.max(jpLines.length, enLines.length) * lineHeight + 10;  
       }
       // 最後のページにもフッターを追加
       page.drawText('© Epla（エプラ） https://eigoplaza.com', {
