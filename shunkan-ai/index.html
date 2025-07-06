@@ -287,51 +287,62 @@
   <button id="downloadCsvBtn">📥 CSVダウンロード</button>
   <button id="downloadPdfBtn">📄 PDFダウンロード</button>
 
-  <!-- jsPDF の最新版（legacyではない）を使う -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
-  <script src="../fonts/NotoSansCJKjp-Regular.js"></script>
-  
+  <script src="https://unpkg.com/pdf-lib@1.4.0/dist/pdf-lib.min.js"></script>
+  <script src="https://unpkg.com/@pdf-lib/fontkit/dist/fontkit.umd.js"></script>
+
+
   <script>
-    // 🔒 フォント登録は addFonts イベントに任せる
-    window.jspdf.jsPDF.API.events.push([
-      'addFonts',
-      function () {
-        const vfs = window.jspdf.jsPDF.VFS;
-        if (vfs?.["NotoSansCJKjp-Regular.ttf"]) {
-          this.addFileToVFS("NotoSansCJKjp-Regular.ttf", vfs["NotoSansCJKjp-Regular.ttf"]);
-          this.addFont("NotoSansCJKjp-Regular.ttf", "NotoSansCJKjp", "normal");
-          console.log("✅ フォント登録完了（addFonts）");
-        } else {
-          console.warn("⚠️ フォントデータが見つかりません");
-        }
-      }
-    ]);
-  </script>
-  
-  <script>
-    document.getElementById('downloadPdfBtn').addEventListener('click', () => {
-      if (!Array.isArray(cards) || cards.length === 0) {
+    document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+      if (!currentFlashcards || currentFlashcards.length === 0) {
         alert('ダウンロードできるカードがありません。');
         return;
       }
-  
-      // jsPDF.umd.min.js を使うときの書き方
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      
-      doc.setFont("NotoSansCJKjp", "normal");  // 🔑 ここでは使用するだけ
-      doc.setFontSize(12);
-  
-      doc.autoTable({
-        head: [['日本語', 'English']],
-        body: cards.map(card => [card.jp, card.en]),
+    
+      const { PDFDocument, rgb } = PDFLib;
+      const pdfDoc = await PDFDocument.create();
+      pdfDoc.registerFontkit(fontkit);
+    
+      // 📁 ipaexg.ttf の読み込み
+      const fontUrl = './ipaexg.ttf';
+      const fontBytes = await fetch(fontUrl).then(res => res.arrayBuffer());
+      const customFont = await pdfDoc.embedFont(fontBytes, { subset: true });
+    
+      const page = pdfDoc.addPage([595, 842]); // A4サイズ
+      const { width, height } = page.getSize();
+    
+      let y = height - 50;
+    
+      page.setFont(customFont);
+      page.setFontSize(14);
+    
+      page.drawText('瞬間英作文フラッシュカード一覧', { x: 50, y });
+      y -= 30;
+    
+      currentFlashcards.forEach(({ jp, en }, index) => {
+        if (y < 80) {
+          y = height - 50;
+          const newPage = pdfDoc.addPage([595, 842]);
+          newPage.setFont(customFont);
+          newPage.setFontSize(14);
+          page = newPage;
+        }
+    
+        page.drawText(`${index + 1}. ${jp}`, { x: 50, y, size: 12 });
+        y -= 20;
+        page.drawText(`    ${en}`, { x: 50, y, size: 12 });
+        y -= 30;
       });
-  
-      doc.save('flashcards.pdf');
+    
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'flashcards.pdf';
+      link.click();
     });
   </script>
-  
+    
   <script>
     // Dummy data (initial)
     const dummyCards = [
