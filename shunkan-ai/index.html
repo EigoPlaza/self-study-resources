@@ -327,8 +327,8 @@
       for (let i = 0; i < currentFlashcards.length; i++) {
         const { jp, en } = currentFlashcards[i];
         
-        const jpLines = splitText(jp, customFont, fontSize, maxLineWidth);
-        const enLines = splitText(en, customFont, fontSize, maxLineWidth);
+        const jpLines = splitTextByChars(jp, customFont, fontSize, maxLineWidth);
+        const enLines = splitTextByWords(en, customFont, fontSize, maxLineWidth);
         
         // 改ページ必要なら追加
         if (y < 60 + Math.max(jpLines.length, enLines.length) * lineHeight) {
@@ -390,11 +390,11 @@
     });
   
     // ヘルパー関数：日本語を折り返す
-    function splitText(text, font, size, maxWidth) {
+    function splitTextByChars(text, font, size, maxWidth) {
       const chars = text.split('');
       let line = '';
       const lines = [];
-  
+    
       for (let i = 0; i < chars.length; i++) {
         const nextLine = line + chars[i];
         const width = font.widthOfTextAtSize(nextLine, size);
@@ -405,10 +405,30 @@
           line = nextLine;
         }
       }
-  
+    
       if (line) lines.push(line);
       return lines;
     }
+
+    function splitTextByWords(text, font, size, maxWidth) {
+      const words = text.split(' ');
+      let line = '';
+      const lines = [];
+    
+      for (let i = 0; i < words.length; i++) {
+        const nextLine = line ? line + ' ' + words[i] : words[i];
+        const width = font.widthOfTextAtSize(nextLine, size);
+        if (width > maxWidth) {
+          if (line) lines.push(line);
+          line = words[i];
+        } else {
+          line = nextLine;
+        }
+      }
+    
+      if (line) lines.push(line);
+      return lines;
+    }  
   </script>
     
   <script>
