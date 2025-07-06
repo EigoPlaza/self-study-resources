@@ -297,48 +297,65 @@
         alert('ダウンロードできるカードがありません。');
         return;
       }
-    
+  
       const { PDFDocument, rgb } = PDFLib;
       const pdfDoc = await PDFDocument.create();
       pdfDoc.registerFontkit(fontkit);
-    
+  
       // 📁 ipaexg.ttf の読み込み
       const fontUrl = './ipaexg.ttf';
       const fontBytes = await fetch(fontUrl).then(res => res.arrayBuffer());
       const customFont = await pdfDoc.embedFont(fontBytes, { subset: true });
-    
-      const page = pdfDoc.addPage([595, 842]); // A4サイズ
+  
+      let page = pdfDoc.addPage([595, 842]); // A4サイズ
       const { width, height } = page.getSize();
-    
+  
+      const leftX = 50;
+      const rightX = 300;
+      const lineHeight = 30;
+      const fontSize = 12;
       let y = height - 50;
-    
+  
       page.setFont(customFont);
       page.setFontSize(14);
-    
-      page.drawText('瞬間英作文フラッシュカード一覧', { x: 50, y });
-      y -= 30;
-    
-      currentFlashcards.forEach(({ jp, en }, index) => {
-        if (y < 80) {
+      page.drawText('瞬間英作文フラッシュカード一覧', { x: leftX, y });
+      y -= 40;
+  
+      for (let i = 0; i < currentFlashcards.length; i++) {
+        const { jp, en } = currentFlashcards[i];
+  
+        if (y < 60) {
+          page = pdfDoc.addPage([595, 842]);
+          page.setFont(customFont);
+          page.setFontSize(fontSize);
           y = height - 50;
-          const newPage = pdfDoc.addPage([595, 842]);
-          newPage.setFont(customFont);
-          newPage.setFontSize(14);
-          page = newPage;
         }
-    
-        page.drawText(`${index + 1}. ${jp}`, { x: 50, y, size: 12 });
-        y -= 20;
-        page.drawText(`    ${en}`, { x: 50, y, size: 12 });
-        y -= 30;
-      });
-    
+  
+        page.drawText(`${i + 1}. ${jp}`, {
+          x: leftX,
+          y,
+          size: fontSize,
+          font: customFont,
+          color: rgb(0, 0, 0),
+        });
+  
+        page.drawText(en, {
+          x: rightX,
+          y,
+          size: fontSize,
+          font: customFont,
+          color: rgb(0, 0, 0),
+        });
+  
+        y -= lineHeight;
+      }
+  
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'flashcards.pdf';
+      link.download = 'flashcards_横並び.pdf';
       link.click();
     });
   </script>
