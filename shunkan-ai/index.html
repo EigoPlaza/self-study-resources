@@ -302,7 +302,7 @@
       doc.setFont('NotoSansJP');
       doc.autoTable({
         head: [['日本語', 'English']],
-        body: flashcards.map(card => [card.jp, card.en]),
+        body: currentFlashcards.map(card => [card.jp, card.en]),
       });
   
       doc.save('flashcards.pdf');
