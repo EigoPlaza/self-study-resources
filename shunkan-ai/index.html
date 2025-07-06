@@ -155,16 +155,18 @@
       </select>
     </div>
     
-    <!-- 特定構文 -->
-    <div>
-      <label for="structureInput">✏️ 特定構文（任意）</label>
-      <input id="structureInput" placeholder="構文 (任意)" />
+    <!-- 特定構文 + 中級構文リスト -->
+    <div style="display: flex; flex-direction: row; gap: 0.5rem; align-items: flex-end;">
+      <div style="display: flex; flex-direction: column; flex: 1;">
+        <label for="structureInput">✏️ 特定構文（任意）</label>
+        <input id="structureInput" placeholder="構文 (任意)" />
+      </div>
+      <div style="margin-bottom: 0.2rem;">
+        <button id="toggleListBtn">中級構文リスト</button>
+      </div>
     </div>
     
-    <!-- ボタン類（順番入れ替え済み） -->
-    <div>
-      <button id="toggleListBtn">中級構文リスト</button>
-    </div>
+    <!-- ボタン -->
     <div>
       <button id="generateBtn">瞬間英作文スタート！</button>
     </div>
