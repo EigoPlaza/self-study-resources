@@ -364,11 +364,24 @@
     
     // Generate button (currently loads dummy cards)
     document.getElementById('generateBtn').addEventListener('click', async () => {
-      // TODO: Integrate with OpenAI via Cloudflare variables
-      // For now, use dummy set and shuffle slightly
-      cards = [...dummyCards].sort(() => Math.random() - 0.5);
-      current = 0;
-      renderCard();
+      const level = document.getElementById("levelSelect").value;
+      const grammar = document.getElementById("grammarSelect").value;
+      const topic = document.getElementById("topicSelect").value;
+      const structure = document.getElementById("structureInput").value;
+    
+      const res = await fetch('https://shunkan-ai.eigoplaza.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level, grammar, topic, structure }),
+      });
+    
+      if (res.ok) {
+        cards = await res.json();
+        current = 0;
+        renderCard();
+      } else {
+        alert("カードの生成に失敗しました。もう一度お試しください。");
+      }
     });
 
     // Initial render
