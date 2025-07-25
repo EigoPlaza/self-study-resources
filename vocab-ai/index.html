@@ -131,12 +131,18 @@
     }
 
     function changeCard(newIndex) {
+      // まずフリップ解除（正面に戻す）
+      cardInner.classList.remove('flipped');
+      
+      // 文字を透明化
       cardInner.classList.add('flipping');
+    
+      // アニメーション終了後に内容更新
       setTimeout(() => {
         current = newIndex;
-        renderCard();
+        renderCard(); // 新しいカードのテキストをセット
         cardInner.classList.remove('flipping');
-      }, 300); // flipアニメーションの時間に合わせる
+      }, 600); // flipの0.6sに合わせる
     }
     
     document.getElementById('nextBtn').addEventListener('click', () => {
