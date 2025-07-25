@@ -121,11 +121,21 @@
         cardInner.classList.remove('flipped');
         return;
       }
-      cardFront.textContent = cards[current].en;
-      cardBack.textContent = cards[current].ja;
+    
+      const card = cards[current];
+      cardFront.textContent = card.en;
+    
+      // ★裏面を複数行で表示（意味＋例文＋日本語訳）
+      cardBack.innerHTML = `
+        <div style="font-size:1.2rem; font-weight:bold;">${card.ja}</div>
+        <hr style="margin:0.5rem 0;">
+        <div style="font-size:1rem;">${card.example_en || ''}</div>
+        <div style="font-size:0.9rem; color:#555;">${card.example_ja || ''}</div>
+      `;
+    
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
       cardInner.classList.remove('flipped');
-    }
+    }  
 
     function changeCard(newIndex) {
       // まずフリップ解除（正面に戻す）
