@@ -50,6 +50,10 @@
         </select>
       </div>
       <div>
+        <label for="topicInput">✏️ トピック指定（任意）</label>
+        <input id="topicInput" type="text" placeholder="例：空港、ハワイ" />
+      </div>
+      <div>
         <label for="wordCount">📦 単語数</label>
         <input id="wordCount" type="number" min="5" max="20" value="10" />
       </div>
@@ -107,6 +111,9 @@
     document.getElementById('generateBtn').addEventListener('click', async () => {
       const level = document.getElementById('levelSelect').value;
       const topic = document.getElementById('topicSelect').value;
+      const topicSelectValue = document.getElementById('topicSelect').value;
+      const topicInputValue = document.getElementById('topicInput').value.trim();
+      const topic = topicInputValue !== "" ? topicInputValue : topicSelectValue;
       const count = document.getElementById('wordCount').value;
       const loadingMsg = document.getElementById('loadingMessage');
       loadingMsg.style.display = 'block';
