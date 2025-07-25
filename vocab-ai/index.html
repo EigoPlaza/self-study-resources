@@ -127,10 +127,15 @@
     
       // ★裏面を複数行で表示（意味＋例文＋日本語訳）
       cardBack.innerHTML = `
-        <div style="font-size:1.2rem; font-weight:bold;">${card.ja}</div>
-        <hr style="margin:0.5rem 0;">
-        <div style="font-size:1rem;">${card.example_en || ''}</div>
-        <div style="font-size:0.9rem; color:#555;">${card.example_ja || ''}</div>
+        <div style="font-size:1.8rem; font-weight:bold; margin-bottom:1rem;">
+          ${card.ja}
+        </div>
+        <div style="font-size:1.2rem; color:#333; margin-bottom:0.8rem;">
+          ${card.example_en || ''}
+        </div>
+        <div style="font-size:1.1rem; color:#555;">
+          ${card.example_ja || ''}
+        </div>
       `;
     
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
