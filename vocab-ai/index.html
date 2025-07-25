@@ -58,7 +58,15 @@
       text-align: left; /* ← 横書きで自然に */
       font-size: 1.5rem;
     }
-    
+    .front-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      font-size: 2rem; /* 表の単語は大きく見せる */
+      font-weight: bold;
+    }
     .card-front { background:#fff; }
     .card-back { background:#fafafa; transform:rotateY(180deg); }
     .nav {
@@ -142,7 +150,11 @@
       }
     
       const card = cards[current];
-      cardFront.textContent = card.en;
+    
+      // 表 → 単語を中央に
+      cardFront.innerHTML = `<div class="front-center">${card.en}</div>`;
+    
+      // 裏 → 日本語＋例文
       cardBack.innerHTML = `
         <div style="font-size:1.8rem; font-weight:bold; margin-bottom:1rem;">
           ${card.ja}
@@ -154,9 +166,10 @@
           ${card.example_ja || ''}
         </div>
       `;
+    
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
       cardInner.classList.remove('flipped');
-    }      
+    }
 
     function changeCard(newIndex) {
       // まずフリップ解除（正面に戻す）
