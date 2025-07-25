@@ -1,1 +1,133 @@
-hi
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>単語カードAI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; display:flex; flex-direction:column; align-items:center; }
+    .controls { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 700px; }
+    .row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .row > div { flex: 1; min-width: 140px; }
+    label { font-weight:bold; font-size:0.9rem; margin-bottom:0.2rem; display:block; }
+    select, input, button { width:100%; padding:0.5rem; font-size:1rem; border-radius:8px; border:1px solid #ccc; }
+    #generateBtn { background-color:#007bff; color:white; font-weight:bold; border:none; font-size:1rem; padding:0.6rem 1.2rem; border-radius:8px; }
+    #generateBtn:hover { background-color:#0056b3; }
+    #flashcardContainer { perspective:1000px; width:90%; max-width:400px; height:250px; margin-bottom:1rem; }
+    .card-inner { position:relative; width:100%; height:100%; transition:transform 0.6s; transform-style:preserve-3d; cursor:pointer; }
+    .flipped { transform:rotateY(180deg); }
+    .card-face { position:absolute; width:100%; height:100%; backface-visibility:hidden; display:flex; align-items:center; justify-content:center; border:1px solid #333; border-radius:12px; padding:1rem; text-align:center; font-size:1.5rem; }
+    .card-front { background:#fff; }
+    .card-back { background:#fafafa; transform:rotateY(180deg); }
+    .nav { display:flex; gap:1rem; align-items:center; }
+    .nav button { padding:0.5rem 1rem; }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <div class="row">
+      <div>
+        <label for="levelSelect">🔤 レベル</label>
+        <select id="levelSelect">
+          <option value="A1">A1（超初級）</option>
+          <option value="A2">A2（初級）</option>
+          <option value="B1">B1（中級）</option>
+          <option value="B2">B2（中上級）</option>
+        </select>
+      </div>
+      <div>
+        <label for="topicSelect">🗂️ トピック</label>
+        <select id="topicSelect">
+          <option value="Travel">旅行</option>
+          <option value="Food">食べ物・レストラン</option>
+          <option value="Business">ビジネス</option>
+          <option value="Health">健康</option>
+          <option value="Shopping">買い物</option>
+          <option value="Weather">天気</option>
+        </select>
+      </div>
+      <div>
+        <label for="wordCount">📦 単語数</label>
+        <input id="wordCount" type="number" min="5" max="20" value="10" />
+      </div>
+    </div>
+    <button id="generateBtn">単語カード生成！</button>
+    <div id="loadingMessage" style="text-align:center; font-weight:bold; color:#007bff; display:none;">🔄 生成中です...</div>
+  </div>
+
+  <div id="flashcardContainer">
+    <div id="cardInner" class="card-inner">
+      <div class="card-face card-front" id="cardFront">👉 条件を選んで『単語カード生成！』を押してください</div>
+      <div class="card-face card-back" id="cardBack">日本語訳が表示されます</div>
+    </div>
+  </div>
+  <div class="nav">
+    <button id="prevBtn">Prev</button>
+    <span id="cardCounter">0 / 0</span>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    let cards = [];
+    let current = 0;
+    const cardInner = document.getElementById('cardInner');
+    const cardFront = document.getElementById('cardFront');
+    const cardBack = document.getElementById('cardBack');
+    const cardCounter = document.getElementById('cardCounter');
+
+    function renderCard() {
+      if (cards.length === 0) {
+        cardFront.textContent = "👉 条件を選んで『単語カード生成！』を押してください";
+        cardBack.textContent = "日本語訳が表示されます";
+        cardCounter.textContent = "0 / 0";
+        cardInner.classList.remove('flipped');
+        return;
+      }
+      cardFront.textContent = cards[current].en;
+      cardBack.textContent = cards[current].ja;
+      cardCounter.textContent = `${current + 1} / ${cards.length}`;
+      cardInner.classList.remove('flipped');
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (current < cards.length - 1) current++; else current = 0;
+      renderCard();
+    });
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (current > 0) current--; else current = cards.length - 1;
+      renderCard();
+    });
+    cardInner.addEventListener('click', () => {
+      cardInner.classList.toggle('flipped');
+    });
+
+    document.getElementById('generateBtn').addEventListener('click', async () => {
+      const level = document.getElementById('levelSelect').value;
+      const topic = document.getElementById('topicSelect').value;
+      const count = document.getElementById('wordCount').value;
+      const loadingMsg = document.getElementById('loadingMessage');
+      loadingMsg.style.display = 'block';
+      try {
+        const res = await fetch('https://vocab-ai.eigoplaza.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ level, topic, count })
+        });
+        if (res.ok) {
+          cards = await res.json(); // [{en:"airport",ja:"空港"}...]
+          current = 0;
+          renderCard();
+        } else {
+          alert('生成に失敗しました');
+        }
+      } catch (e) {
+        alert('エラー：' + e.message);
+      } finally {
+        loadingMsg.style.display = 'none';
+      }
+    });
+    renderCard();
+  </script>
+</body>
+</html>
