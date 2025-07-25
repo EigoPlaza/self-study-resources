@@ -36,7 +36,14 @@
       height: 250px;
       margin: 2rem auto; /* 上下に余白を広げる */
     }
-    
+    .center-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      font-size: 1.2rem;
+    }
     .card-inner { position:relative; width:100%; height:100%; transition:transform 0.6s; transform-style:preserve-3d; cursor:pointer; }
     .flipped { transform:rotateY(180deg); }
     .card-face {
@@ -127,8 +134,8 @@
 
     function renderCard() {
       if (cards.length === 0) {
-        cardFront.textContent = "👉 条件を選んで『単語カード生成！』を押してください";
-        cardBack.textContent = "日本語訳が表示されます";
+        cardFront.innerHTML = `<div class="center-message">👉 条件を選んで『単語カード生成！』を押してください</div>`;
+        cardBack.innerHTML = `<div class="center-message">日本語訳が表示されます</div>`;
         cardCounter.textContent = "0 / 0";
         cardInner.classList.remove('flipped');
         return;
@@ -136,8 +143,6 @@
     
       const card = cards[current];
       cardFront.textContent = card.en;
-    
-      // ★裏面を複数行で表示（意味＋例文＋日本語訳）
       cardBack.innerHTML = `
         <div style="font-size:1.8rem; font-weight:bold; margin-bottom:1rem;">
           ${card.ja}
@@ -149,10 +154,9 @@
           ${card.example_ja || ''}
         </div>
       `;
-    
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
       cardInner.classList.remove('flipped');
-    }  
+    }      
 
     function changeCard(newIndex) {
       // まずフリップ解除（正面に戻す）
