@@ -80,6 +80,17 @@
       text-align: center;
     }
     .nav button { padding:0.5rem 1rem; }
+    .audio-btn {
+      width: auto;
+      padding: 0.3rem 0.4rem;
+      font-size: 1.2rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .audio-btn:hover {
+      transform: scale(1.2);
+    }
   </style>
 </head>
 <body>
@@ -166,7 +177,7 @@
         </div>
         <div style="font-size:1.2rem; color:#333; margin-bottom:0.8rem;">
           ${card.example_en || ''} 
-          ${card.example_en ? `<button onclick="speak('${card.example_en}')">🔊</button>` : ''}
+          ${card.example_en ? `<button class="audio-btn" onclick="event.stopPropagation(); speak('${card.en}')">🔊</button>` : ''}
         </div>
         <div style="font-size:1.1rem; color:#555;">
           ${card.example_ja || ''}
