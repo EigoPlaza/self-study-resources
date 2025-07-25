@@ -151,16 +151,22 @@
     
       const card = cards[current];
     
-      // 表 → 単語を中央に
-      cardFront.innerHTML = `<div class="front-center">${card.en}</div>`;
+      // 表：単語＋音声ボタン
+      cardFront.innerHTML = `
+        <div class="front-center">
+          ${card.en}
+          <button onclick="speak('${card.en}')" style="margin-left:10px;">🔊</button>
+        </div>
+      `;
     
-      // 裏 → 日本語＋例文
+      // 裏：日本語＋英文＋音声ボタン
       cardBack.innerHTML = `
         <div style="font-size:1.8rem; font-weight:bold; margin-bottom:1rem;">
           ${card.ja}
         </div>
         <div style="font-size:1.2rem; color:#333; margin-bottom:0.8rem;">
-          ${card.example_en || ''}
+          ${card.example_en || ''} 
+          ${card.example_en ? `<button onclick="speak('${card.example_en}')">🔊</button>` : ''}
         </div>
         <div style="font-size:1.1rem; color:#555;">
           ${card.example_ja || ''}
@@ -169,6 +175,13 @@
     
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
       cardInner.classList.remove('flipped');
+    }
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US'; // 英語発音
+      utterance.rate = 0.9; // 少しゆっくり
+      speechSynthesis.speak(utterance);
     }
 
     function changeCard(newIndex) {
