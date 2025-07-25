@@ -166,7 +166,7 @@
       cardFront.innerHTML = `
         <div class="front-center">
           ${card.en}
-          <button onclick="speak('${card.en}')" style="margin-left:10px;">🔊</button>
+          <button class="audio-btn" onclick="event.stopPropagation(); speak('${card.en}')">🔊</button>
         </div>
       `;
     
@@ -177,7 +177,7 @@
         </div>
         <div style="font-size:1.2rem; color:#333; margin-bottom:0.8rem;">
           ${card.example_en || ''} 
-          ${card.example_en ? `<button class="audio-btn" onclick="event.stopPropagation(); speak('${card.en}')">🔊</button>` : ''}
+          ${card.example_en ? `<button class="audio-btn" onclick="event.stopPropagation(); speak('${card.example_en}')">🔊</button>` : ''}
         </div>
         <div style="font-size:1.1rem; color:#555;">
           ${card.example_ja || ''}
