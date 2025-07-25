@@ -17,6 +17,10 @@
       flex: 1 1 calc(50% - 0.75rem); /* 1行に2つ並べる */
       min-width: 200px; /* モバイルで縦並びに切り替えやすくする */
     }
+    /* トピック指定の入力欄だけ幅を調整 */
+    #topicInput {
+      max-width: 150px; /* 横幅を抑える */
+    }
     label { font-weight:bold; font-size:0.9rem; margin-bottom:0.2rem; display:block; }
     select, input, button { width:100%; padding:0.5rem; font-size:1rem; border-radius:8px; border:1px solid #ccc; }
     #generateBtn { background-color:#007bff; color:white; font-weight:bold; border:none; font-size:1rem; padding:0.6rem 1.2rem; border-radius:8px; }
@@ -40,6 +44,10 @@
       gap: 1rem;
       align-items: center;
       margin-top: 1.5rem; /* カードとの間隔を広げる */
+    }
+    #cardCounter {
+      min-width: 50px; /* 固定幅を設定して、横並びを維持 */
+      text-align: center;
     }
     .nav button { padding:0.5rem 1rem; }
   </style>
