@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow">
-  <title>This Week's Topic</title>
+  <title>This Week's Beginner Topic</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -53,7 +53,7 @@
   </style>
 </head>
 <body>
-  <h1>This Week's English Conversation Topic</h1>
+  <h1>This Week's Beginner English Topic</h1>
   <div id="topic" class="highlight">Loading...</div>
 
   <div id="examples-section" style="display:none;">
@@ -81,9 +81,9 @@
       return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
     };
 
-    const currentWeek = new Date().getWeekNumber();
+    const currentWeek = ((new Date().getWeekNumber() - 1) % 26) + 1;
 
-    fetch('weekly-topics-intermediate.json')
+    fetch('weekly-topics-beginner.json')
       .then(response => response.json())
       .then(data => {
         const topic = data.find(item => item.week === String(currentWeek));
@@ -126,7 +126,7 @@
           }
 
         } else {
-          topicDiv.innerText = `No topic found for this week (Week ${currentWeek})`;
+          topicDiv.innerText = `No beginner topic found for this week (Week ${currentWeek})`;
         }
       });
   </script>
