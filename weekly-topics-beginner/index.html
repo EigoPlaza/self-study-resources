@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title>This Week's Topic</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fdf6f0;
+      color: #333;
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
 
+    h1 {
+      color: #d17c75;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      color: #666;
+    }
+
+    ul {
+      list-style-type: circle;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #bb4f4f;
+    }
+
+    #topic {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 1rem 0;
+      text-align: center;
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>This Week's English Conversation Topic</h1>
+  <div id="topic" class="highlight">Loading...</div>
+
+  <div id="examples-section" style="display:none;">
+    <h2>❓ Example Questions</h2>
+    <ul id="examples"></ul>
+  </div>
+
+  <div id="phrases-section" style="display:none;">
+    <h2>💬 Useful Expressions</h2>
+    <ul id="phrases"></ul>
+  </div>
+
+  <div id="tips-section" style="display:none;">
+    <h2>💡 Conversation Tips</h2>
+    <ul id="tips"></ul>
+  </div>
+
+  <script>
+    // ISO週番号取得（1年の最初の木曜を含む週がWeek 1）
+    Date.prototype.getWeekNumber = function () {
+      const date = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+      const dayNum = date.getUTCDay() || 7;
+      date.setUTCDate(date.getUTCDate() + 4 - dayNum);
+      const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+      return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+    };
+
+    const currentWeek = new Date().getWeekNumber();
+
+    fetch('weekly-topics-intermediate.json')
+      .then(response => response.json())
+      .then(data => {
+        const topic = data.find(item => item.week === String(currentWeek));
+        const topicDiv = document.getElementById('topic');
+
+        if (topic) {
+          topicDiv.innerText = topic.title;
+
+          // 例文
+          if (topic.examples?.length) {
+            document.getElementById('examples-section').style.display = 'block';
+            const examplesList = document.getElementById('examples');
+            topic.examples.forEach(ex => {
+              const li = document.createElement('li');
+              li.textContent = ex;
+              examplesList.appendChild(li);
+            });
+          }
+
+          // フレーズ
+          if (topic.phrases?.length) {
+            document.getElementById('phrases-section').style.display = 'block';
+            const phrasesList = document.getElementById('phrases');
+            topic.phrases.forEach(ph => {
+              const li = document.createElement('li');
+              li.textContent = ph;
+              phrasesList.appendChild(li);
+            });
+          }
+
+          // 補助ネタ
+          if (topic.tips?.length) {
+            document.getElementById('tips-section').style.display = 'block';
+            const tipsList = document.getElementById('tips');
+            topic.tips.forEach(tip => {
+              const li = document.createElement('li');
+              li.textContent = tip;
+              tipsList.appendChild(li);
+            });
+          }
+
+        } else {
+          topicDiv.innerText = `No topic found for this week (Week ${currentWeek})`;
+        }
+      });
+  </script>
+</body>
+</html>
