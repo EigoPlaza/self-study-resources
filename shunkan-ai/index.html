@@ -6,6 +6,19 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>瞬間英作文フラッシュカード</title>
   <style>
+    .audio-btn {
+      width: auto;
+      padding: 0.3rem 0.4rem;
+      font-size: 1.2rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    
+    .audio-btn:hover {
+      transform: scale(1.2);
+    }
+    
     * { box-sizing: border-box; }
     body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; display:flex; flex-direction:column; align-items:center; }
     .controls {
@@ -453,6 +466,14 @@
     const cardBack = document.getElementById('cardBack');
     const cardCounter = document.getElementById('cardCounter');
 
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.9;
+      speechSynthesis.cancel(); // 前の音声が残っていたら止める
+      speechSynthesis.speak(utterance);
+    }
+    
     function renderCard() {
       if (cards.length === 0) {
         cardFront.textContent = "👉 条件を選んで『瞬間英作文スタート！』を押してください";
@@ -462,8 +483,14 @@
         return;
       }
     
+
       cardFront.textContent = cards[current].jp;
-      cardBack.textContent = cards[current].en;
+
+      cardBack.innerHTML = `
+        <span>${cards[current].en}</span>
+        <button class="audio-btn" onclick="event.stopPropagation(); speak(this.dataset.text)" data-text="${cards[current].en.replace(/"/g, '&quot;')}">🔊</button>
+      `;
+      
       cardCounter.textContent = `${current + 1} / ${cards.length}`;
       cardInner.classList.remove('flipped');
     }
