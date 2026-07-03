@@ -60,6 +60,17 @@
     a.download-btn:hover {
       background-color: #d0d0d0;
     }
+    .loop-control {
+      margin-top: 0.5em;
+      font-size: 0.9em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+    .loop-control input {
+      transform: scale(1.1);
+    }
+    
     .error {
       color: red;
       font-size: 0.9em;
@@ -93,10 +104,28 @@
     <div class="output">
       <h2>🔁 ポーズあり（リピーティング用）</h2>
       <audio id="audioWithPause" controls></audio>
+            <label class="loop-control">
+      
+        <input type="checkbox" onchange="toggleLoop('audioWithPause', this)">
+      
+        🔁 リピート再生
+      
+      </label>
+      
+      <br>
       <a id="downloadWithPause" href="#" class="download-btn" download="with_pause.mp3">⬇️ ダウンロード</a>
 
       <h2>🚀 ポーズなし（シャドーイング用）</h2>
       <audio id="audioWithoutPause" controls></audio>
+      <label class="loop-control">
+
+        <input type="checkbox" onchange="toggleLoop('audioWithoutPause', this)">
+      
+        🔁 リピート再生
+      
+      </label>
+      
+      <br>
       <a id="downloadWithoutPause" href="#" class="download-btn" download="without_pause.mp3">⬇️ ダウンロード</a>
     </div>
     <div class="usage-warning">
@@ -142,6 +171,11 @@
       wordCount.textContent = `単語数：${words.length} / 150`;
     });
 
+    function toggleLoop(audioId, checkbox) {
+      const audio = document.getElementById(audioId);
+      audio.loop = checkbox.checked;
+    }
+    
     async function generateAudio() {
       const text = document.getElementById("inputText").value.trim();
       const voice = document.getElementById("voice").value;
