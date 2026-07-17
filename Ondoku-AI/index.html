@@ -104,6 +104,17 @@
     <button onclick="generateAudio()">🎙 音声を生成</button>
 
     <div class="output">
+      <div style="margin-top: 1em;">
+        🔊 再生速度：
+        <select id="speedControl" onchange="changeSpeed(this.value)">
+          <option value="0.7">0.7倍</option>
+          <option value="0.8">0.8倍</option>
+          <option value="0.9">0.9倍</option>
+          <option value="1" selected>1.0倍（標準）</option>
+          <option value="1.1">1.1倍</option>
+          <option value="1.2">1.2倍</option>
+        </select>
+      </div>
       <h2>🔁 ポーズあり（リピーティング用）</h2>
       <audio id="audioWithPause" controls></audio>
             <label class="loop-control">
@@ -176,6 +187,11 @@
     function toggleLoop(audioId, checkbox) {
       const audio = document.getElementById(audioId);
       audio.loop = checkbox.checked;
+    }
+
+    function changeSpeed(speed) {
+      document.getElementById("audioWithPause").playbackRate = Number(speed);
+      document.getElementById("audioWithoutPause").playbackRate = Number(speed);
     }
     
     async function generateAudio() {
