@@ -467,6 +467,32 @@
     const cardBack = document.getElementById('cardBack');
     const cardCounter = document.getElementById('cardCounter');
 
+    // URLパラメーターが指定されている場合だけ、各項目の初期値に反映する。
+    // optionのvalue（内部値）に加え、画面上の表示名でも指定できる。
+    const urlParameters = new URLSearchParams(window.location.search);
+
+    function applySelectValueFromUrl(selectId, parameterName) {
+      const parameterValue = urlParameters.get(parameterName);
+      if (!parameterValue) return;
+
+      const select = document.getElementById(selectId);
+      const matchingOption = Array.from(select.options).find(option =>
+        option.value === parameterValue || option.textContent.trim() === parameterValue
+      );
+
+      // 不正な値で従来の初期値が壊れないよう、選択肢にある場合だけ反映する。
+      if (matchingOption) select.value = matchingOption.value;
+    }
+
+    applySelectValueFromUrl('levelSelect', 'level');
+    applySelectValueFromUrl('grammarSelect', 'grammar');
+    applySelectValueFromUrl('topicSelect', 'topic');
+
+    const structureParameter = urlParameters.get('structure');
+    if (structureParameter) {
+      document.getElementById('structureInput').value = structureParameter;
+    }
+
     function speak(text) {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-US';
