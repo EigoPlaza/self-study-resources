@@ -577,11 +577,21 @@
     
     
     // Generate button (currently loads dummy cards)
+    let isFirstGeneration = true;
+
     document.getElementById('generateBtn').addEventListener('click', async () => {
-      const level = document.getElementById("levelSelect").value;
-      const grammar = document.getElementById("grammarSelect").value;
-      const topic = document.getElementById("topicSelect").value;
-      const structure = document.getElementById("structureInput").value;
+      const currentLevel = document.getElementById("levelSelect").value;
+      const currentGrammar = document.getElementById("grammarSelect").value;
+      const currentTopic = document.getElementById("topicSelect").value;
+      const currentStructure = document.getElementById("structureInput").value;
+
+      // 初回生成ではURLプリセットを送信値にも直接使用する。
+      // 2回目以降は、学習者が画面上で変更した現在値を使用する。
+      const level = isFirstGeneration ? (urlParameters.get('level') || currentLevel) : currentLevel;
+      const grammar = isFirstGeneration ? (urlParameters.get('grammar') || currentGrammar) : currentGrammar;
+      const topic = isFirstGeneration ? (urlParameters.get('topic') ?? currentTopic) : currentTopic;
+      const structure = isFirstGeneration ? (urlParameters.get('structure') || currentStructure) : currentStructure;
+      isFirstGeneration = false;
 
       const loadingMsg = document.getElementById("loadingMessage");
       loadingMsg.style.display = "block"; // ← 表示開始
