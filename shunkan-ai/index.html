@@ -149,12 +149,14 @@
     #structureList li:hover { background:#f0f0f0; }
 
     /* Flashcard styles */
-    #flashcardContainer { perspective: 1000px; width: 90%; max-width: 400px; height: 250px; margin-bottom:1rem; }
-    .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; cursor:pointer; }
-    .flipped { transform: rotateY(180deg); }
-    .card-face { position: absolute; width:100%; height:100%; backface-visibility:hidden; display:flex; align-items:center; justify-content:center; border:1px solid #333; border-radius:12px; padding:1rem; text-align:center; font-size:1.25rem; }
-    .card-front { background:#fff; }
-    .card-back { background:#fafafa; transform: rotateY(180deg); }
+    #flashcardContainer { perspective: 1000px; -webkit-perspective: 1000px; width: 90%; max-width: 400px; height: 250px; margin-bottom:1rem; }
+    .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; -webkit-transition: -webkit-transform 0.6s; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; cursor:pointer; }
+    .flipped { transform: rotateY(180deg); -webkit-transform: rotateY(180deg); }
+    .card-face { position: absolute; width:100%; height:100%; backface-visibility:hidden; -webkit-backface-visibility:hidden; transform: translateZ(0); -webkit-transform: translateZ(0); display:flex; align-items:center; justify-content:center; border:1px solid #333; border-radius:12px; padding:1rem; text-align:center; font-size:1.25rem; }
+    .card-front { background:#fff; z-index:2; }
+    .card-back { background:#fafafa; transform: rotateY(180deg) translateZ(1px); -webkit-transform: rotateY(180deg) translateZ(1px); z-index:1; }
+    .flipped .card-front { z-index:1; }
+    .flipped .card-back { z-index:2; }
 
     .nav { display:flex; gap:1rem; align-items:center; }
     .nav button { padding:0.5rem 1rem; font-size:1rem; cursor:pointer; }
